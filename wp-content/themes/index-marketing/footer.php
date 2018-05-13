@@ -1,3 +1,4 @@
+<?php wp_footer(); ?>
 </div>
 <?php
 $theme_options = get_option('theme_options');

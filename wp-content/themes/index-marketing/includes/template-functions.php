@@ -54,3 +54,15 @@ function uploader_javaScript() {
         wp_enqueue_script('admin');
     }
 }
+
+function button_link($field, $external, $internal ) {
+    switch ($field) {
+        case 'external':
+            $button = $external;
+            break;
+        case 'internal':
+            $button = $internal;
+            break;
+    }
+    return $button;
+}
