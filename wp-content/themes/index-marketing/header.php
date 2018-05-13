@@ -7,7 +7,8 @@
     <meta name="google-site-verification" content="swDF0tWKFS1NKqLfZC2ZqDCerDFVAKvyiIFVK2jepio"/>
     <meta content="Nearshore web and mobile development company, Nearshore web and mobile development services, Nearshore e-commerce development services" name="keywords">
     <title>
-        <?php is_home() ? bloginfo('description') : wp_title('|'); ?>| <?php bloginfo('name'); ?></title>
+        <?php is_home() ? bloginfo('description') : wp_title('|'); ?>| <?php bloginfo('name'); ?>
+    </title>
     <link rel="icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon"/>
     <?php wp_head(); ?>
