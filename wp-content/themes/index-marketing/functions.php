@@ -38,9 +38,9 @@ include( get_template_directory() . '/includes/admin/theme-options.php');
  * REGISTER MENU
  */
 register_nav_menus( array(
-        'main_menu'=> 'main-menu',
+        'primary'  => 'Main menu',
         'footer_menu'=> 'footer-menu',
     ) );
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+//add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
 

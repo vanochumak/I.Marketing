@@ -131,35 +131,14 @@ function theme_option_settings() {
         'label_for' => 'newsletter_text'
     );
     add_settings_field( 'newsletter_textarea_field', 'Newsletter content', 'theme_option_display_settings', $theme_page, 'theme_section_footer', $theme_field_params );
-    /*
-    // Добавляем вторую секцию настроек
-
-    add_settings_section( 'theme_section_2', 'Другие поля ввода', '', $theme_page );
-
-    // Создадим чекбокс
     $theme_field_params = array(
-        'type'      => 'checkbox',
-        'id'        => 'my_checkbox',
-        'desc'      => 'Пример чекбокса.'
+        'type'      => 'copyright_text',
+        'id'        => 'copyright_text',
+        'std'       => '',
+        'desc'      => 'Copyright content',
+        'label_for' => 'copyright_text'
     );
-    add_settings_field( 'my_checkbox_field', 'Чекбокс', 'theme_option_display_settings', $theme_page, 'theme_section_2', $theme_field_params );
-
-    // Создадим выпадающий список
-    $theme_field_params = array(
-        'type'      => 'select',
-        'id'        => 'my_select',
-        'desc'      => 'Пример выпадающего списка.',
-        'vals'		=> array( 'val1' => 'Значение 1', 'val2' => 'Значение 2', 'val3' => 'Значение 3')
-    );
-    add_settings_field( 'my_select_field', 'Выпадающий список', 'theme_option_display_settings', $theme_page, 'theme_section_2', $theme_field_params );
-
-    // Создадим радио-кнопку
-    $theme_field_params = array(
-        'type'      => 'radio',
-        'id'      => 'my_radio',
-        'vals'		=> array( 'val1' => 'Значение 1', 'val2' => 'Значение 2', 'val3' => 'Значение 3')
-    );
-    add_settings_field( 'my_radio', 'Радио кнопки', 'theme_option_display_settings', $theme_page, 'theme_section_2', $theme_field_params );*/
+    add_settings_field( 'copyright_textarea_field', 'Copyright content', 'theme_option_display_settings', $theme_page, 'theme_section_footer', $theme_field_params );
 
 }
 add_action( 'admin_init', 'theme_option_settings' );
@@ -236,30 +215,11 @@ function theme_option_display_settings($field) {
             echo "<textarea class='code large-text' cols='50' rows='10' type='text' id='$id' name='" . $option_name . "[$id]'>$option[$id]</textarea>";
             echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
             break;
-        /*
-         case 'checkbox':
-             $checked = ($o[$id] == 'on') ? " checked='checked'" :  '';
-             echo "<label><input type='checkbox' id='$id' name='" . $option_name . "[$id]' $checked /> ";
-             echo ($desc != '') ? $desc : "";
-             echo "</label>";
-             break;
-         case 'select':
-             echo "<select id='$id' name='" . $option_name . "[$id]'>";
-             foreach($vals as $v=>$l){
-                 $selected = ($o[$id] == $v) ? "selected='selected'" : '';
-                 echo "<option value='$v' $selected>$l</option>";
-             }
-             echo ($desc != '') ? $desc : "";
-             echo "</select>";
-             break;
-         case 'radio':
-             echo "<fieldset>";
-             foreach($vals as $v=>$l){
-                 $checked = ($o[$id] == $v) ? "checked='checked'" : '';
-                 echo "<label><input type='radio' name='" . $option_name . "[$id]' value='$v' $checked />$l</label><br />";
-             }
-             echo "</fieldset>";
-             break;*/
+        case 'copyright_text':
+            $option[$id] = esc_attr( stripslashes($option[$id]) );
+            echo "<textarea class='code large-text' cols='50' rows='10' type='text' id='$id' name='" . $option_name . "[$id]'>$option[$id]</textarea>";
+            echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
+            break;
     }
 }
 

@@ -4,13 +4,14 @@
  * @param mixed $classes
  * @param mixed $item
  */
-//function special_nav_class($classes, $item){
-//    if (in_array('menu-item-1625', $classes)) {
-//        $classes[] = 'col-sm-15';
-//    }
-//    return $classes;
-//}
+function special_nav_class($classes, $item){
+    if (in_array('current-menu-item', $classes)) {
+        $classes[] = 'active';
+    }
+    return $classes;
+}
 
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 /**
  * @param $scripts
  */
