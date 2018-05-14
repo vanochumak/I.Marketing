@@ -59,7 +59,6 @@
                     </div>
                     <a class="header-tel btn"
                        href="tel:<?php echo $theme_options['theme_phone_number']; ?>"><?php echo $theme_options['theme_phone_number']; ?></a>
-
                 </div>
             </div>
         </div>

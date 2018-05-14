@@ -55,6 +55,12 @@ function uploader_javaScript() {
     }
 }
 
+/**
+ * @param $field
+ * @param $external
+ * @param $internal
+ * @return mixed
+ */
 function button_link($field, $external, $internal ) {
     switch ($field) {
         case 'external':

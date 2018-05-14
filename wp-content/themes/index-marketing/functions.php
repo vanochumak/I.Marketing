@@ -27,20 +27,20 @@ function get_image_by_id($pid, $size = ''){
 /**
  * INCLUDE JAVASCRIPT AND CSS FILES
  */
-include( get_template_directory() . '/includes/enqueue-script-style.php');
+require( get_template_directory() . '/includes/enqueue-script-style.php');
 /**
  * INCLUDE OTHER FILES
  */
-include( get_template_directory() . '/includes/template-functions.php');
-include( get_template_directory() . '/includes/admin/theme-options.php');
+require( get_template_directory() . '/includes/template-functions.php');
+require( get_template_directory() . '/includes/admin/theme-options.php');
 
 /**
  * REGISTER MENU
  */
 register_nav_menus( array(
-        'primary'  => 'Main menu',
-        'footer_menu'=> 'footer-menu',
-    ) );
-//add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+        'primary'       => 'Main menu',
+        'footer_menu'   => 'footer-menu',
+));
+
 
 

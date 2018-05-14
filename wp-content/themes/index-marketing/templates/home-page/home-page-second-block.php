@@ -15,6 +15,7 @@ $button = button_link(
     $home_page_second_block['button_external'],
     $home_page_second_block['button_internal']
 );
+
 ?>
 <section class="s-about">
     <div class="container-fluid">
@@ -40,7 +41,14 @@ $button = button_link(
 ?>
                     </div>
                     <div class="col-md-12 col-lg-6">
-                        <img class="img" src="images/home-1.jpg" alt="">
+                        <?php
+                        $image = $home_page_second_block['image'];
+                        if($image) {
+                            ?>
+                            <img class="img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

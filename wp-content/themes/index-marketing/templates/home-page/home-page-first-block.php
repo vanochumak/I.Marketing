@@ -23,25 +23,28 @@ $second_button = button_link(
     $home_page_first_block['external_link_second_button'],
     $home_page_first_block['internal_link_second_button']
 );
+if ($img = get_image_by_id(get_the_ID())) $src = $img[0]; else $src = '';
 ?>
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col col-md-10 col-lg-8 col-xl-6">
-            <?php
-            echo $home_page_first_block['title'] ? '<h1 class="h1 title">'. $home_page_first_block['title'] .'</h1>' : '';
-            echo $home_page_first_block['sub_title'] ? '<h2 class="h2 h2-center subtitle">'. $home_page_first_block['sub_title'] .'</h2>' : '';
-            echo $home_page_first_block['content'] ? '<div class="desc">'. $home_page_first_block['content'] .'</div>' : '';
-                if($home_page_first_block['first_button'] || $home_page_first_block['second_button']) {
-                echo '<div class="btns">';
-                    if($home_page_first_block['first_button']){
-                        echo '<a href="' . $first_button . '" class="btn btn-bg">' . $home_page_first_block['first_button'] . '</a>';
-                    }
-                    if($home_page_first_block['second_button']) {
-                        echo '<a href="' . $second_button . '" class="btn">' . $home_page_first_block['second_button'] . '</a>';
-                    }
-                echo '</div>';
-            }
-            ?>
+<section class="s-top" style="background-image: url('<?php echo $img[0] ?>')">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col col-md-10 col-lg-8 col-xl-6">
+                <?php
+                echo $home_page_first_block['title'] ? '<h1 class="h1 title">'. $home_page_first_block['title'] .'</h1>' : '';
+                echo $home_page_first_block['sub_title'] ? '<h2 class="h2 h2-center subtitle">'. $home_page_first_block['sub_title'] .'</h2>' : '';
+                echo $home_page_first_block['content'] ? '<div class="desc">'. $home_page_first_block['content'] .'</div>' : '';
+                    if($home_page_first_block['first_button'] || $home_page_first_block['second_button']) {
+                    echo '<div class="btns">';
+                        if($home_page_first_block['first_button']){
+                            echo '<a href="' . $first_button . '" class="btn btn-bg">' . $home_page_first_block['first_button'] . '</a>';
+                        }
+                        if($home_page_first_block['second_button']) {
+                            echo '<a href="' . $second_button . '" class="btn">' . $home_page_first_block['second_button'] . '</a>';
+                        }
+                    echo '</div>';
+                }
+                ?>
+            </div>
         </div>
     </div>
-</div>
+</section>
