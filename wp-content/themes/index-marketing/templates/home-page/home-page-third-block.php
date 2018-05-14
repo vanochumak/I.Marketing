@@ -29,15 +29,10 @@ $title_third_block = get_field('title_third_block');
                         </article>
                     </div>
             <?php
-                    // display a sub field value
-
-
                 endwhile;
             else :
             endif;
             ?>
-
-
         </div>
     </div>
 </section>
