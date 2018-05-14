@@ -16,7 +16,7 @@ $home_page_first_block = array(
 $first_button = button_link(
     $home_page_first_block['link_first_button'],
     $home_page_first_block['external_link_first_button'],
-    $home_page_first_block['internal_link_first_button']
+    $home_page_first_block['nternal_link_first_button']
 );
 $second_button = button_link(
     $home_page_first_block['link_second_button'],

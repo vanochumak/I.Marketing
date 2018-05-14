@@ -22,7 +22,7 @@ get_header();
             <?php
             $args = array(
                 'post_type'              => array( 'post' ),
-                'posts_per_page'         => '-1',
+                'posts_per_page'         => -1,
                 'order'                  => 'DESC',
                 'orderby'                => 'date',
             );
@@ -49,7 +49,8 @@ get_header();
                     }
 //                    print_r($image_blog_url);
 //                    print_r($image_blog_title);
-
+                    $d = 'j F d, Y, g:i a';
+                    $date = get_the_date( $d, get_the_ID() );
                    ?>
                     <div class="grid-item">
                         <div class="blog-item">
@@ -64,7 +65,7 @@ get_header();
                                             <div class="blog-item-tag"><a href="#"><?php echo $category[0]->name; ?></a></div>
                                         </div>
                                         <div class="col-12 col-sm-6">
-                                            <div class="blog-item-author">by <a href="#"><?php the_author(); ?></a></div>
+                                            <div class="blog-item-author"><?php _e('by', 'index-marketing'); ?><a href="#"><?php the_author(); ?></a></div>
                                         </div>
                                     </div>
                                     <a href="<?php the_permalink(); ?>" class="blog-item-title"><?php the_title(); ?></a>
@@ -79,7 +80,7 @@ get_header();
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="blog-item-date">
-                                            Feb 27, 2017 at 6:53 pm
+                                            <?php echo $date; ?>
                                         </div>
                                     </div>
                                     <div class="col-3">
