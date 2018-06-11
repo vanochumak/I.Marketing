@@ -3,16 +3,18 @@
  * Template Name: Blog
  */
 get_header();
+$title_on_the_blog_page = get_field('title_on_the_blog_page', 'option');
+$image_on_the_blog_page      = get_field('image_on_the_blog_page', 'option');
 ?>
-<section class="s-top-2 bg-top" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/bg-02.jpg')">
-    <h1 class="h1 title">Masonry blog</h1>
+<section class="s-top-2 bg-top" style="background-image: url('<?php echo $image_on_the_blog_page['url']; ?>')">
+    <?php echo $title_on_the_blog_page ? '<h1 class="h1 title">'. $title_on_the_blog_page .'</h1>' : ''; ?>
     <ul class="breadcrumbs">
         <li>
-            <a href="#">Home</a>
+            <a href="<?php echo get_home_url(); ?>"><?php _e('Home', 'index-marketing'); ?></a>
             <i class="icon ion-android-arrow-forward"></i>
         </li>
         <li class="active">
-            Masonry blog
+            <?php echo get_the_title(get_the_ID()); ?>
         </li>
     </ul>
 </section>
@@ -20,11 +22,13 @@ get_header();
     <div class="container-md">
         <div class="mas-grid">
             <?php
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             $args = array(
-                'post_type'              => array( 'post' ),
-                'posts_per_page'         => -1,
-                'order'                  => 'DESC',
-                'orderby'                => 'date',
+                'post_type'      => array( 'post' ),
+                'posts_per_page' => -1,
+                'paged'          => $paged,
+                'order'          => 'DESC',
+                'orderby'        => 'date',
             );
 
             // The Query
@@ -36,28 +40,35 @@ get_header();
                     $blog->the_post();
                     $category = get_the_category( $blog->ID );
                     //custom_print_r($category);
-                    $image_blog_url = [];
-                    $image_blog_title = [];
-                    if ( have_rows( 'layout_blog' ) ) {
-                        while ( have_rows( 'layout_blog' ) ) {
-                            the_row();
-                            $image_blog =  get_sub_field('image_blog');
-                            $image_blog_url[]  = $image_blog['url'];
-                            $image_blog_title[]    = get_sub_field('text_big');
-
-                        }
-                    }
-//                    print_r($image_blog_url);
-//                    print_r($image_blog_title);
                     $d = 'j F d, Y, g:i a';
                     $date = get_the_date( $d, get_the_ID() );
-                   ?>
+                    $content_main_blog_page = get_field('content_main_blog_page');
+                    $image_main_blog_page = get_field('image_main_blog_page');
+                    $quote_main_blog_page = get_field('quote_main_blog_page');
+                    $video_main_blog_page = get_field('video_main_blog_page');
+                    $type_content = get_field('type_content');
+                    ?>
                     <div class="grid-item">
-                        <div class="blog-item">
+                        <div class="blog-item <?php echo type_content_main_blog($type_content); ?>">
                             <div class="blog-item-body">
-
                                 <a href="" class="blog-item-img">
-                                    <img src="<?php echo $image_blog_url[1]; ?>" alt="">
+                                    <?php
+                                           if($type_content == 'quote') {
+                                               ?>
+                                               <i class="icon ion-quote"></i>
+                                               <?php
+                                               echo $quote_main_blog_page;
+                                           }elseif($type_content == 'video'){
+                                              ?>
+                                               <img src="./images/news-02.jpg" alt="">
+                                               <div class="play">
+                                                   <i class="icon ion-ios-play"></i>
+                                               </div>
+                                               <?php
+                                           }else{
+                                               echo '<img src="'. $image_main_blog_page['url'] .'" alt="'. $image_main_blog_page['alt'] .'">';
+                                           }
+                                    ?>
                                 </a>
                                 <div class="blog-caption">
                                     <div class="row align-items-center">
@@ -65,13 +76,15 @@ get_header();
                                             <div class="blog-item-tag"><a href="#"><?php echo $category[0]->name; ?></a></div>
                                         </div>
                                         <div class="col-12 col-sm-6">
-                                            <div class="blog-item-author"><?php _e('by', 'index-marketing'); ?><a href="#"><?php the_author(); ?></a></div>
+                                            <div class="blog-item-author"><?php _e('by', 'index-marketing'); ?> <a href="#"><?php the_author(); ?></a></div>
                                         </div>
                                     </div>
-                                    <a href="<?php the_permalink(); ?>" class="blog-item-title"><?php the_title(); ?></a>
+                                    <a href="<?php the_permalink(); ?>" class="blog-item-title">
+                                        <?php the_title(); ?>
+                                    </a>
                                     <div class="blog-item-text">
                                         <?php
-                                            echo $image_blog_title[0];
+                                            echo $content_main_blog_page;
                                         ?>
                                     </div>
                                 </div>
@@ -95,7 +108,6 @@ get_header();
                     <?php
                 }
             } else {
-
                     ?>
                 <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
                 <?php
@@ -104,216 +116,18 @@ get_header();
             // Restore original Post Data
             wp_reset_postdata();
                 ?>
-
-
-<!--            <div class="grid-item">-->
-<!--                <div class="blog-item b-video">-->
-<!--                    <div class="blog-item-body">-->
-<!--                        <a href="" class="blog-item-img">-->
-<!--                            <img src="./images/news-02.jpg" alt="">-->
-<!--                            <div class="play">-->
-<!--                                <i class="icon ion-ios-play"></i>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                        <div class="blog-caption">-->
-<!--                            <div class="row align-items-center">-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-tag"><a href="#">Tips & Tricks</a></div>-->
-<!--                                </div>-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-author">by <a href="#">Ronald Chen</a></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <a href="#" class="blog-item-title">Benefits of Using Modern Promotion Technologies in 2017</a>-->
-<!--                            <div class="blog-item-text">-->
-<!--                                <p>Technology is constantly changing, and it is obvious it takes our life to a whole new level. As the Internet has already become a powerful instrument of marketing, the technological advancement also plays...</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="blog-item-footer align-items-center">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-9">-->
-<!--                                <div class="blog-item-date">-->
-<!--                                    Feb 27, 2017 at 6:53 pm-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-3">-->
-<!--                                <a href="#" class="blog-item-comments">-->
-<!--                                    <i class="icon ion-android-chat"></i>3-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="grid-item">-->
-<!--                <div class="blog-item b-quote">-->
-<!--                    <div class="blog-item-body">-->
-<!--                        <a href="" class="blog-item-img">-->
-<!--                            <i class="icon ion-quote"></i>-->
-<!--                            Local SEO is becoming an essential components to every business.-->
-<!--                        </a>-->
-<!--                        <div class="blog-caption">-->
-<!--                            <div class="row align-items-center">-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-tag"><a href="#">news</a></div>-->
-<!--                                </div>-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-author">by <a href="#">Ronald Chen</a></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <a href="#" class="blog-item-title">How Google Search Works in 2017. Video Review</a>-->
-<!--                            <div class="blog-item-text">-->
-<!--                                <p>Many years ago we created an infographic about how search works, from the perspective of a content creator, starting with their content & following it through the indexing & ranking process. As users...</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="blog-item-footer align-items-center">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-9">-->
-<!--                                <div class="blog-item-date">-->
-<!--                                    Feb 27, 2017 at 6:53 pm-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-3">-->
-<!--                                <a href="#" class="blog-item-comments">-->
-<!--                                    <i class="icon ion-android-chat"></i>3-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="grid-item">-->
-<!--                <div class="blog-item">-->
-<!--                    <div class="blog-item-body">-->
-<!--                        <a href="" class="blog-item-img">-->
-<!--                            <img src="./images/news-01.jpg" alt="">-->
-<!--                        </a>-->
-<!--                        <div class="blog-caption">-->
-<!--                            <div class="row align-items-center">-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-tag"><a href="#">news</a></div>-->
-<!--                                </div>-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-author">by <a href="#">Ronald Chen</a></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <a href="#" class="blog-item-title">How Google Search Works in 2017. Video Review</a>-->
-<!--                            <div class="blog-item-text">-->
-<!--                                <p>Many years ago we created an infographic about how search works, from the perspective of a content creator, starting with their content & following it through the indexing & ranking process. As users...</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="blog-item-footer align-items-center">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-9">-->
-<!--                                <div class="blog-item-date">-->
-<!--                                    Feb 27, 2017 at 6:53 pm-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-3">-->
-<!--                                <a href="#" class="blog-item-comments">-->
-<!--                                    <i class="icon ion-android-chat"></i>3-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="grid-item">-->
-<!--                <div class="blog-item">-->
-<!--                    <div class="blog-item-body">-->
-<!--                        <a href="" class="blog-item-img">-->
-<!--                            <img src="./images/news-02.jpg" alt="">-->
-<!--                        </a>-->
-<!--                        <div class="blog-caption">-->
-<!--                            <div class="row align-items-center">-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-tag"><a href="#">news</a></div>-->
-<!--                                </div>-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-author">by <a href="#">Ronald Chen</a></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <a href="#" class="blog-item-title">Google Rethinking Payday Loans & Doorway Pages?</a>-->
-<!--                            <div class="blog-item-text">-->
-<!--                                <p>Best yet, not only does Google maintain their investment in payday loans via LendUp, but there is also a bubble in the personal loans space, so Google will be...</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="blog-item-footer align-items-center">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-9">-->
-<!--                                <div class="blog-item-date">-->
-<!--                                    Feb 27, 2017 at 6:53 pm-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-3">-->
-<!--                                <a href="#" class="blog-item-comments">-->
-<!--                                    <i class="icon ion-android-chat"></i>3-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="grid-item">-->
-<!--                <div class="blog-item">-->
-<!--                    <div class="blog-item-body">-->
-<!--                        <a href="" class="blog-item-img">-->
-<!--                            <img src="./images/news-03.jpg" alt="">-->
-<!--                        </a>-->
-<!--                        <div class="blog-caption">-->
-<!--                            <div class="row align-items-center">-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-tag"><a href="#">Tips & Tricks</a></div>-->
-<!--                                </div>-->
-<!--                                <div class="col-12 col-sm-6">-->
-<!--                                    <div class="blog-item-author">by <a href="#">Ronald Chen</a></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <a href="#" class="blog-item-title">Benefits of Using Modern Promotion Technologies in 2017</a>-->
-<!--                            <div class="blog-item-text">-->
-<!--                                <p>Technology is constantly changing, and it is obvious it takes our life to a whole new level. As the Internet has already become a powerful instrument of marketing, the technological advancement also plays...</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="blog-item-footer align-items-center">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-9">-->
-<!--                                <div class="blog-item-date">-->
-<!--                                    Feb 27, 2017 at 6:53 pm-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-3">-->
-<!--                                <a href="#" class="blog-item-comments">-->
-<!--                                    <i class="icon ion-android-chat"></i>3-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
 
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <button class="btn btn-light">load more posts</button>
-            </div>
-        </div>
-        <ul class="pagination">
-            <li class="active">
-                <a href="#">1</a>
-            </li>
-            <li>
-                <a href="#">2</a>
-            </li>
-            <li>
-                <a href="#">3</a>
-            </li>
-        </ul>
-
+<!--        <div class="row">-->
+<!--            <div class="col-md-8 offset-md-2">-->
+<!--                <button class="btn btn-light">load more posts</button>-->
+<!--            </div>-->
+<!--        </div>-->
+        <?php
+        if (function_exists('vb_pagination')) {
+            vb_pagination($blog);// loop
+        }
+        ?>
     </div>
 </section>
 <?php

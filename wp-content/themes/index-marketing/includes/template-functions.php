@@ -56,6 +56,7 @@ function uploader_javaScript() {
 }
 
 /**
+ * The function show button links external or internal
  * @param $field
  * @param $external
  * @param $internal
@@ -71,4 +72,23 @@ function button_link($field, $external, $internal ) {
             break;
     }
     return $button;
+}
+
+/**
+ * @param $type_content
+ * @return string
+ */
+function type_content_main_blog($type_content) {
+    switch ($type_content) {
+        case 'image':
+            $class = '';
+            break;
+        case 'quote':
+            $class = 'b-quote';
+            break;
+        case 'video':
+            $class = 'b-video';
+            break;
+    }
+    return $class;
 }

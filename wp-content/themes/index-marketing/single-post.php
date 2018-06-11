@@ -1,50 +1,46 @@
 <?php
 get_header();
+$d = 'F, j Y g:i a';
+$date = get_the_date( $d, get_the_ID() );
+$title_single_blog_page = get_field('title_single_blog_page', 'option');
+$image_single_blog      = get_field('image_single_blog', 'option');
+$img = get_image_by_id(get_the_ID()); $src = $img[0];
 ?>
-    <section class="s-top-2 bg-top" style="background-image: url('./images/bg-02.jpg')">
-        <h1 class="h1 title">Blog single</h1>
+    <section class="s-top-2 bg-top" style="background-image: url('<?php echo $src ? $src : $image_single_blog['url']; ?>')">
+        <?php echo $title_single_blog_page ? '<h1 class="h1 title">'. $title_single_blog_page .'</h1>' : ''; ?>
         <ul class="breadcrumbs">
             <li>
-                <a href="#">Home</a>
+                <a href="<?php echo get_home_url(); ?>"><?php _e('Home', 'index-marketing'); ?></a>
                 <i class="icon ion-android-arrow-forward"></i>
             </li>
             <li>
-                <a href="#">Blog</a>
+                <a href="<?php echo get_home_url(); ?>/blog/"><?php _e('Blog', 'index-marketing'); ?></a>
                 <i class="icon ion-android-arrow-forward"></i>
             </li>
             <li class="active">
-                Blog single
+                <?php echo get_the_title(get_the_ID()); ?>
             </li>
         </ul>
     </section>
-
     <section class="s-blog-single">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 col-xl-6">
-
                     <article class="blog-article">
-
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                         <h2 class="title h2 h2-alt"><?php the_title(); ?></h2>
                         <ul class="meta">
                             <li class="meta-author">
-                                <i class="icon ion-android-person"></i> by <a href="#"><?php the_author(); ?></a>
+                                <i class="icon ion-android-person"></i> <?php _e('by', 'index-marketing'); ?>
+                                <a href="#"><?php the_author(); ?></a>
                             </li>
                             <li class="meta-author">
-                                <i class="icon ion-calendar"></i> Feb, 27 2017 at 5:47 pm
+                                <i class="icon ion-calendar"></i>
+                                <?php echo $date;  ?>
+<!--                                Feb, 27 2017 at 5:47 pm-->
                             </li>
                         </ul>
                         <?php require( get_template_directory() . '/templates/blog/blog-layout.php'); ?>
-
-
-
-
-
-
-
-
-
                         <div class="article-btn-wrap">
                             <a href="#" class="btn btn-icon btn-fb">
                                 <span><i class="icon ion-social-facebook"></i></span>
@@ -59,16 +55,13 @@ get_header();
                                 Google
                             </a>
                         </div>
-
-
-                            <?php endwhile; else : ?>
-                                <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-                            <?php endif; ?>
+                        <?php endwhile; else : ?>
+                            <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                        <?php endif; ?>
                     </article>
 
                 </div>
             </div>
-
         </div>
     </section>
 

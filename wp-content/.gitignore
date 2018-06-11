@@ -1,0 +1,21 @@
+# PhpStorm
+.idea
+
+# .htaccess
+.htaccess
+!.htaccess-*
+
+# Wordpress and cacheing
+#wp-content/uploads/*
+#wp-content/cache/*
+#wp-content/advanced-cache.php
+#wp-content/object-cache.php
+wp-config.php
+#wp-config-local.php
+
+# everything else
+#/dev/
+#/Search-Replace-DB-master/
+#/PHPMailer/
+#/xpertmailer/
+#/stats/
