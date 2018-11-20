@@ -1,0 +1,21 @@
+.s-text{
+  padding: 40px 15px;
+  display: flex;
+  justify-content: center;
+  background-image: -webkit-linear-gradient(0deg, #0796c6 0%, #50e590 100%);
+  color: $white;
+  font-size: 24px;
+  text-align: center;
+  a{
+    transition: 0.3s;
+    &:hover{
+      color: $hover-2;
+    }
+  }
+  @media (max-width: 1599px) {
+    font-size: 19px;
+  }
+  @media (max-width: 767px) {
+
+  }
+}

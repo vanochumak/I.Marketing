@@ -1,0 +1,48 @@
+.s-team{
+}
+
+.team{
+  text-align: center;
+  margin-top: 55px;
+  .img{
+    border-radius: 50%;
+    width: 100%;
+    max-width: 300px;
+  }
+  .caption{
+    color: $text;
+    .name{
+      font-size: 19px;
+      margin-top: 15px;
+      font-weight: 400;
+      color: $hover;
+      line-height: 1;
+    }
+    .position{
+      font-style: italic;
+      margin-top: 5px;
+    }
+  }
+  @media (max-width: 991px) {
+    .img{
+      max-width: 270px;
+    }
+  }
+}
+
+.socials{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  li{
+    padding: 0 8px;
+    a{
+      color: $text-2;
+      font-size: 22px;
+      transition: color 0.3s;
+      &:hover{
+        color: $hover;
+      }
+    }
+  }
+}

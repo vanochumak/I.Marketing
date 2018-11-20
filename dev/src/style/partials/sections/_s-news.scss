@@ -1,0 +1,82 @@
+.s-news{
+  background-color: $grey-light;
+  .title{
+    margin-bottom: 60px;
+  }
+  @media (max-width: 1199px) {
+    .title{
+      margin-bottom: 60px;
+    }
+  }
+}
+.news-item{
+  margin-bottom: 90px;
+  .img{
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    img{
+      display: block;
+      width: 100%;
+      transition: all 0.5s ease-out;
+      backface-visibility: hidden;
+    }
+    .caption{
+      background-color: $dark_05;
+      @include absolute;
+      opacity: 0;
+      transition: all 0.5s ease-out;
+      @include flex-col-center;
+      .btn{
+        transform: scale(0.4);
+        transition: all 0.5s ease-out;
+      }
+    }
+    &:hover{
+      img{
+        transform: scale(1.1);
+      }
+      .caption{
+        opacity: 1;
+        .btn{
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  .date{
+    color: $text;
+    @include flex-row;
+    align-items: center;
+    margin-bottom: 20px;
+    i{
+      display: flex;
+      margin-right: 10px;
+      color: #50e590;
+      background: linear-gradient(-60deg, #0796c6 50%, #50e590);
+      background-size: 200% auto;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 22px;
+    }
+  }
+  .title{
+    color: $main;
+    transition: all 0.3s;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
+    &:hover{
+      color: $hover;
+    }
+  }
+  @media (max-width: 1199px) {
+    margin-bottom: 60px;
+    .title{
+      font-size: 20px;
+    }
+  }
+}

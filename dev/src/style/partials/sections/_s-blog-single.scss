@@ -1,0 +1,147 @@
+.s-blog-single{
+  padding-top: 60px;
+  .breadcrumbs{
+    margin-bottom: 60px;
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 60px;
+  }
+}
+
+.blog-article{
+  .title{
+
+  }
+  ul.meta{
+    @include flex-row;
+    line-height: 1;
+    margin-top: 35px;
+    color: $text;
+    li{
+      @include flex-row-center;
+      margin-right: 50px;
+      i{
+        color: $main;
+        margin-right: 10px;
+        font-size: 24px;
+      }
+      a{
+        transition: all 0.3s;
+        display: inline-block;
+        &:hover{
+          color: $hover;
+        }
+      }
+    }
+    li.meta-author{
+      a{
+        margin-left: 5px;
+      }
+    }
+  }
+  .text-big{
+    margin-top: 30px;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  .img{
+    text-align: center;
+    margin-top: 55px;
+    img{
+      width: 100%;
+    }
+  }
+
+  * + p{
+    margin-top: 15px;
+  }
+  p + p{
+    margin-top: 12px;
+  }
+  .img + *{
+    margin-top: 45px;
+  }
+  .article-quote + p{
+    margin-top: 30px;
+  }
+
+  .article-quote{
+    font-size: 24px;
+    font-style: italic;
+    margin-top: 25px;
+    padding: 0 40px;
+    i{
+      transform: rotate(180deg);
+      color: $main;
+      font-size: 40px;
+      margin-left: -10px;
+    }
+    p{
+      margin-top: -15px;
+    }
+    .quote-meta{
+      color: $text-2;
+      font-style: normal;
+      font-size: 18px;
+      margin-top: 20px;
+      span{
+        color: $hover;
+      }
+    }
+  }
+  .article-btn-wrap{
+    .btn{
+      margin-right: 30px;
+      margin-top: 60px;
+    }
+  }
+  @media (max-width: 1599px) {
+    .text-big{
+      font-size: 19px;
+    }
+  }
+  @media (max-width: 1199px) {
+    .article-quote {
+      font-size: 20px;
+      margin-top: 20px;
+      .quote-meta{
+        margin-top: 15px;
+      }
+    }
+    .article-btn-wrap{
+      .btn{
+        margin-top: 30px;
+      }
+    }
+    .article-quote + p{
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    ul.meta {
+      margin-top: 15px;
+    }
+    .text-big{
+      margin-top: 20px;
+    }
+    .img{
+      margin-top: 25px;
+    }
+    .img + *{
+      margin-top: 15px;
+    }
+  }
+  @media (max-width: 575px) {
+    ul.meta {
+      flex-direction: column;
+      align-items: flex-start;
+      li{
+        margin-bottom: 15px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+

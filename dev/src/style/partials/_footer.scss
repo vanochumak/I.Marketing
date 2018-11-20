@@ -1,0 +1,113 @@
+.footer{
+  padding: 100px 0 35px;
+  background-color: $white; //$grey-light;
+  color: $text;
+  .input{
+    background-color: $grey-light; //$white
+  }
+  .title{
+    margin-bottom: 40px;
+  }
+  .subtitle{
+    margin-bottom: 10px;
+  }
+  @media (max-width: 1199px) {
+    padding: 80px 0 35px;
+    .title{
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.footer-text{
+  @media (max-width: 1199px) {
+    margin-bottom: 50px;
+  }
+}
+
+.footer-instagram{
+  .i-items{
+    @include flex-row;
+    flex-wrap: wrap;
+    margin: 0 -6px;
+    .i-item{
+      display: block;
+      position: relative;
+      width: calc(25% - 15px);
+      height: 0;
+      padding-top: calc(25% - 15px);
+      @include bg-center;
+      margin: 0 6px 12px;
+      .caption{
+        @include flex-col-center;
+        @include absolute;
+        color: $white;
+        background-color: $main_08;
+        font-weight: 400;
+        opacity: 0;
+        transition: opacity 0.3s;
+        ul{
+          transform: scale(0.5);
+          transition: 480ms cubic-bezier(0.18, 0.89, 0.32, 1.28) transform, 150ms cubic-bezier(0.18, 0.89, 0.32, 1.28) opacity;
+          transition-delay: 0.15s;
+          li{
+            @include flex-row-center;
+            font-size: 18px;
+            line-height: 1;
+            margin-bottom: 12px;
+            i{
+              margin-right: 4px;
+            }
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      &:hover{
+        .caption{
+          opacity: 1;
+          ul{
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .i-items{
+      .i-item{
+        width: calc(50% - 15px);
+        height: 0;
+        padding-top: calc(50% - 15px);
+      }
+    }
+  }
+}
+
+.footer-newsletter{
+  .desc{
+    margin-bottom: 25px;
+  }
+  @media (max-width: 1199px) {
+    margin-top: 50px;
+  }
+}
+
+
+.copyright{
+  margin-top: 80px;
+  @media (max-width: 1199px) {
+    margin-top: 50px;
+  }
+}
+
+.blog, .single-post{
+  .footer{
+    background-color: $white;
+    color: $text;
+    .input{
+      background-color: $grey-light;
+    }
+  }
+}

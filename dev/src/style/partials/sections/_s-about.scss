@@ -1,0 +1,44 @@
+.s-about{
+  .title{
+
+  }
+  .subtitle{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-top: 50px;
+    font-size: 24px;
+  }
+  .desc{
+    color: $text;
+    margin-top: 20px;
+  }
+  .btn{
+    margin-top: 25px;
+    min-width: 230px;
+  }
+  .img{
+    display: block;
+    width: 100%;
+  }
+  @media (max-width: 1599px) {
+    .subtitle{
+      font-size: 19px;
+      margin-top: 25px;
+    }
+    .desc{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 1199px) {
+    .subtitle{
+      margin-top: 20px;
+    }
+    .img{
+      margin-top: 50px;
+    }
+    .btn{
+      min-width: 210px;
+    }
+  }
+}

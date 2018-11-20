@@ -1,0 +1,76 @@
+.s-contacts{
+  .text{
+    margin-top: 50px;
+    font-size: 24px;
+    color: $text;
+  }
+  @media (max-width: 1599px) {
+    .text{
+      font-size: 19px;
+      margin-top: 20px;
+    }
+  }
+}
+.contacts-sidebar{
+  .contacts-sidebar-item{
+    margin-top: 90px;
+    &:first-child{
+      margin-top: 0;
+    }
+    .item-text{
+      margin-top: 25px;
+      padding-left: 30px;
+      position: relative;
+      color: $text;
+      a{
+        transition: 0.3s;
+        color: $dark;
+        &:hover{
+          color: $hover;
+        }
+      }
+      i{
+        position: absolute;
+        left: 0;
+        top: -3px;
+        font-size: 23px;
+        color: #0796c6;
+        &:before{
+          background: linear-gradient(60deg, #50e590, #0796c6);
+          background-size: 100% auto;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        &.ion-ios-email{
+          font-size: 24px;
+          top: -4px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1599px) {
+    .contacts-sidebar-item{
+      margin-top: 50px;
+      .item-text{
+        font-size: 16px;
+        i{
+          font-size: 20px;
+          top: -2px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1199px) and (min-width: 992px){
+    padding-left: 30px;
+  }
+  @media (max-width: 991px) {
+    .contacts-sidebar-item {
+      &:first-child {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+

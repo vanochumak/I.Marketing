@@ -1,0 +1,21 @@
+.s-newsletter{
+  background-color: $hr;
+  padding: 125px 0;
+  .title{
+    text-align: center;
+    &:before{
+      display: none;
+    }
+  }
+  .desc{
+    color: $text;
+    margin-bottom: 25px;
+  }
+  .btn.btn-sm{
+    top: 5px;
+    right: 5px;
+  }
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+}

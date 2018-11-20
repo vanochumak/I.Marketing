@@ -1,0 +1,13 @@
+.s-top-2{
+  padding: 230px 0 135px;
+  text-align: center;
+  color: $white;
+  @include flex-col-center;
+  .title{
+    margin-bottom: 20px;
+    color: $white;
+  }
+  @media (max-width: 1599px) {
+    padding: 130px 0 60px;
+  }
+}

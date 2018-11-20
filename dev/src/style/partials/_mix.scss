@@ -1,0 +1,51 @@
+// CSS Flex
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-row-sb() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flex-row-center() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-col-center() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-col-sb() {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// BG
+@mixin bg-center() {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin bg-top() {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+//position
+@mixin absolute() {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
