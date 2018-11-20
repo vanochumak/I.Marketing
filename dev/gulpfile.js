@@ -17,7 +17,7 @@ var path = {
     build: {
         html: 'build/',
         js: 'build/js/',
-        css: 'build/css/',
+        css: '../wp-content/themes/index-marketing/includes/css/',
         images: 'build/images/',
         fonts: 'build/fonts/'
     },

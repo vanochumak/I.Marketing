@@ -3,12 +3,12 @@
     margin-top: 80px;
     max-width: 390px;
     .article-title-wrap{
-      margin-bottom: 20px;
+      margin-bottom: 6px;
       @include flex-row;
       align-items: center;
       .article-title{
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 600;
       }
       .article-icon{
         margin-right: 25px;

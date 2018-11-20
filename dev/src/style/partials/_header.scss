@@ -7,7 +7,6 @@
   background-color: $white;
   backface-visibility: hidden;
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
-
   .header-inner{
     @include flex-row-sb;
     margin: 0 70px;
@@ -41,12 +40,13 @@
         a{
           @include flex-row-center;
           position: relative;
-          height: 146px;
+          height: 134px;
           font-size: 18px;
           line-height: 1;
           text-transform: uppercase;
           font-weight: 600;
           transition: all 0.3s;
+          color: $dark;
           &:before{
             content: '';
             position: absolute;
