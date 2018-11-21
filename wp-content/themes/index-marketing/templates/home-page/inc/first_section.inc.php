@@ -1,5 +1,6 @@
 <?php
 $first_section = array(
+    'add_background_section'      => get_sub_field('add_background_section'),
     'background_image'            => get_sub_field('background_image'),
     'title'                       => get_sub_field('title'),
     'sub_title'                   => get_sub_field('sub_title'),
@@ -26,7 +27,8 @@ $second_button = button_link(
 );
 //if ($img = get_image_by_id(get_the_ID())) $src = $img[0]; else $src = '';
 ?>
-<section class="s-top" style="background-image: url('<?php echo $first_section['background_image']['url']; ?>')">
+<section class="s-top <?php echo $first_section['add_background_section'] == 'true' ? 'add-background-section' : '' ?>"
+         style="background-image: url('<?php echo $first_section['background_image']['url']; ?>')">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col col-md-10 col-lg-8 col-xl-6">

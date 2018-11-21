@@ -1,9 +1,10 @@
 <?php
-$title_third_block = get_field('title_third_block');
+$title_third_section = get_sub_field('title_third_block');
+$add_background_section_third_section = get_sub_field('add_background_section');
 ?>
-<section class="s-services">
+<section class="s-services <?php echo $add_background_section_third_section == 'true' ? 'add-background-section' : '' ?>">
     <div class="container-fluid">
-        <?php echo ($title_third_block) ? '<h2 class="h2 h2-center title">'. $title_third_block .'</h2>' : ''; ?>
+        <?php echo ($title_third_section) ? '<h2 class="h2 h2-center title">'. $title_third_section .'</h2>' : ''; ?>
         <div class="row">
             <?php
             if( have_rows('repeater_third') ):
@@ -14,13 +15,11 @@ $title_third_block = get_field('title_third_block');
                     //print_r($choose_icon);
                     $field = get_sub_field_object('choose_icon');
                     $value = $field['value'];
-            ?>
+                    ?>
                     <div class="col-12 col-md-6 col-xl-3">
                         <article class="article">
                             <div class="article-title-wrap">
-
                                 <div class="article-icon <?php echo $value; ?>"></div>
-
                                 <h3 class="h3 article-title"><?php echo $repeater_title; ?></h3>
                             </div>
                             <div class="article-desc">
@@ -28,7 +27,7 @@ $title_third_block = get_field('title_third_block');
                             </div>
                         </article>
                     </div>
-            <?php
+                    <?php
                 endwhile;
             else :
             endif;
