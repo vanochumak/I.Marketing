@@ -92,3 +92,4 @@ function type_content_main_blog($type_content) {
     }
     return $class;
 }
+

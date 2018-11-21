@@ -34,7 +34,7 @@ require( get_template_directory() . '/includes/enqueue-script-style.php');
 require( get_template_directory() . '/includes/template-functions.php');
 require( get_template_directory() . '/includes/functions/acf-functions.php');
 require( get_template_directory() . '/includes/functions/pagination.php');
-require( get_template_directory() . '/includes/admin/theme-options.php');
+//require( get_template_directory() . '/includes/admin/theme-options.php');
 
 /**
  * REGISTER MENU

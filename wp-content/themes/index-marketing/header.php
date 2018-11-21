@@ -37,8 +37,7 @@
                         <span></span>
                     </div>
                     <!-- error404 ? logo-inverse.png : logo.png -->
-                    <a class="header-logo" href="#"><img
-                                src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="SEOMarket"></a>
+                    <a class="header-logo" href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="SEOMarket"></a>
                 </div>
 
                 <div class="hamburger-2">
@@ -58,8 +57,15 @@
                             </div>
                         </form>
                     </div>
-                    <a class="header-tel btn"
-                       href="tel:<?php echo $theme_options['theme_phone_number']; ?>"><?php echo $theme_options['theme_phone_number']; ?></a>
+                    <?php
+                    $theme_settings_header = get_field('theme_settings_header', 'option');
+                    if($theme_settings_header) {
+                        ?>
+                        <a class="header-tel btn"
+                           href="tel:<?php echo $theme_settings_header['number_phone']; ?>"><?php echo $theme_settings_header['number_phone']; ?></a>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
