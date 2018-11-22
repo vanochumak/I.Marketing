@@ -120,9 +120,9 @@ $theme_settings_footer = get_field('theme_settings_footer', 'option');
                         ?>
                         <div class="col-12 col-xl-3">
                             <div class="footer-newsletter">
-                                <h3 class="h3 title"><?php echo $footer_third_section['title']; ?></h3>
+                                <h3 class="h3 title"><?php echo isset($footer_third_section['title']); ?></h3>
                                 <div class="desc">
-                                    <p><?php echo $footer_third_section['content']; ?></p>
+                                    <p><?php echo isset($footer_third_section['content']); ?></p>
                                 </div>
                                 <form class="form" action="">
                                     <div class="input-wrap input-wrap-btn">
