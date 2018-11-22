@@ -17,7 +17,7 @@
     <?php wp_head(); ?>
 </head>
 <?php $theme_options = get_option('theme_options'); ?>
-<body <?php body_class($class); ?> id="post-<?php the_ID(); ?>">
+<body <?php body_class(); ?> id="post-<?php the_ID(); ?>">
 <div class="min-height">
     <header class="header">
         <div class="container-fluid">
