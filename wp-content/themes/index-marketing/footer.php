@@ -35,7 +35,7 @@ $theme_settings_footer = get_field('theme_settings_footer', 'option');
 
                     }elseif( get_row_layout() == 'footer_second_section' ){
                         $footer_second_section = array(
-                            'title'      => get_sub_field('title'),
+                            'title'      => get_sub_field('title')
                         );
 ?>
                         <div class="col-12 col-xl-4">
