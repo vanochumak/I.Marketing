@@ -17,7 +17,7 @@ $theme_settings_footer = get_field('theme_settings_footer', 'option');
                 // loop through the rows of data
                 while ( have_rows('footer_section') ) : the_row();
 
-                    if( get_row_layout() == 'footer_first_section' ):
+                    if( get_row_layout() == 'footer_first_section' ){
                         $footer_first_section = array(
                             'title'      => get_sub_field('title'),
                             'sub_title'  => get_sub_field('sub_title'),
@@ -33,7 +33,7 @@ $theme_settings_footer = get_field('theme_settings_footer', 'option');
                         </div>
                         <?
 
-                    elseif( get_row_layout() == 'footer_second_section' ):
+                    }elseif( get_row_layout() == 'footer_second_section' ){
                         $footer_second_section = array(
                             'title'      => get_sub_field('title'),
                             'sub_title'  => get_sub_field('sub_title'),
@@ -112,7 +112,7 @@ $theme_settings_footer = get_field('theme_settings_footer', 'option');
                             </div>
                         </div>
                         <?php
-                    elseif( get_row_layout() == 'footer_third_section' ):
+                    }elseif( get_row_layout() == 'footer_third_section' ){
                         $footer_third_section = array(
                             'title'      => get_sub_field('title'),
                             'content'    => get_sub_field('content'),
@@ -120,9 +120,9 @@ $theme_settings_footer = get_field('theme_settings_footer', 'option');
                         ?>
                         <div class="col-12 col-xl-3">
                             <div class="footer-newsletter">
-                                <h3 class="h3 title"><?php echo isset($footer_third_section['title']); ?></h3>
+                                <h3 class="h3 title"><?php echo $footer_third_section['title']; ?></h3>
                                 <div class="desc">
-                                    <p><?php echo isset($footer_third_section['content']); ?></p>
+                                    <p><?php echo $footer_third_section['content']; ?></p>
                                 </div>
                                 <form class="form" action="">
                                     <div class="input-wrap input-wrap-btn">
@@ -133,7 +133,7 @@ $theme_settings_footer = get_field('theme_settings_footer', 'option');
                             </div>
                         </div>
                         <?php
-                    endif;
+                    }
                 endwhile;
 
             else :
