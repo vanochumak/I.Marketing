@@ -1,0 +1,101 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Fullwidth Gallery'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    text: "Hover Title",
+    title: 'Fullwidth Gallery',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // titled Grid gallery
+  section.section.section-lg-top.text-center.bg-white
+    h3 Our Projects
+    .isotope-wrap.range.range-50
+      // Isotope Filters
+      .cell-lg-12 
+        ul.isotope-filters.isotope-filters-horizontal
+          li.block-top-level
+            p.big Choose your category:
+            // Isotope Filters
+            button.isotope-filters-toggle.button.button-xs.button-primary(data-custom-toggle='.isotope-filters-list', data-custom-toggle-hide-on-blur='true')
+              | Filter
+              span.caret
+
+            ul.isotope-filters-list
+              li: a.active(data-isotope-filter='*', data-isotope-group='gallery-02', href='#') All Categories
+              li: a(data-isotope-filter='type 1', data-isotope-group='gallery-02', href='#') Type 1
+              li: a(data-isotope-filter='type 2', data-isotope-group='gallery-02', href='#') Type 2
+
+      // Isotope Content
+      .cell-lg-12
+        .isotope(data-isotope-layout='fitRows', data-isotope-group='gallery-02', data-lightgallery='group')
+          .row.row-condensed.row-no-gutter
+            .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+              +gallery-item({
+                classMod: 'gallery-item-fullwidth',
+                lightGallery: 'group-item',
+                img: 'gallery-fullwidth-01-640x430',
+                original: 'gallery-01-original',
+                title: 'photo #1',
+                text: 'SEOMarket provides first class search engine optimization services'
+              })
+            .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+              +gallery-item({
+                classMod: 'gallery-item-fullwidth',
+                lightGallery: 'group-item',
+                img: 'gallery-fullwidth-02-640x430',
+                original: 'gallery-02-original',
+                title: 'photo #2',
+                text: 'SEOMarket provides first class search engine optimization services'
+              })
+            .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+              +gallery-item({
+                classMod: 'gallery-item-fullwidth',
+                lightGallery: 'group-item',
+                img: 'gallery-fullwidth-03-640x430',
+                original: 'gallery-03-original',
+                title: 'photo #3',
+                text: 'SEOMarket provides first class search engine optimization services'
+              })
+            .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+              +gallery-item({
+                classMod: 'gallery-item-fullwidth',
+                lightGallery: 'group-item',
+                img: 'gallery-fullwidth-04-640x430',
+                original: 'gallery-04-original',
+                title: 'photo #4',
+                text: 'SEOMarket provides first class search engine optimization services'
+              })
+            .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+              +gallery-item({
+                classMod: 'gallery-item-fullwidth',
+                lightGallery: 'group-item',
+                img: 'gallery-fullwidth-05-640x430',
+                original: 'gallery-05-original',
+                title: 'photo #5',
+                text: 'SEOMarket provides first class search engine optimization services'
+              })
+            .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+              +gallery-item({
+                classMod: 'gallery-item-fullwidth',
+                lightGallery: 'group-item',
+                img: 'gallery-fullwidth-06-640x430',
+                original: 'gallery-06-original',
+                title: 'photo #6',
+                text: 'SEOMarket provides first class search engine optimization services'
+              })
+  ="\n"
+
+  include ../sections/_cta-section-thin
+
+  // Page Footer
+  +footer-default({className: 'bg-gray-lighter'})

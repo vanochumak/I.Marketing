@@ -1,0 +1,72 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Careers'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // hi, we are brave
+  section.section.section-lg.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify.range-md-reverse
+        .cell-sm-9.cell-md-5.cell-lg-4
+          h3 We're always looking
+            br.veil.reveal-xl-block
+            =" "
+            | for talents
+          .divider.divider-default
+          p.heading-5 The team of SEOMarket provides award-winning online marketing and SEO solutions for top brands in various industries including education, technology, and travel.
+          p.text-spacing-sm If you're a multi-disciplined expert at your craft who loves figuring out new ways to do things, being professional, playing chess, beer Fridays, and an overflowing snack cabinet, let's talk. We offer all the stuff you'd expect, and plenty of other really generous perks.
+        .cell-sm-9.cell-md-5
+          +jpg('careers-1-720x459')
+  ="\n"
+  
+  // Small Features
+  section.section.section-lg.text-center.text-sm-left.bg-gray-lighter
+    .shell-wide
+      .range.range-50.range-xs-center.text-gray-light
+        .cell-xs-10.cell-sm-4
+          .box-accent
+            h6 Corporate Culture
+            p A good job isn't just about the paycheck and insurance benefits. Most people want to feel like their work is contributing to the greater good of the world. and that’s exactly what we give our team members at SEOMarket. At the end of the day, every employee feels that he/she is the part of a family.
+        .cell-xs-10.cell-sm-4
+          .box-accent
+            h6 Benefits
+            p There are multiple benefits available to our employees, both experienced and new. Every employee has a challenging and fulfilling role in a great team, while dealing with great clients and rewarding projects. We provide our team members with free access to our social events and corporate benefits.
+        .cell-xs-10.cell-sm-4
+          .box-accent
+            h6 Learning
+            p Working at SEOMarket gives our employees a chance to challenge themselves and learn something new in online marketing, while also communicating with important people in the industry. We also organize refresher courses that allow our junior employees to extend their skills.
+
+  // Current Openings
+  section.section.section-lg.bg-white.text-center
+    .shell.shell-wide
+      h3 Current Openings
+      .divider.divider-default
+      .range.range-30.range-center.text-left
+        include ../elements/_openings-1
+        include ../elements/_openings-2
+           
+  ="\n"
+
+  // CTA Primary
+  section.section.section-xs.text-center.bg-primary
+    .shell-wide
+      .box-cta-thin
+        p.big
+          span We are Always Looking for Talents.
+          | &nbsp;
+          a(href='#').link.link-bold Get in Touch!
+  ="\n"
+  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

@@ -1,0 +1,46 @@
+//
+// Countdown
+// --------------------------------------------------
+
+.countdown {
+  font-family: $font-family-sec;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: $gray-darker;
+ 
+  
+  &.countdown-expired {
+    color: $gray-1;
+  }
+}
+
+* + .countdown {
+  margin-top: 20px;
+}
+
+.countdown + .countdown {
+  margin-top: 15px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .countdown {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .countdown {
+    font-size: 24px;
+  }
+
+  * + .countdown {
+    margin-top: 40px;
+  }
+
+  .countdown + .countdown {
+    margin-top: 20px;
+  }
+}

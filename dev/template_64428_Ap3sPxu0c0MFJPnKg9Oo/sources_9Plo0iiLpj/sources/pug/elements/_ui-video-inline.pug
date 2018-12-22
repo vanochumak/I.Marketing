@@ -1,0 +1,50 @@
+.jp-type-playlist
+  // Hidden playlist for script
+  ul.jp-player-list
+    li.jp-player-list-item(
+    data-jp-m4v="video/video.mp4",
+    data-jp-title="local video",
+    data-jp-poster="images/video-poster.jpg")
+  // container in which our video will be played
+  .jp-jplayer
+  // main containers for our controls
+  .jp-gui
+    .jp-interface
+      .jp-controls-holder
+        // play and pause buttons
+        a.jp-play(href='javascript:;', tabindex='1') play
+        a.jp-pause(href='javascript:;', tabindex='1') pause
+        span.separator.sep-1
+        // progress bar
+        .jp-progress
+          .jp-seek-bar
+            .jp-play-bar
+              span
+        .jp-time-wrapper
+          // time notifications
+          .jp-current-time
+          span.time-sep /
+          .jp-duration
+        span.separator.sep-2
+        // mute / unmute toggle
+        a.jp-mute(href='javascript:;', tabindex='1', title='mute') mute
+        a.jp-unmute(href='javascript:;', tabindex='1', title='unmute') unmute
+        // volume bar
+        .jp-volume-bar
+          .jp-volume-bar-value
+            span.handle
+        span.separator.sep-2
+        // full screen toggle
+        a.jp-full-screen(href='javascript:;', tabindex='1', title='full screen') full screen
+        a.jp-restore-screen(href='javascript:;', tabindex='1', title='restore screen') restore screen
+      // end jp-controls-holder
+    // end jp-interface
+  // end jp-gui
+  // unsupported message
+  .jp-playlist
+    ul
+      li
+  .jp-no-solution
+    span Update Required
+    | Here's a message which will appear if the video isn't supported. A Flash alternative can be used here if you fancy it.
+  // end jp_container_1

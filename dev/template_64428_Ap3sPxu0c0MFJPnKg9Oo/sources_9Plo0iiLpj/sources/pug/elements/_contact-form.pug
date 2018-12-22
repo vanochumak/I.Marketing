@@ -1,0 +1,32 @@
+mixin contact-form()
+  - contactFormCounter += 1
+  // RD Mailform
+  form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+    .range.range-20
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-' + contactFormCounter + '-name') First name
+          input.form-input(id='form-' + contactFormCounter + '-name' type="text" name="name" data-constraints='@Required')
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-' + contactFormCounter + '-last-name') Last name
+          input.form-input(id='form-' + contactFormCounter + '-last-name' type="text" name="last-name" data-constraints="@Required")
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-' + contactFormCounter + '-email') E-mail
+          input.form-input(id='form-' + contactFormCounter + '-email' type="email" name="email" data-constraints="@Email @Required")
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-' + contactFormCounter + '-phone') Phone
+          input.form-input(id='form-' + contactFormCounter + '-phone' type="text" name="phone" data-constraints="@Numeric @Required")
+      .cell-xs-12
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-' + contactFormCounter + '-message') Message
+          textarea.form-input(id='form-' + contactFormCounter + '-message' name="message" data-constraints="@Required")
+
+      //- Additional fields
+      block
+
+      .cell-xs-12.offset-custom-1
+        .form-button
+          button.button.button-primary(type='submit') send message

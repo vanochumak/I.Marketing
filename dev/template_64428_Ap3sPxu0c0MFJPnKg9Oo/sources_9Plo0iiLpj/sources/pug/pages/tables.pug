@@ -1,0 +1,47 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-table-custom
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Tables'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Hover Row Table
+  section.section.section-lg.bg-white.text-center
+    .shell
+      .range.range-xs-center
+        .cell-sm-10.cell-lg-8
+          h3 Hover Row Table
+          +table('table-hover')
+
+  ="\n"
+
+  // Color Header Row Table
+  section.section.section-lg.bg-white.text-center
+    .shell
+      .range.range-xs-center
+        .cell-sm-10.cell-lg-8
+          h3 Color header table
+          +table('table-color-header')
+
+  ="\n"
+
+  // Bordered Row Table
+  section.section.section-lg.bg-white.text-center
+    .shell
+      .range.range-xs-center
+        .cell-sm-10.cell-lg-8
+          h3 Bordered table
+          +table('table-custom-bordered')
+  ="\n"
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

@@ -1,0 +1,72 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_contact-form
+include ../elements/_ui-maps
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Contacts'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Contact information
+  section.section.section-lg.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-6
+          h3 Contact us
+          hr.divider.divider-left.divider-default
+          p.big You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally.
+          +contact-form
+
+        .cell-sm-9.cell-md-4.cell-lg-3: .column-aside
+          .range
+            .cell-xs-10.cell-sm-6.cell-md-12
+              h6 Address
+              hr.divider-thin
+              article.box-inline
+                span.icon.icon-md-smaller.icon-primary-gradient.mdi.mdi-map-marker
+                span: a(href='#') 2130 Fulton Street, Chicago, IL #[br.veil.reveal-lg-block] 94117-1080 USA
+            .cell-xs-10.cell-sm-6.cell-md-12
+              h6 Phone
+              hr.divider-thin
+              article.box-inline
+                span.icon.icon-md-smaller.icon-primary-gradient.mdi.mdi-phone
+                ul.list-comma
+                  li: a(href='callto:#') 1-800-6543-765
+                  li: a(href='callto:#') 1-800-3434-876
+
+            .cell-xs-10.cell-sm-6.cell-md-12
+              h6 E-mail 
+              hr.divider-thin
+              article.box-inline
+                span.icon.icon-md-smaller.icon-primary-gradient.mdi.mdi-email-open
+                span: a(href='mailto:#') mail@demolink.org
+
+            .cell-xs-10.cell-sm-6.cell-md-12
+              h6 Opening hours 
+              hr.divider-thin
+              article.box-inline
+                span.icon.icon-md-smaller.icon-primary-gradient.mdi.mdi-calendar-clock
+                ul.list-0
+                  li Mon–Fri: 9:00 am–6:00 pm
+                  li Sat–Sun: 11:00 am–4:00 pm
+  ='\n'
+
+  section.section
+    +map-default({
+      className: 'rd-google-map-with-icon rd-google-map-default rd-google-map-sm'
+    })
+  ="\n"
+  
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})
+
+
+

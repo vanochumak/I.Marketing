@@ -1,0 +1,151 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 3
+  - var pageName = 'Blog Grid'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Grid blog']]
+  })
+
+  // Blog
+  section.section.section-xl.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-90.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-7.cell-lg-6.text-center
+          .range.range-30
+            .cell-sm-6: article.post-blog
+              a.post-blog-image(href=postLink)
+                +jpg('grid-blog-1-420x305')
+              .post-blog-caption
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href=postLink).button-tags News
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='about-me.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href=postLink).post-blog-title Google Rethinking Payday Loans & Doorway Pages?
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href=postLink).post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+            .cell-sm-6: article.post-blog
+              a(href='image-post.html').post-blog-image
+                +jpg('grid-blog-2-420x305')
+              .post-blog-caption 
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href='image-post.html').button-tags Tips & Tricks
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='about-me.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href='image-post.html').post-blog-title Benefits of Using Modern Promotion Technologies in 2017
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href='image-post.html').post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+            .cell-sm-6: article.post-blog
+              a(href='video-post.html').post-blog-video
+                figure: +jpg('grid-blog-3-420x305')
+                span.icon.mdi.mdi-play-circle-outline
+              .post-blog-caption
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href='video-post.html').button-tags News
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='about-me.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href='video-post.html').post-blog-title How Google Search Works in 2017. Video Review
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href='video-post.html').post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+            .cell-sm-6: article.post-blog
+              a(href=postLink).post-blog-quote
+                p.post-blog-quote-text Local SEO is becoming an essential components to every business.
+              .post-blog-caption
+                .post-blog-caption-header
+                  ul.post-blog-tags
+                    li: a(href=postLink).button-tags Tips & Tricks
+                  ul.post-blog-meta
+                    li
+                      span by
+                      | &nbsp;
+                      a(href='about-me.html') Ronald Chen
+                .post-blog-caption-body
+                  h5: a(href=postLink).post-blog-title What is Local SEO?  5 Quick Tips For Mastering It
+
+                .post-blog-caption-footer
+                  time(datetime='2017') Feb 27, 2017 at 6:53 pm
+                  a(href=postLink).post-comment
+                    span.icon.icon-md-middle.icon-gray-1.mdi.mdi-comment
+                    span 3
+
+          a.button.button-default-outline.button-block.button-blog(href='#') Load more posts
+          ul.pagination-custom
+            li.active: a(href='#') 1
+            li: a(href='#') 2
+            li: a(href='#') 3
+            li: a(href='#') 4
+
+        .cell-sm-9.cell-md-3.blog-aside
+          .blog-aside-item
+            h6 Search
+            form.rd-search.rd-search-modern(action="search-results.html" method="GET")
+              div.form-wrap
+                input(class="rd-search-input form-input" id="rd-search-input" type="text" name="s" autocomplete="off")
+                label.form-label(for="rd-search-input" class="form-label") Search
+              button.button.mdi.mdi-magnify(type='submit')
+
+          .blog-aside-item
+            h6 Archive
+            ul.list-marked.list-marked-primary
+              li: a(href='#') January 2017
+              li: a(href='#') February 2017
+              li: a(href='#') March 2017
+              li: a(href='#') April 2017
+              li: a(href='#') May 2017
+
+          .blog-aside-item
+            h6 About Us
+            p Our team of specialists consistently delivers outstanding results combining creative ideas with our vast experience. We can help you build a sustainable, meaningful relationship with your clients by engaging them with your brand using social media.
+            a.button.button-xs.button-default-outline(href='about-us.html') learn more
+
+          .blog-aside-item
+            h6 Categories
+            ul.list-marked.list-marked-primary
+              li: a(href='#') SEO
+              li: a(href='#') Tips & Tricks
+              li: a(href='#') Reviews
+              li: a(href='#') News
+              li: a(href='#') Marketing
+  ='\n'
+  
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})
+
+
+

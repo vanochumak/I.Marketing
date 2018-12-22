@@ -1,0 +1,74 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_subscribe-form
+
+block variables
+  - var activeIndex = 3
+  - var pageName = 'Single Post'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    title: 'Blog',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Single post']]
+  })
+
+  // Single post
+  section.section.section-lg.bg-white
+    .shell-wide
+      .range.range-xs-center
+        .cell-md-10.cell-lg-8.cell-xl-6.sections-collapsable
+          article.post-blog-article
+            p.post-blog-article-title How it Works: Social Media for Small and Medium Businesses
+            ul.post-blog-article-meta.group-xl
+              li: .box-inline
+                span.icon.icon-md.icon-primary.mdi.mdi-account
+                | by
+                div: a(href='#') Ronald Chen
+              li: .box-inline
+                span.icon.icon-md.icon-primary.mdi.mdi-calendar-clock
+                time(datetime='2017') Feb, 27 2017 at 5:47 pm
+            p.big You are a small business owner with a local target audience. Of course, your local audience needs to find your shop or office, and you want to use social media for that. But, in the plethora of platforms, you just have no clue where to start. So you post something on Facebook, try a tweet now and then, but nothing happens.
+            +jpg('single-post-1-870x580')
+            p An even better way to detect a preferrable platform is to simply start using a certain social platform and see what happens. I prefer this option over the alternatives. Try everything, keep track of the results, and stop doing the things that don’t work for your business after a couple of months. Don’t give up the next day, but set a goal for yourself and see if you can achieve that.
+            p You need to find the social platforms your target audience uses. Otherwise, you won’t be able to reach the right people. There are (at least) two ways to find out what these platforms are. The first is to ask your customers what social media they use. That might be Twitter or Snapchat, but can also be Yelp or Meetup.com, depending on your type of business. Simply ask your customers and see what response you get. If you have hundreds of customers a week, this is probably not the best course of action.
+
+            article.quote-primary
+              svg.quote-primary-mark(version='1.1', xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='35px', height='25px', viewbox='0 0 35 25')
+                path(d='M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5\
+                            L7.539,10.206z')
+              .quote-primary-text: p There are many things to keep in mind when you’re thinking about social media plans as a small business owner. Your results will depend on the platform you’ve chosen, but the three factors (time, relevant content, determination) also definitely play a part.
+
+              p.quote-primary-meta
+                span by
+                span.cite Ronald Chen
+            p An even better way to break the boring conversation mirror is to skip over the expected response and go somewhere next-level. Even if your answer won’t concern the topic of the initial question, it will push the conversation forward. Don’t be afraid to go ahead and be bold. Upend the dinner table conversation! Turn small talk into big ideas at the next summer wedding reception you’re forced to attend! You never know which ideas will be worth spreading next and maybe breaking the ice of a small talk will end in amazing conversation.
+            p p That’s it for now! I’m sure I’ve convinced you that even as a small business, investing some time and effort into your social media strategy will pay off. So go for it!
+            .group-md.group-middle.button-group
+              a.button.button-icon-alternate.button-icon-left.button-sm.button-facebook(href='#')
+                span.icon.mdi.mdi-facebook
+                | Facebook
+              a.button.button-icon-alternate.button-icon-left.button-sm.button-twitter(href='#')
+                span.icon.mdi.mdi-twitter
+                | Twitter
+              a.button.button-icon-alternate.button-icon-left.button-sm.button-google(href='#')
+                span.icon.mdi.mdi-google
+                | Google
+
+          include ../sections/_post-footer
+  ="\n"
+
+  // NewsLetter
+  section.section.section-lg.bg-gray-lighter
+    .shell
+      .range.range-50.range-sm-center
+        .cell-sm-9.cell-md-7.cell-lg-6
+          h3.text-center NewsLetter
+          p Keep up with our always upcoming product features and technologies. #[br] Enter your e-mail and subscribe to our newsletter.
+          +subscribe-form('rd-mailform-inline-modern')
+  ="\n"
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

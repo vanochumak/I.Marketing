@@ -1,0 +1,65 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Our History'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+  
+  // Timeline
+  section.section.section-lg.bg-white.text-center
+    .shell.shell-wide
+      .range.range-xs-center
+        .cell-md-9.cell-lg-8.cell-xl-6
+          h3 Timeline
+          .divider.divider-default
+          p What started as a small team of web design and online marketing specialists eventually became a huge project evolving lots of experts in SEO, SMM, web design, and email marketing from all over the world.
+
+          .time-line-vertical
+            .time-line-vertical-element.time-line-vertical-element-offset
+              .unit.unit-sm.unit-sm-horizontal.unit-spacing-xxl
+                .unit-left
+                  .time-line-time
+                    time.wow.fadeInLeft(data-wow-delay=".6s" datetime='2017') April, 2016
+                .unit-body
+                  .time-line-content.wow.fadeInRight(data-wow-delay=".6s")
+                    h5 We gathered the team of dedicated and knowledgeable online marketing specialists
+                    +jpg('image-7-570x380')
+                    p Before we started working as a team at SEOMarket, we extended our team with young, talented, and promising experts in online marketing and web design. It allowed us to reach great results.
+
+            .time-line-vertical-element.time-line-vertical-element-offset
+              .unit.unit-sm-horizontal.unit-spacing-xxl
+                .unit-left
+                  .time-line-time
+                    time.wow.fadeInLeft(data-wow-delay=".7s" datetime='2017') September, 2016
+                .unit-body
+                  .time-line-content.wow.fadeInRight(data-wow-delay=".7s")
+                    h5 Developing an extensive client list
+                    +jpg('image-8-570x380')
+                    p Over the years we have developed an impressive client list ranging from small, local startups to internationally recognized brands. We have also polished our skills to deliver return on investment for our clients.
+
+            .time-line-vertical-element.time-line-vertical-element-offset
+              .unit.unit-sm-horizontal.unit-spacing-xxl
+                .unit-left
+                  .time-line-time
+                    time.wow.fadeInLeft(data-wow-delay=".8s" datetime='2017') March, 2017
+                .unit-body
+                  .time-line-content.wow.fadeInRight(data-wow-delay=".8s")
+                    h5 Today we are one of the biggest SEO agencies
+                    +jpg('image-9-570x380')
+                    p Thanks to our constant improvement and cooperation with global partners, we have reached a great level of acknowledgment in the industry and we are known as the #1 SEO agency in the world.
+
+  ="\n"
+
+  include ../sections/_cta-section-thin
+
+  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

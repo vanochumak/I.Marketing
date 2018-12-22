@@ -1,0 +1,140 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Services'
+
+block page
+  // Page Header 
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // A few words About Us 
+  section.section.section-wrap
+    .section-wrap-inner
+      .shell.shell-bigger
+        .range.range-ten.range-50.range-sm-center.range-md-left
+          .cell-sm-9.cell-md-6
+            .section-wrap-content.section-lg
+              h3 A Few Words About Us 
+              .divider.divider-default
+              .text-gray-light.box-2-columns
+                p.heading-5 Our team of specialists consistently delivers outstanding results combining creative ideas with our vast experience.
+                p We can help you build a sustainable, meaningful relationship with your clients by engaging them with your brand using social media, emails, and other channels of digital communication.
+                p As a leading online marketing and SEO agency, we work in areas as diverse as search engine optimization, social media marketing, email marketing and digital marketing. Our innovative approach revolutionizes modern promotion.
+                p We establish a relationship with all of our clients, and we feel it is our responsibility to help them grow and harness the opportunity of their presence on the Internet.
+      .section-wrap-aside.section-wrap-image.section-wrap-image-right
+        +jpg('services-1-644x790')
+  ="\n"
+
+  // What We Do
+  section.section.section-lg.text-center.bg-gray-lighter
+    .shell-wide
+      .range.range-50.range-xl-90.offset-custom-2.text-left
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-search74
+              h6.box-minimal-title SEO
+            .box-minimal-text Search engine optimization (SEO) is the process of affecting the visibility of a website or a web page in a web search engine's unpaid results — often referred to as "natural".
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-user143
+              h6.box-minimal-title SMM
+            .box-minimal-text Social media management solutions can help you manage outbound and incoming online interactions — along with other small business marketing activities — in an efficient manner.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.box-minimal-icon-sm.fl-bigmug-line-email64
+              h6.box-minimal-title Email Marketing
+              .box-minimal-text Email marketing provides an effective connection with your targeted audience and gives you the best return on investment, including reaching out to your customers.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-favourites5
+              h6.box-minimal-title Brand Management
+            .box-minimal-text Brand management refers to influencing and controlling an individual's or business's reputation. Originally a public relations term, today it’s an issue of search results.
+
+        // row 2     
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-square160
+              h6.box-minimal-title Web design
+            .box-minimal-text Users enjoy visiting sites that are aesthetically appealing and easy to navigate. Let our team help your site make an outstanding first impression with speed and accessibility.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-note35
+              h6.box-minimal-title Content marketing
+            .box-minimal-text Content strategy is becoming steadily more critical to successful marketing both on and offline and in order to help your growth you need to ensure you have something captivating.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-megaphone11
+              h6.box-minimal-title Online Advertising
+            .box-minimal-text With the development of the Internet, advertising has moved to the Web and its critical for the e-world. Our experts can help you manage your online advertising strategy.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-code30
+              h6.box-minimal-title Local SEO
+            .box-minimal-text Local SEO increases visibility of your business by driving your website to the top of local listings. If you have a local business, you need geographically-relevant traffic to your site.
+
+  // testimonials
+  section.section.section-md.text-center.bg-image.bg-image-5
+    .shell.shell-wide
+      h3 Testimonials
+      hr.divider.divider-default
+      // Owl Carousel
+      .owl-carousel(data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4', data-dots='true', data-nav='false', data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag='false')
+        article.quote-modern
+          .quote-modern-text
+            p I would just like to say thank you for your effective online marketing services, for your friendly and professional support and answers to my questions!
+          .quote-modern-footer
+            +jpg('quote-user-4-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Philip Lawrence
+              p.quote-modern-small Regular Customer
+        article.quote-modern
+          .quote-modern-text
+            p Thank you for the SEO services you delivered. You helped my website attract new partners and promote my own services to a greater number of customers.
+          .quote-modern-footer
+            +jpg('quote-user-5-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Debra Ortega
+              p.quote-modern-small Regular Customer
+        article.quote-modern
+          .quote-modern-text
+            p SEOMarket is the only agency that provides high quality online marketing and promotion services. The members of their team are real professionals in search engine optimization.
+          .quote-modern-footer
+            +jpg('quote-user-6-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Jose Gutierrez
+              p.quote-modern-small Regular Customer
+        article.quote-modern
+          .quote-modern-text
+            p Your team worked hard before the project to come up with a perfect  SMM solution that met our requirements. Every team member did  their job well and I appreciate it.
+          .quote-modern-footer
+            +jpg('quote-user-8-80x80', 'quote-modern-image')
+            .quote-modern-meta
+              p.quote-modern-cite Asher Greer
+              p.quote-modern-small Writer
+  ="\n"
+  
+  include ../sections/_cta-section-thin
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})
+  

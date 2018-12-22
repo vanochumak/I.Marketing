@@ -1,0 +1,141 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'About Me'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+  
+  // Ronald Chen
+  section.section.section-lg.bg-white.text-left
+    .shell.shell-bigger
+      .range.range-ten.range-lg-justify
+        .cell-lg-3
+          .range.range-70.range-sm-middle
+            .cell-sm-6.cell-lg-12
+              +jpg('ronald-chen-1-420x420')
+            .cell-sm-6.cell-lg-12.text-sm-left
+              h6 Get in Touch
+              - contactFormCounter += 1
+              // RD Mailform
+              form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                .range.range-20
+                  .cell-sm-12
+                    .form-wrap.form-wrap-validation
+                      label.form-label-outside(for='form-' + contactFormCounter + '-name') First name
+                      input.form-input(id='form-' + contactFormCounter + '-name' type="text" name="name" data-constraints='@Required')
+                  .cell-sm-12
+                    .form-wrap.form-wrap-validation
+                      label.form-label-outside(for='form-' + contactFormCounter + '-email') E-mail
+                      input.form-input(id='form-' + contactFormCounter + '-email' type="email" name="email" data-constraints="@Email @Required")
+                  .cell-xs-12
+                    .form-wrap.form-wrap-validation
+                      label.form-label-outside(for='form-' + contactFormCounter + '-message') Message
+                      textarea.form-input(id='form-' + contactFormCounter + '-message' name="message" data-constraints="@Required")
+
+                  .cell-xs-12.offset-custom-1
+                    .form-button
+                      button.button.button-primary(type='submit') send message
+
+        .cell-lg-6
+          .range.range-120
+            .cell-xs-12
+              .heading-5 Marketer
+              h3 Ronald Chen
+              .divider.divider-default
+              p
+                | Ronald is one of the main person behind Brave. He is the multitalented marketer and a former lead strategist who is a true mine of creative ideas for everyone at our team.
+              .range.text-center.range-md.range-30.range-xxs-center
+                .cell-xxs-6.cell-xs-4
+                  .progress-bar-circle(data-value="0.75", data-gradient="#50e590, #50e590", data-empty-fill="rgb(242,243,249)", data-size="140", data-thickness="6"): span.radial 5
+                  .heading-5 Marketing
+                .cell-xxs-6.cell-xs-4
+                  .progress-bar-circle(data-value="0.50", data-gradient="#50e590, #50e590", data-empty-fill="rgb(242,243,249)", data-size="140", data-thickness="6"): span.radial 5
+                  .heading-5 Strategy
+                .cell-xxs-6.cell-xs-4
+                  .progress-bar-circle(data-value="0.25", data-gradient="#50e590, #50e590", data-empty-fill="rgb(242,243,249)", data-size="140", data-thickness="6"): span.radial 5
+                  .heading-5 Design
+
+            .cell-xs-12
+              .range.range-70
+                .cell-sm-6
+                  h6 Skills
+                  p Marketing, advertising, sales, management,
+                    br.veil.reveal-xl-block
+                    =" "
+                    | strategy, communication, coaching, PR
+                .cell-sm-6
+                  h6 Awards
+                  ul.list.list-xxs
+                    li 2017 — The Best Employer of the Year
+                    li 2016 — The Best Marketer 
+                    li 2015 — The Best PR Expert
+                .cell-sm-6
+                  h6 Certificates
+                  ul.list.list-xxs
+                    li 2017 — New Ways of SEO
+                    li 2016 — Modern Methods of Promotion
+                    li 2015 — Public Relations in Business
+                .cell-sm-6
+                  h6 Contact information
+                  ul.list-xs
+                    li.box-inline.box-inline-gray
+                      span.icon.icon-md-smaller.icon-primary-gradient.mdi.mdi-map-marker
+                      div
+                        a(href='#') 2130 Fulton Street, San Diego, CA
+                          br
+                          | 94117-1080 USA
+
+                    li.box-inline.box-inline-gray
+                      span.icon.icon-md-smaller.icon-primary-gradient.mdi.mdi-phone
+                      ul.list-comma
+                        li: a(href='callto:#') 1-800-1234-567
+
+                    li
+                      ul.inline-list-xs
+                        li: a.icon.icon-sm-bigger.icon-gray-1.mdi.mdi-facebook(href='#')
+                        li: a.icon.icon-sm-bigger.icon-gray-1.mdi.mdi-twitter(href='#')
+                        li: a.icon.icon-sm-bigger.icon-gray-1.mdi.mdi-instagram(href='#')
+                        li: a.icon.icon-sm-bigger.icon-gray-1.mdi.mdi-google(href='#')
+                        li: a.icon.icon-sm-bigger.icon-gray-1.mdi.mdi-linkedin(href='#')
+
+
+
+  // Projects
+  section.section.section-lg.text-center.bg-gray-darker 
+    .shell.shell-wide
+      .range.range-50.range-sm-center
+        .cell-xs-12.cell-sm-10.cell-md-8.cell-lg-7.cell-xl-6
+          h3 Projects
+          .divider.divider-default
+          p Ronald not only provides great marketing and management services, he  also works on a variety of business, advertising, and promotional projects that make the life of our clients and community better.
+
+      include ../elements/_about-gallery
+
+    a.button.button-primary(href='#') view all projects
+
+  ="\n"
+
+  // Testimonials
+  section.section.section-lg.text-center.bg-gray-lighter
+    include ../elements/_ui-testimonials-1
+
+  ="\n"
+
+  // CTA Gradient
+  section.section.section-md.text-center.text-sm-left.bg-gradient-1
+    include ../elements/_ui-cta-1
+
+  ="\n"
+  
+  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

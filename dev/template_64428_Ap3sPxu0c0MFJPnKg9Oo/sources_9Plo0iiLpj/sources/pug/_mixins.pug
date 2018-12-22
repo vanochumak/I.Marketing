@@ -1,0 +1,126 @@
+-
+  function nameToLink(name) {
+    try { return name.trim().replace(/\s/g, '-').toLowerCase() + '.html'; }
+    catch ( error ) {
+      throw new Error('Error in function nameToLink:\n' + error);
+    }
+  }
+
+  function getImageSize(name) {
+    try { return name.match('[0-9]+(x)[0-9]+')[0].split('x'); }
+    catch ( error ) {
+      throw new Error('Error in function getImageSize:\n' + error);
+    }
+  }
+
+//- Img image
+mixin img(name, className)
+  - var size = getImageSize(name);
+  - var ext = name.split('.')[1];
+
+  img(src='images/' + name, alt='', width=size[0], height=size[1], class=className)
+
+//- Jpg image
+mixin jpg(name, className)
+  - var size = getImageSize(name);
+  img(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1], class=className)
+
+//- Png image
+mixin png(name, className)
+  - var size = getImageSize(name);
+  img(src='images/' + name + '.png', alt='', width=size[0], height=size[1], class=className)
+
+mixin parallax-section(obj)
+  section.section.parallax-container(class = obj.bgClass ? obj.bgClass : 'bg-image')
+    .material-parallax
+      img(src='images/' + obj.parallaxImage + '.jpg' alt='')
+    .parallax-content
+      block
+  ="\n"
+
+//- Loop mixin
+mixin loop(count)
+  - if (typeof(count) === 'undefined') var count = 6;
+  - for (var i = 0; i < count ; i++)
+    block
+
+
+//- Breadcrumbs custom
+mixin breadcrumbs(obj)
+  - var activeItemName = obj.path.pop()[0];
+  - var mainTitle= obj.title ? obj.title : activeItemName;
+  // Breadcrumbs
+  section.breadcrumbs-custom.bg-image
+    .shell
+      p.heading-1.breadcrumbs-custom-title=mainTitle
+
+      ul.breadcrumbs-custom-path
+        li: a(href='index.html')=menu[0].title
+        - for (var i = 0; i < obj.path.length; i++)
+          - if (obj.path[i][0] == activeItemName) break;
+          - var pathLink = obj.path[i][1] ? obj.path[i][1] : nameToLink(obj.path[i][0])
+          li: a(href=pathLink)=obj.path[i][0]
+
+        li.active=activeItemName
+        
+  ="\n" 
+  
+
+//- Icon list
+mixin list-inline-icon(obj)
+  ul(class=obj.list_class)
+    each item in obj.items
+      li: a.icon(href='#' class=item)
+
+//- Equal Link
+mixin equalLink(name)
+  a(href=nameToLink(name))=name
+
+//- Table
+mixin table(classes, modClasses)
+  .table-novi.table-custom-responsive(class=modClasses)
+    table.table-custom(class=classes)
+      thead
+        tr
+          th #
+          th First Name
+          th Last Name
+          th Username
+
+      tbody
+        tr
+          td 1
+          td Benjamin
+          td Turner
+          td @benjaminturner
+        tr
+          td 2
+          td Lauren
+          td Wood
+          td @laurenwood
+        tr
+          td 3
+          td Bryan
+          td Vargas
+          td @benjaminturner
+
+        tr
+          td 4
+          td Arthur
+          td Henderson
+          td @benjaminturner
+
+//- Section svg decoration
+mixin svg-decoration()
+  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='1920px', height='54.993px', viewbox='0 0 1920 54.993', enable-background='new 0 0 1920 54.993', xml:space='preserve')
+    path(d='M1920,4c0,16.996,0,33.992,0,50.99c-640,0.003-1280,0.003-1920,0C0,37.991,0,20.996,0,4\
+    c15.943-0.782,31.786,0.885,46.881,5.576c23.15,7.195,46.026,15.365,68.722,23.91c40.295,15.171,81.376,20.808,123.289,9.028\
+    c22.505-6.325,44.41-14.942,66.291-23.297c43.095-16.455,86.955-21.177,131.58-8.128c22.297,6.52,44.048,14.996,65.832,23.159\
+    c40.738,15.264,82.197,19.796,124.285,7.326c22.274-6.6,43.957-15.248,65.763-23.36c41.393-15.399,83.487-20.052,126.243-7.096\
+    c22.088,6.693,43.636,15.198,65.339,23.13c40.211,14.696,81.261,19.942,122.941,8.228c22.507-6.325,44.374-15.051,66.287-23.337\
+    c41.587-15.726,84.016-21.123,127.229-8.935c22.341,6.301,44.021,15.06,65.779,23.289c41.958,15.868,84.689,20.915,128.176,8.102\
+    c22.286-6.566,43.964-15.248,65.784-23.332c40.377-14.959,81.565-20.026,123.403-8.043c22.326,6.394,44.021,15.084,65.798,23.278\
+    c44.331,16.679,89.39,20.99,135.06,7.054c19.992-6.101,39.255-14.603,58.823-22.081C1868.141,9.056,1893.453,3.279,1920,4z')
+
+//- Footers
+include sections/_footers

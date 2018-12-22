@@ -1,0 +1,39 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Countdown'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Standard countdown
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Standard countdown
+      .range.range-50.range-md-center
+        .cell-md-10.cell-lg-9.cell-xl-8
+          .countdown-wrap
+            .DateCountdown(data-type='until', data-date='2018-12-31 00:00:00', data-format='wdhms', data-color='#50e590', data-bg='rgba(255, 255, 255, 1)', data-width='0.02')
+
+  ="\n"
+
+  // Simple countdown
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Simple countdown
+      .range.range-50.range-md-center
+        .cell-md-10.cell-lg-8
+          .countdown(data-time='2020/10/10 12:34:56', data-format='YYYY/MMDDHMS', data-type='until')
+          .countdown(data-time='2010/10/10 12:34:56', data-format='YYYY/MM/DDHMS', data-type='until')
+
+  ="\n"
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

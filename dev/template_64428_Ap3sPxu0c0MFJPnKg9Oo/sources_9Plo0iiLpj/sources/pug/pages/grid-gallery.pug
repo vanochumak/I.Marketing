@@ -1,0 +1,101 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Grid Gallery'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+    
+  +breadcrumbs({
+    text: "Gallery",
+    title: 'Grid Gallery',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Grid Gallery']]
+  })
+
+  // titled Grid gallery
+  section.section.section-lg.text-center.bg-white
+    .shell-wide
+      h3 Our Projects
+      .isotope-wrap.range.range-0
+        // Isotope Filters
+        .cell-lg-12
+          ul.isotope-filters.isotope-filters-horizontal
+            li.block-top-level
+              p.big Choose your category:
+              // Isotope Filters
+              button.isotope-filters-toggle.button.button-xs.button-primary(data-custom-toggle='.isotope-filters-list', data-custom-toggle-hide-on-blur='true')
+                | Filter
+                span.caret
+
+              ul.isotope-filters-list
+                li: a.active(data-isotope-filter='*', data-isotope-group='gallery-01', href='#') All Categories
+                li: a(data-isotope-filter='type 1', data-isotope-group='gallery-01', href='#') Type 1
+                li: a(data-isotope-filter='type 2', data-isotope-group='gallery-01', href='#') Type 2
+
+        // Isotope Content
+        .cell-lg-12
+          .isotope.isotope-titled-gallery(data-isotope-layout='fitRows', data-isotope-group='gallery-01', data-lightgallery='group')
+            .row
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+                +gallery-item({
+                  classMod: 'titled-gallery-item',
+                  lightGallery: 'group-item',
+                  img: 'gallery-grid-01-570x380',
+                  original: 'gallery-01-original',
+                  figcaption: 'SEO Consultants'
+                })
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+                +gallery-item({
+                  classMod: 'titled-gallery-item',
+                  lightGallery: 'group-item',
+                  img: 'gallery-grid-02-570x380',
+                  original: 'gallery-02-original',
+                  figcaption: 'Keyword Research'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+                +gallery-item({
+                  classMod: 'titled-gallery-item',
+                  lightGallery: 'group-item',
+                  img: 'gallery-grid-03-570x380',
+                  original: 'gallery-03-original',
+                  figcaption: 'Link Building Services'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+                +gallery-item({
+                  classMod: 'titled-gallery-item',
+                  lightGallery: 'group-item',
+                  img: 'gallery-grid-04-570x380',
+                  original: 'gallery-04-original',
+                  figcaption: 'SEO Strategy'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+                +gallery-item({
+                  classMod: 'titled-gallery-item',
+                  lightGallery: 'group-item',
+                  img: 'gallery-grid-05-570x380',
+                  original: 'gallery-05-original',
+                  figcaption: 'Web Copywriting'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+                +gallery-item({
+                  classMod: 'titled-gallery-item',
+                  lightGallery: 'group-item',
+                  img: 'gallery-grid-06-570x380',
+                  original: 'gallery-06-original',
+                  figcaption: 'Online Marketing'
+                })
+  ="\n"
+
+  include ../sections/_cta-section-thin
+
+  // Page Footer
+  +footer-default({className: 'bg-gray-lighter'})

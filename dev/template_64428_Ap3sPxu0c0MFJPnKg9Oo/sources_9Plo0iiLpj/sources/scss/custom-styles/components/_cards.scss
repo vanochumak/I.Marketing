@@ -1,0 +1,70 @@
+/*
+*
+* 2.8  Cards
+* --------------------------------------------------
+*/
+
+/**
+* Card info
+*/
+.card-info {
+  @include display-flex;
+  @include flex-direction(column);
+  max-width: 730px;
+  text-align: left;
+
+  * + .card-info-subtitle { margin-top: 5px; }
+}
+
+.card-info-image {
+  border-radius: 9px;
+}
+
+.card-info-title {
+  color: $secondary;
+}
+
+.card-info-subtitle {
+  font-style: italic;
+}
+
+.card-info-aside {
+  @include flex-shrink(0);
+  max-width: 30%;
+}
+
+.card-info-main {
+  @include flex-grow(1);
+}
+
+* + .card-info-title { margin-top: 10px; }
+* + .card-info-main { padding-top: 15px; }
+
+@media (min-width: $screen-xs-min) {
+  .card-info {
+    @include flex-direction(row);
+  }
+
+  * + .card-info-main {
+    padding-top: 0;
+    padding-left: 15px; 
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  * + .card-info-main {
+    padding-left: 30px;
+  }
+}
+
+@media (min-width: $screen-xl-min) {
+  .card-info {
+    * + p {
+      margin-top: 26px;
+    }
+  }
+
+  * + .card-info-main {
+    padding-left: 45px;
+  }
+}

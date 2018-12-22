@@ -1,0 +1,295 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 3
+  - var pageName = 'Blog Classic'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], ['Classic blog']]
+  })
+
+  // Blog
+  section.section.section-xl.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-90.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-6.blog-classic-main.text-center
+          // Post classic
+          article.post-classic
+            a.post-classic-media(href=postLink)
+              +jpg('blog-post-1-870x580')
+            .post-classic-body
+              p.post-classic-title: a(href=postLink) Google Rethinking Payday Loans & Doorway Pages?
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span 
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') News
+
+              .post-classic-text
+                p Best yet, not only does Google maintain their investment in payday loans via LendUp, but there is also a bubble in the personal loans space, so Google will be able to show effectively the same ads for effectively the same service & by the time the P2P loan bubble pops some of the payday lenders will have followed LendUp's lead in re-branding their offers as being something else in name. 
+
+              .post-classic-footer
+                a.button.button-sm.button-primary(href=postLink) Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href=postLink)
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            a.post-classic-media(href='image-post.html')
+              +jpg('blog-post-2-870x580')
+            .post-classic-body
+              p.post-classic-title: a(href='image-post.html') Benefits of Using Modern Promotion Technologies
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') News
+
+              .post-classic-text
+                p Technology is constantly changing, and it is obvious it takes our life to a whole new level. As the Internet has already become a powerful instrument of marketing, the technological advancement also plays a great role in promotion as well as in SEO and SMM services. In this article we will unveil how the correct usage of technology can help your business to attract new customers. 
+
+              .post-classic-footer
+                a.button.button-sm.button-primary(href='image-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='image-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            .post-classic-media
+              a(href='video-post.html').post-blog-video.post-classic-video
+                figure: +jpg('blog-post-3-870x580')
+                span.icon.mdi.mdi-play-circle-outline
+            .post-classic-body
+              p.post-classic-title: a(href='video-post.html') How Google Search Works in 2017. Video Review
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') News
+
+              .post-classic-text
+                p Many years ago we created an infographic about how search works, from the perspective of a content creator, starting with their content & following it through the indexing & ranking process. As users have shifted to mobile devices, the limited screen size of the devices have pushed search engines to squeeze out & displace publishers with their own self - hosted information in an effort...
+
+              .post-classic-footer
+                a.button.button-sm.button-primary(href='video-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='video-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            .post-classic-media.post-quote-wrap
+              .post-classic-quote
+                p.post-classic-title Local SEO is becoming an essential components to every business.
+
+            .post-classic-body
+              p.post-classic-title: a(href='single-post.html') What is Local SEO?
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='single-post.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') News
+
+              .post-classic-text
+                p Local SEO has grown significantly over the last few years, particularly given the rise of smartphone usage and better connectivity while out and about. Although it has a lot of similarities with organic SEO, it’s ultimately very different. Local SEO is focused on providing results that are relevant to a searcher based on their current location. If I search for ‘best steak restaurant’ on my desktop...
+
+              .post-classic-footer
+                a.button.button-sm.button-primary(href='single-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='single-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+          // Post classic
+          article.post-classic
+            .post-classic-media
+              a(href='audio-post.html').post-blog-video.post-classic-video
+                figure: +jpg('blog-post-4-870x580')
+                span.icon.mdi.mdi-play-circle-outline
+            .post-classic-body
+              p.post-classic-title: a(href='audio-post.html') Social Media for SMBs
+              ul.post-classic-meta
+                li
+                  span.icon.mdi.mdi-account
+                  span
+                    | by 
+                    a(href='about-me.html') Ronald Chen
+                li
+                  span.icon.mdi.mdi-calendar-clock
+                  time(datetime='2017') Feb 27, 2017 at 5:47 pm
+                li
+                  span.icon.mdi.mdi-tag
+                  a(href='#') News
+
+
+              // Inline JP Audio
+              .post-audio.jp-player-init
+                .jp-jplayer
+                .jp-audio(role='application', aria-label='media player')
+                  ul.jp-player-list
+                    li.jp-player-list-item(data-jp-title='Simple melody', data-jp-artist='Unknown artist', data-jp-mp3='audio/sound-1.mp3')
+                  .jp-interface
+                    .jp-button.jp-playpaus-button
+                      button.jp-btn.jp-play(role='button', tabindex='0')
+                    .jp-time-rail
+                      .jp-progress
+                        .jp-seek-bar
+                          .jp-play-bar
+                    .jp-button.jp-volume-button
+                      button.jp-btn.jp-mute(role='button', tabindex='0')
+                    .jp-volume-bar
+                      .jp-volume-bar-value
+                  .jp-playlist.jp-playlist--hidden
+                    ul
+                      li
+                  .jp-no-solution
+                    span Update Required
+                    |            To play the media you will need to either update your browser to a recent version or update your
+                    a(href='http://get.adobe.com/flashplayer/', target='_blank')  Flash plugin
+                    | .
+
+              .post-classic-text
+                p You are a small business owner with a local target audience. Of course, your local audience needs to find your shop or office, and you want to use social media for that. But, in the plethora of platforms, you just have no clue where to start. So you post something on Facebook, try a tweet now and then, but nothing happens. To small business owners, social media can feel like a struggle every...
+
+              .post-classic-footer
+                a.button.button-sm.button-primary(href='audio-post.html') Continue reading
+                div: ul.post-classic-info
+                  li
+                    span.icon.mdi.mdi-eye
+                    span 193
+                  li: a(href='audio-post.html')
+                    span.icon.mdi.mdi-comment
+                    span 3
+
+
+          a.button.button-default-outline.button-block.button-blog(href='#') Load more posts
+          ul.pagination-custom
+            li.active: a(href='#') 1
+            li: a(href='#') 2
+            li: a(href='#') 3
+            li: a(href='#') 4
+
+        .cell-sm-9.cell-md-4.cell-lg-3.blog-aside
+          .blog-aside-item
+            h6 Search
+            form.rd-search.rd-search-modern(action="search-results.html" method="GET")
+              div.form-wrap
+                input(class="rd-search-input form-input" id="rd-search-input" type="text" name="s" autocomplete="off")
+                label.form-label(for="rd-search-input" class="form-label") Search
+              button.button.mdi.mdi-magnify(type='submit')
+
+          .blog-aside-item
+            h6 Archive
+            ul.list-marked.list-marked-primary
+              li: a(href='#') January 2017
+              li: a(href='#') February 2017
+              li: a(href='#') March 2017
+              li: a(href='#') April 2017
+              li: a(href='#') May 2017
+
+          .blog-aside-item
+            h6 About Us
+            p Our team of specialists consistently delivers outstanding results combining creative ideas with our vast experience. We can help you build a sustainable, meaningful relationship with your clients by engaging them with your brand using social media.
+            a.button.button-xs.button-default-outline(href='about-us.html') learn more
+
+          .blog-aside-item
+            h6 Categories
+            ul.list-marked.list-marked-primary
+             li: a(href='#') SEO
+             li: a(href='#') Tips & Tricks
+             li: a(href='#') Reviews
+             li: a(href='#') News
+             li: a(href='#') Marketing
+
+          .blog-aside-item
+            h6 Twitter feed
+            ul.twitter.list-twitter(data-twitter-username='templatemonster')
+              - for (var i = 0; i < 3 ; i++)
+                li(data-twitter-type='tweet')
+                  .unit.unit-xs-horizontal
+                    .unit-left
+                      span.mdi.mdi-twitter.twitter-icon.icon-md-middle
+                    .unit-body
+                      p(data-tweet='text')
+                      time(data-date="text" data-datetime="datetime" datetime='2017')
+          .blog-aside-item
+            h6 Recent blog posts
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Google Rethinking Payday Loans & Doorway Pages?
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) Benefits of Using Modern Promotion Technologies
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+            // Post minimal
+            article.post-minimal
+              p.post-minimal-title: a(href=postLink) How Google Search Works in 2017. Video Review
+              time.post-minimal-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+
+          .blog-aside-item
+            // Facebook Feed
+            #fb-root
+              .fb-page-responsive
+                .fb-page(data-href='https://www.facebook.com/TemplateMonster', data-tabs='timeline', data-height='540', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
+                  .fb-xfbml-parse-ignore
+                    blockquote(cite='https://www.facebook.com/TemplateMonster')
+                      a(href='https://www.facebook.com/TemplateMonster') TemplateMonster
+  ='\n'
+
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

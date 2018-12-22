@@ -1,0 +1,94 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item-title-inside
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Masonry Gallery'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // titled Grid gallery
+  section.section.section-lg.text-center.bg-white
+    .shell-wide
+      h3 Our projects
+      .isotope-wrap.range.range-30
+        // Isotope Filters
+        .cell-lg-12
+          ul.isotope-filters.isotope-filters-horizontal
+            li.block-top-level
+              p.big Choose your category:
+              // Isotope Filters
+              button.isotope-filters-toggle.button.button-xs.button-primary(data-custom-toggle='.isotope-filters-list', data-custom-toggle-hide-on-blur='true')
+                | Filter
+                span.caret
+
+              ul.isotope-filters-list
+                li: a.active(data-isotope-filter='*', data-isotope-group='gallery-01', href='#') All Categories
+                li: a(data-isotope-filter='type 1', data-isotope-group='gallery-01', href='#') Type 1
+                li: a(data-isotope-filter='type 2', data-isotope-group='gallery-01', href='#') Type 2
+
+        // Isotope Content
+        .cell-lg-12
+          .isotope(data-isotope-layout='masonry', data-isotope-group='gallery-01', data-lightgallery='group')
+            .row
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+                +gallery-item-title-inside({
+                  classMod: 'title-inside-gallery-item',
+                  img: 'masonry-title-inside-gallery-01-570x790',
+                  title_inside: 'Experienced developer',
+                  text: 'Brave is a perfect multipurpose HTML solution designed to be used everywhere.'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+                +gallery-item-title-inside({
+                  classMod: 'title-inside-gallery-item',
+                  img: 'title-inside-gallery-02-640x430',
+                  title_inside: 'User experience research',
+                  text: 'Brave is a perfect multipurpose HTML solution designed to be used everywhere.'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 1')
+                +gallery-item-title-inside({
+                  classMod: 'title-inside-gallery-item',
+                  img: 'masonry-title-inside-gallery-03-570x790',
+                  title_inside: 'Startup team',
+                  text: 'Brave is a perfect multipurpose HTML solution designed to be used everywhere.'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+                +gallery-item-title-inside({
+                  classMod: 'title-inside-gallery-item',
+                  img: 'masonry-title-inside-gallery-04-570x790',
+                  title_inside: 'Online coaching',
+                  text: 'Brave is a perfect multipurpose HTML solution designed to be used everywhere.'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+                +gallery-item-title-inside({
+                  classMod: 'title-inside-gallery-item',
+                  img: 'title-inside-gallery-04-640x430',
+                  title_inside: 'Workspace',
+                  text: 'Brave is a perfect multipurpose HTML solution designed to be used everywhere.'
+                })
+
+              .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter='type 2')
+                +gallery-item-title-inside({
+                  classMod: 'title-inside-gallery-item',
+                  img: 'title-inside-gallery-06-640x430',
+                  title_inside: 'Skateboard shop project',
+                  text: 'Brave is a perfect multipurpose HTML solution designed to be used everywhere.'
+                })
+  ="\n"
+
+  include ../sections/_cta-section-thin
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

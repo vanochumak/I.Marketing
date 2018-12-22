@@ -1,0 +1,49 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Login Page'
+
+block page
+  // Page Header
+  header.section.page-header.bg-gray-darker.breadcrumbs-custom-wrap
+    include ../sections/navbar-centered
+
+  section.section.fullwidth-page.bg-image(style='background-image: url(images/bg-image-1.jpg);')
+    .fullwidth-page-inner
+      .section-md.text-center
+        .shell
+          h3 Login
+          .range.range-xs-center
+            .cell-sm-8.cell-md-6.cell-lg-4
+              // RD Mailform
+              form.rd-mailform
+                .form-wrap.form-wrap-validation
+                  input#forms-login-name.form-input(type="text" name="name" data-constraints='@Required')
+                  label.form-label(for="forms-login-name") E-mail or nickname
+                .form-wrap.form-wrap-validation
+                  input#forms-login-password.form-input(type="password" name="password" data-constraints="@Required")
+                  label.form-label(for="forms-login-password") Password
+                .form-button
+                  button.button.button-block.button-primary(type="submit") Sign In
+
+          p.offset-custom-1 or enter with
+
+          .group-xs.group-middle
+            a.icon.icon-md-smaller.icon-circle.icon-filled.mdi.mdi-facebook(href='#')
+            a.icon.icon-md-smaller.icon-circle.icon-filled.mdi.mdi-twitter(href='#')
+            a.icon.icon-md-smaller.icon-circle.icon-filled.mdi.mdi-google(href='#')
+
+      // Page Footer
+      .section-xs.page-footer.text-center
+        .shell
+          p.right
+            | &#169; #[span(class="copyright-year")] All Rights Reserved
+            | &nbsp;
+            a(href="#") Terms of Use
+            | &nbsp;
+            span and
+            | &nbsp;
+            a(href="privacy-policy.html") Privacy Policy

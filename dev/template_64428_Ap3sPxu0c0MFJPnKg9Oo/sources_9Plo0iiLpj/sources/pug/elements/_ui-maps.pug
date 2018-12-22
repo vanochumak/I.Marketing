@@ -1,0 +1,7 @@
+mixin map-default(obj)
+  - if (typeof(obj) === 'undefined') var obj = {};
+  // RD Google Map
+  .rd-google-map.rd-google-map-novi.rd-google-map__model(class= obj.className, data-zoom= obj.MapZoom ? obj.MapZoom : '15', data-y= obj.MapY ? obj.MapY : '40.643180', data-x= obj.MapX ? obj.MapX : '-73.9874068', data-styles= obj.mapStyle)
+    ul.map_locations
+      li(data-y= obj.MapY ? obj.MapY : '40.643180', data-x= obj.MapX ? obj.MapX : '-73.9874068')
+        p= obj.mapAdress ? obj.mapAdress : '9870 St Vincent Place, Glasgow, DC 45 Fr 45.'

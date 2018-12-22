@@ -1,0 +1,7 @@
+mixin thumbnail-modern(obj)
+  // Thumbnail modern
+  .thumbnail-modern
+    a.thumbnail-modern-image-wrap(href=obj.link): +jpg(obj.img, 'thumbnail-modern-image')
+
+    .thumbnail-modern-caption
+      h5: a(href=obj.link)=obj.title

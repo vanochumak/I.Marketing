@@ -1,0 +1,427 @@
+/*
+*
+* Quotes
+* --------------------------------------------------
+*/
+
+/**
+* Quote primary
+*/
+.quote-primary {
+  text-align: left;
+
+  .cite { color: $secondary; }
+}
+
+.quote-primary-text {
+  font-style: italic;
+  font-size: 18px;
+  line-height: (28 / 18);
+}
+
+.quote-primary-mark {
+  position: relative;
+  top: 6px;
+  display: block;
+  fill: $primary;
+  @include flex-shrink(0);
+  text-align: left;
+  font-size: 0;
+  line-height: 0;
+
+  &::before {
+    display: inline-block;
+    position: relative;
+    transform: scale(-1, -1);
+    left: -10px;
+    content: '\f373';
+    font-family: 'Material Design Icons';
+    font-size: 60px;
+    font-style: normal;
+    line-height: .7;
+    color: $secondary;
+
+
+    @supports(-webkit-background-clip: text) {
+      background: linear-gradient(to left, #50e590 70%, #36c9a3);
+      background-size: 200% auto;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.quote-primary-meta {
+  margin-left: -.2em;
+  color: $gray-1;
+  * { padding: 0 .2em; }
+}
+
+* + .quote-primary-text { margin-top: 20px; }
+
+* + .quote-primary-meta { margin-top: 15px; }
+
+@media (min-width: $screen-sm-min) {
+  .quote-primary-text {
+    font-size: 20px;
+  }
+
+  * + .quote-primary-meta { margin-top: 20px; }
+}
+
+@media (min-width: $screen-lg-min) {
+  .quote-primary-text {
+    font-size: 24px;
+    line-height: (34 / 24);
+  }
+}
+
+/**
+* Quote minimal
+*/
+.quote-minimal {
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+.quote-minimal-text {
+  font-size: 18px;
+  font-style: italic;
+  color: $gray-darker;
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-minimal {
+    max-width: 90%;
+  }
+  .quote-minimal-text {
+    font-size: 24px;
+  }
+}
+
+/**
+* Quote boxed
+*/
+.quote-boxed {
+  text-align: left;
+  @include group(30px, 20px);
+}
+
+.quote-boxed-image {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.quote-boxed-text,
+.quote-boxed-cite {
+  font-size: 18px;
+}
+
+.quote-boxed-text {
+  position: relative;
+  color: $gray-darker;
+
+  &::before {
+    display: inline-block;
+    position: relative;
+    transform: scale(-1, -1);
+    left: -10px;
+    content: '\f373';
+    font-family: 'Material Design Icons';
+    font-size: 60px;
+    font-style: normal;
+    line-height: .7;
+    color: $secondary;
+
+
+    @supports(-webkit-background-clip: text) {
+      background: linear-gradient(to left, #50e590 70%, #36c9a3);
+      background-size: 200% auto;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.quote-boxed-cite {
+  font-weight: 400;
+  color: $secondary;
+}
+
+.quote-boxed-small {
+  color: $gray-light;
+}
+
+.quote-boxed-meta {
+  > * + * { margin-top: 0; }
+}
+
+* + .quote-boxed-meta { margin-top: 10px; }
+
+@media (min-width: $screen-xs-min) {
+  .quote-boxed {
+    @include display-flex;
+    @include flex-direction(row);
+  }
+
+  .quote-boxed-aside {
+    @include flex-shrink(0);
+  }
+
+  .quote-boxed-main {
+    @include flex-grow(1);
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-boxed-image {
+    width: 160px;
+  }
+
+  .quote-boxed-text,
+  .quote-boxed-cite {
+    font-size: 20px;
+    line-height: (34 / 24);
+  }
+
+  .quote-boxed-text {
+    &::before {
+      font-size: 60px;
+      top: -9px;
+    }
+  }
+
+  * + .quote-boxed-meta { margin-top: 20px; }
+}
+
+@media (min-width: $screen-lg-min) {
+  .quote-boxed {
+    @include group(80px, 30px);
+  }
+
+  .quote-boxed-image {
+    width: 210px;
+  }
+
+  .quote-boxed-text,
+  .quote-boxed-cite {
+    font-size: 24px;
+  }
+
+  * + .quote-boxed-meta { margin-top: 30px; }
+}
+
+/**
+* Quote vertical
+*/
+.quote-vertical {
+}
+
+.quote-vertical-image {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+} 
+
+.quote-vertical-text {
+  position: relative;
+  color: $gray-darker;
+
+  &::after {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    content: '\f373';
+    font-family: 'Material Design Icons';
+    font-size: 40px;
+    line-height: 1;
+    color: $secondary;
+  }
+}
+
+.quote-vertical-cite {
+  font-weight: 400;
+  color: $primary;
+}
+
+.quote-vertical-small {
+  color: $gray-light;
+}
+ 
+.quote-vertical-meta {
+  > * + * { margin-top: 0; }
+}
+
+* + .quote-vertical-text { margin-top: 15px; }
+
+* + .quote-vertical-meta { margin-top: 5px; }
+
+@media (min-width: $screen-xs-min) {
+  .quote-vertical-text,
+  .quote-vertical-cite {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-vertical-text,
+  .quote-vertical-cite {
+    font-size: 20px;
+    line-height: (30 / 20);
+  }
+
+  .quote-vertical-text {
+    &::after { margin-top: 20px; }
+  }
+
+  * + .quote-vertical-text { margin-top: 25px; }
+}
+
+@media (min-width: $screen-lg-min) {
+  .quote-vertical-text,
+  .quote-vertical-cite {
+    font-size: 24px;
+  }
+}
+
+/**
+* Quote classic
+*/
+.quote-classic {
+  text-align: left;
+}
+
+.quote-classic-image {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.quote-classic-header {
+  @include display-flex;
+  @include flex-direction(row);
+  @include align-items(center);
+  @include group(20px);
+}
+
+.quote-classic-text {
+  font-style: italic;
+  color: $gray-darker;
+}
+
+.quote-classic-cite {
+  font-weight: 400;
+  color: $secondary;
+}
+
+.quote-classic-small {
+  font-style: italic;
+  color: $gray-light;
+}
+
+.quote-classic-meta {
+  > * + * { margin-top: 0; }
+}
+
+* + .quote-classic-text { margin-top: 20px; }
+
+@media (min-width: $screen-xs-min) {
+  .quote-classic-text,
+  .quote-classic-cite {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-classic-text,
+  .quote-classic-cite {
+    font-size: 20px;
+    line-height: (30 / 20);
+  }
+}
+
+@media (min-width: $screen-xl-min) {
+  .quote-classic-text,
+  .quote-classic-cite {
+    font-size: 24px;
+  }
+}
+
+/**
+* Quote modern
+*/
+
+.quote-modern {
+  text-align: left;
+}
+
+.quote-modern-image {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.quote-modern-footer {
+  @include display-flex;
+  @include flex-direction(row);
+  @include align-items(center);
+  @include group(20px);
+}
+
+.quote-modern-text {
+  position: relative;
+  font-size: 18px;
+  color: $gray-darker;
+
+  &::before {
+    position: relative;
+    display: inline-block;
+    transform: scale(-1, -1);
+    left: -10px;
+    content: '\f373';
+    font-family: 'Material Design Icons';
+    font-size: 60px;
+    font-style: normal;
+    line-height: 1;
+    color: $secondary-2;
+  }
+}
+
+.quote-modern-cite {
+  font-weight: 400;
+  color: $secondary-2;
+}
+
+.quote-modern-small {
+  color: $gray-light;
+}
+
+.quote-modern-meta {
+  > * + * { margin-top: 0; }
+}
+
+* + .quote-modern-text { margin-top: 20px; }
+
+* + .quote-modern-footer { margin-top: 20px; }
+
+@media (min-width: $screen-sm-min) {
+  .quote-modern-cite,
+  .quote-modern-text {
+    font-size: 20px;
+    line-height: (30 / 20);
+  }
+}
+
+@media (min-width: $screen-xl-min) {
+  .quote-modern-cite,
+  .quote-modern-text {
+    font-size: 24px;
+  }
+}

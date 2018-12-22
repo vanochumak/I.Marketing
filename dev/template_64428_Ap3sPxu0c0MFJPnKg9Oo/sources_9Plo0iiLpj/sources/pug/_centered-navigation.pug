@@ -1,0 +1,62 @@
+ul.rd-navbar-nav
+	li(class={'active' : activeIndex === 0})
+		a(href='index.html') Home
+
+	li(class={'active': activeIndex === 1})
+		a(href='about-us.html') About Us
+			
+	li(class={'active': activeIndex === 3})
+		a(href='#') Blog
+		ul.rd-navbar-dropdown
+			li: a(href='classic-blog.html') Classic Blog
+			li: a(href='grid-blog.html') Grid Blog
+			li: a(href='masonry-blog.html') Masonry Blog
+			li: a(href='modern-blog.html') Modern Blog
+			li: a(href='audio-post.html') Audio Post
+			li: a(href='single-post.html') Single Post
+			li: a(href='image-post.html') Image Post
+			li: a(href='video-post.html') Video Post
+
+	li.rd-navbar--has-megamenu.rd-navbar-submenu(class={'active' : activeIndex === 2 || activeIndex == 4})
+		a(href='#') Pages
+		// RD Navbar Megamenu 
+		ul.rd-navbar-megamenu
+			li
+				ul.rd-megamenu-list
+					li: a(href='about-me.html') About Me
+					li: a(href='our-history.html') Our History
+					li: a(href='services.html') Services
+					li: a(href='single-service.html') Single Service
+					li: a(href='careers.html') Careers
+					li: a(href='single-job.html') Single Job
+					li: a(href='contacts.html') Contacts
+					li: a(href='grid-gallery.html') Grid Gallery
+			li
+				ul.rd-megamenu-list
+					li: a(href='grid-album-gallery.html') Grid Album Gallery
+					li: a(href='fullwidth-gallery.html') Fullwidth Gallery
+					li: a(href='single-project.html') Single Project
+					li: a(href='login-page.html') Login Page
+					li: a(href='registration-page.html') Registration Page
+					li: a(href='pricing-page.html') Pricing Page
+					li: a(href='404-page.html') 404 Page
+					
+			li
+				ul.rd-megamenu-list 
+					li: a(href='503-page.html') 503 Page
+					li: a(href='coming-soon.html') Coming Soon
+					li: a(href='under-construction.html') Under Construction
+					li: a(href='accordions.html') Accordions
+					li: a(href='forms.html') Forms
+					li: a(href='countdown.html') Countdown
+					li: a(href='grid-system.html') Grid System
+			li
+				ul.rd-megamenu-list
+					li: a(href='tables.html') Tables
+					li: a(href='tabs.html') Tabs
+					li: a(href='typography.html') Typography
+					li: a(href='radials.html') Radials
+					li: a(href='pricing.html') Pricing
+					li: a(href='tooltips.html') Tooltips
+					li: a(href='search-results.html') Search Results
+		

@@ -1,0 +1,107 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_pricings
+include ../elements/_ui-panel
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Pricing Page'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    title: pageName,
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  section.section.section-lg.bg-white.text-center
+    .shell.shell-wide
+      h3 Pricing
+      .divider.divider-default
+      +xxl-pricing
+
+  section.section.section-lg.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-5.cell-xl-5
+          h3 Some of Your Questions
+          .divider.divider-default
+          // Bootstrap collapse
+          #accordion2.panel-group.panel-group-custom.panel-group-light(role='tablist', aria-multiselectable='false')
+            +panel({
+              first: true,
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '1',
+              header: 'How can I change something in my order?'
+            })
+              p If you need to change something in your order, please contact us immediately. We usually process orders within 30 minutes, and once we have processed your order, we will be unable to make any changes.
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '2',
+              header: 'How can I pay for my order?'
+            })
+              p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '3',
+              header: 'How long will my order take to be delivered?'
+            })
+              p Delivery times will depend on your location. Once payment is confirmed your order will be packaged. Delivery can be expected within a day.
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '4',
+              header: 'Can I track my order?'
+            })
+              p Yes, you can! After placing your order you will receive an order confirmation via email. Each order starts production 24 hours after your order is placed. Within 72 hours of you placing your order, you will receive an expected delivery date.
+
+        .cell-sm-9.cell-md-5.cell-xl-4.text-center
+          figure.image-default: +jpg('accordions-1-570x600')
+
+  section.section.section-lg.text-center.bg-white
+    .shell.shell-bigger
+      h3 Testimonials
+      .divider.divider-default
+      // Owl Carousel
+      .owl-carousel.owl-layout-1(data-items='1', data-dots='true' data-nav='true' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false")
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-1-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p Every writer needs to refresh the look of his/hers website from time to time, and that’s why I was looking for a new design for my website. I do not often choose website templates, but Brave really amazed me with its functionality. Actually, I doubt that you may find another template so powerful to cover all your design needs.
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Philip Lawrence
+              p.quote-boxed-small Regular Customer
+
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-2-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p My company needed a new design for our new website and we decided to stop on Brave. No HTML template that we’ve seen before hasn’t even come close to what your designers and developers done. It’s a truly amazing solution and if you still hesitate whether to buy this template or not, I recommend you to buy it now.
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Debra Ortega
+              p.quote-boxed-small Regular Customer
+
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-3-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p This template is a universal solution, which I was looking for so long. With Brave, I can now showcase all my projects and receive instant feedback from my website visitors. It is an easy-to-use and very powerful product, and the features it has will come in handy if you need a reliable and stunning website.
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Jose Gutierrez
+              p.quote-boxed-small Regular Customer
+  ="\n"
+  
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

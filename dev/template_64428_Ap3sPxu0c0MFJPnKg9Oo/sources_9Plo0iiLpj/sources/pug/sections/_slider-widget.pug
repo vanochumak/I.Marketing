@@ -1,0 +1,37 @@
+// Slick Carousel
+.slider-widget
+  .slick-slider#slick-1(data-arrows="true", data-loop="true", data-dots="false", data-swipe="false", data-items="1" data-custom-arrows='true')
+    .item
+      article.quote-classic
+        .quote-classic-header
+          +jpg('quote-user-2-210x210', 'quote-classic-image')
+          .quote-classic-meta
+            p.quote-classic-cite Jane Smith
+            p.quote-classic-small Businessman
+        .quote-classic-text
+          p My company needed a new design for our new website and we decided to stop on Brave. No HTML template that we’ve seen before hasn’t even come close to what your designers and developers done. It’s a truly amazing solution, and I recommend it.
+
+    .item
+      article.quote-classic
+        .quote-classic-header
+          +jpg('quote-user-1-210x210', 'quote-classic-image')
+          .quote-classic-meta
+            p.quote-classic-cite Philip Lawrence
+            p.quote-classic-small Designer
+        .quote-classic-text
+          p This template is a universal solution, which I was looking for so long. With Brave, I can now showcase all my projects and receive instant feedback from my website visitors. It is very easy to use and at the same time a very powerful product.
+
+    .item
+      article.quote-classic
+        .quote-classic-header
+          +jpg('quote-user-3-210x210', 'quote-classic-image')
+          .quote-classic-meta
+            p.quote-classic-cite Morgan McMillan
+            p.quote-classic-small Writer
+        .quote-classic-text
+          p Every writer needs to refresh the look of his/hers website from time to time, and that’s why I was looking for a new design for my website. I do not often choose website templates, but Brave really amazed me with its design and functionality.
+  .slider-widget-aside
+    .icon.icon-lg-smaller.mdi.mdi-format-quote
+    .slider-nav
+      button.slick-prev.mdi.mdi-arrow-left-bold-circle(type='button', data-slick='slick-1')
+      button.slick-next.mdi.mdi-arrow-right-bold-circle(type='button', data-slick='slick-1')

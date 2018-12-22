@@ -1,0 +1,9 @@
+mixin mailchimp-form(classes)
+  - mailchimpFormCounter += 1
+  // Mailchimp
+  form.mailchimp-mailform.rd-mailform-inline.rd-mailform-sm(data-form-output="form-output-global", action="https://templatemonster.us15.list-manage.com/subscribe/post?u=ba5bb362073a413f48e4a7b90&id=8dc95d9dec" method='post' class=classes)
+    .rd-mailform-inline-inner
+      .form-wrap
+        input.form-input(type="email" name="email" data-constraints="@Email @Required" id='mailchimp-form-email-' + mailchimpFormCounter)
+        label.form-label(for='mailchimp-form-email-' + mailchimpFormCounter) Enter your e-mail
+      button.button.form-button.button-sm.button-primary(type="submit") Subscribe

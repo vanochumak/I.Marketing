@@ -1,0 +1,373 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+include ../elements/_ui-counter
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Home'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+
+  section.section.section-xl.bg-image.bg-image-9.text-center
+    .shell-wide
+      .range.range-50.range-xs-center
+        .cell-sm-10.cell-lg-6
+          .heading-group
+            h1 We Can Improve
+            p.heading-3.text-elight The Web Image Of Your Company
+          .divider.divider-default
+          p.heading-5 Every company owner wants to see his/her company on a leading position of the industry. We are ready to give your business such an advantage.
+          .group-md.button-group
+            a(href='#').button.button-primary free consultation
+            a(href='#').button.button-default-outline learn more
+
+  // A Few Words About Us
+  section.section.section-lg.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify
+        .cell-sm-9.cell-md-5.cell-xl-4.text-gray-light
+          h3 A Few Words About Us
+          .divider.divider-default
+          p.heading-5 We work in areas as diverse as search engine optimization, social media marketing, email marketing and digital marketing.
+          p Our team of specialists consistently delivers outstanding results combining creative ideas with our vast experience. We can help you build a sustainable, meaningful relationship with your clients by engaging them with your brand using social media. With our help, you can use the power of social media for your benefit.
+          a.button.button-primary(href='about-us.html') learn more
+
+        .cell-sm-9.cell-md-5
+          +jpg('home-1-720x518')
+
+  // What We Do
+  section.section.section-lg.text-center
+    .shell-wide
+      h3 What We Do
+      .divider.divider-default
+      .range.range-50.range-xl-90.offset-custom-2.text-left
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-search74
+              h6.box-minimal-title SEO
+            .box-minimal-text Search engine optimization (SEO) is the process of affecting the visibility of a website or a web page in a web search engine's unpaid results — often referred to as "natural".
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-user143
+              h6.box-minimal-title SMM
+            .box-minimal-text Social media management solutions can help you manage outbound and incoming online interactions — along with other small business marketing activities — in an efficient manner.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.box-minimal-icon-sm.fl-bigmug-line-email64
+              h6.box-minimal-title Email Marketing
+            .box-minimal-text Email marketing provides an effective connection with your targeted audience and gives you the best return on investment, including reaching out to your customers.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-favourites5
+              h6.box-minimal-title Brand Management
+            .box-minimal-text Brand management refers to influencing and controlling an individual's or business's reputation. Originally a public relations term, today it’s an issue of search results.
+
+        // row 2     
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-square160
+              h6.box-minimal-title Web Design
+            .box-minimal-text Users enjoy visiting sites that are aesthetically appealing and easy to navigate. Let our team help your site make an outstanding first impression with speed and accessibility.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-note35
+              h6.box-minimal-title Content Marketing
+            .box-minimal-text Content strategy is becoming steadily more critical to successful marketing both on and offline and in order to help your growth you need to ensure you have something captivating.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-megaphone11
+              h6.box-minimal-title Online Advertising
+            .box-minimal-text With the development of the Internet, advertising has moved to the Web and it's critical for the e-world. Our experts can help you manage your online advertising strategy.
+
+        .cell-xs-10.cell-sm-6.cell-lg-3  
+          article.box-minimal  
+            .box-minimal-header
+              .box-minimal-icon.fl-bigmug-line-code30 
+              h6.box-minimal-title Local SEO
+            .box-minimal-text Local SEO increases visibility of your business by driving your website to the top of local listings. If you have a local business, you need geographically relevant traffic to your site.
+
+  // Icon carousel
+  section.section.bg-gray-lighter: .shell-custom
+    .range.range-sm-center.range-md-middle.range-lg-left.range-0
+      .cell-sm-10.cell-md-6: .section-lg
+        .shell-custom-inner
+          h3 What People Say
+          hr.divider.divider-default
+          .slider-widget
+            .slick-slider#slick-1(data-arrows="true", data-loop="true", data-dots="false", data-swipe="false", data-items="1" data-custom-arrows='true')
+              .item
+                article.quote-classic
+                  .quote-classic-header
+                    +jpg('quote-taxi-1-103x107', 'quote-classic-image')
+                    .quote-classic-meta
+                      p.quote-classic-cite Mary McMillan
+                      p.quote-classic-small Cleaning expert
+                  .quote-classic-text
+                    p I would just like to say thank you for your effective online marketing services, for your friendly and professional support and answers to my questions! Your expert SEO services helped me make my services known to a greater number of people.
+
+              .item
+                article.quote-classic
+                  .quote-classic-header
+                    +jpg('quote-taxi-2-107x111', 'quote-classic-image')
+                    .quote-classic-meta
+                      p.quote-classic-cite James Smith
+                      p.quote-classic-small Business Owner
+                  .quote-classic-text
+                    p Thank you for the SEO services you delivered. You helped my company to attract new partners and promote our services to a greater number of customers. Your brand management and online advertising services saved us!
+
+              .item
+                article.quote-classic
+                  .quote-classic-header
+                    +jpg('quote-taxi-3-109x112', 'quote-classic-image')
+                    .quote-classic-meta
+                      p.quote-classic-cite Susan Contreras
+                      p.quote-classic-small Designer
+                  .quote-classic-text
+                    p SEOMarket is the only agency that provides high quality online marketing and promotion services. The members of their team are real professionals in SEO, and it’s no wonder that they helped me promote my design services.
+
+            .slider-widget-aside
+              .icon.icon-lg-smaller.mdi.mdi-format-quote
+              .slider-nav
+                button.slick-prev.mdi.mdi-arrow-left-bold-circle(type='button', data-slick='slick-1')
+                button.slick-next.mdi.mdi-arrow-right-bold-circle(type='button', data-slick='slick-1')
+
+
+      .cell-md-6.bg-additional-item.bg-image(style='background-image: url(images/bg-image-2.jpg);'): .section-lg
+        .shell-custom-inner.shell-custom-inner-1.text-center
+          .range.range-120
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Projects", "", {
+                "dataTo": "62000",
+                "dataSpeed": "1000",
+                "attr": "",
+                "preffix": '+'
+              }, "heading-3", 'mdi mdi-television-guide')
+
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Happy Clients", "", {
+                "dataTo": "246000",
+                "dataSpeed": "3000",
+                "attr": ""
+              }, "heading-3", 'mdi mdi-account-multiple-outline')
+
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Hours of Work", "", {
+                "dataTo": "1200",
+                "dataSpeed": "3000",
+                "attr": ""
+              }, "heading-3", 'mdi mdi-clock')
+
+            .cell-xs-6.cell-sm-3.cell-md-6
+              +counter("Solutions", "", {
+                "dataTo": "12000",
+                "dataSpeed": "3000",
+                "attr": ""
+              }, "heading-3",'mdi mdi-code-tags')
+  ="\n"
+
+  // CTA Gradient
+  section.section.section-md.bg-gradient-1.text-center.text-sm-left
+    include ../elements/_ui-cta-1
+  ="\n"
+
+  // Latest News
+  section.section.section-lg.bg-white.text-center
+    .shell-wide
+      .range: .cell-xs-12
+        h3 Latest News
+        .divider.divider-default
+        .range.range-50
+          .cell-sm-6.cell-lg-4
+            article.event-default-wrap
+              .event-default
+                figure.event-default-image
+                  +jpg('home-1-570x370')
+
+                .event-default-caption
+                  a(href='registration-page.html').button.button-xs.button-primary book now
+              .event-default-inner
+                .box-inline
+                  span.icon.icon-md-middle.icon-secondary.mdi.mdi-calendar
+                  a(href=postLink).event-default-link April 13, 2017 at 12:15 pm
+                h5: a(href=postLink).event-default-title Google Rethinking Payday Loans & Doorway Pages?
+
+          .cell-sm-6.cell-lg-4
+            article.event-default-wrap
+              .event-default
+                figure.event-default-image
+                  +jpg('home-2-570x370')
+
+                .event-default-caption
+                  a(href='registration-page.html').button.button-xs.button-primary book now
+              .event-default-inner
+                .box-inline
+                  span.icon.icon-md-middle.icon-secondary.mdi.mdi-calendar
+                  a(href=postLink).event-default-link April 13, 2017 at 12:15 pm
+                h5: a(href=postLink).event-default-title Benefits of Using Modern Promotion Technologies
+
+          .cell-sm-6.cell-lg-4
+            article.event-default-wrap
+              .event-default
+                figure.event-default-image
+                  +jpg('home-3-570x370')
+
+                .event-default-caption
+                  a(href='registration-page.html').button.button-xs.button-primary book now
+              .event-default-inner
+                .box-inline
+                  span.icon.icon-md-middle.icon-secondary.mdi.mdi-calendar
+                  a(href=postLink).event-default-link April 13, 2017 at 12:15 pm
+                h5: a(href=postLink).event-default-title How Google Search Works in 2017
+
+      a.button.button-primary(href=blogLink) view all blog posts
+  ="\n"
+
+
+  // our Team
+  section.section.section-wrap.section-wrap-lg.section-wrap-sm.bg-gray-darker.text-center.text-sm-left: .section-wrap-inner
+    .shell.shell-wide
+      .range.range-50.range-sm-center.range-lg-left
+        .cell-sm-12.cell-md-10.cell-lg-7.cell-xl-6
+          .section-lg
+            h3 Our Team
+            .divider.divider-default
+
+            // Owl Carousel
+            .owl-carousel.owl-layout-5(data-items='1', data-dots='true' data-nav='false' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false")
+              +team-classic( 'teamInline', {
+                image: 'team-11-380x380',
+                title: 'Ronald Chen',
+                job_position: 'Founder, CEO',
+                text: 'Ronald Chen is the founder and CEO of SEOMarket. He has been working in Marketing since 2001 and got “bit” by the “SEO & Social” bug in 2005, which eventually made him the #1 specialist.'
+              })
+              +team-classic( 'teamInline', {
+                image: 'landing-seo-6-570x370',
+                title: 'Frances Watson',
+                job_position: 'Marketing Analyst',
+                text: 'Frances is a prolific part of the SEO community worldwide and contributes regularly to publications on and offline as well as best practice guides and round tables.'
+              })
+              +team-classic( 'teamInline', {
+                image: 'landing-seo-5-570x370',
+                title: 'Joe Myers',
+                job_position: 'SEO Expert',
+                text: 'Since graduating, Joe has worked for a marketing capability consultancy managing a variety of client projects including Aviva, Hewlett Packard, Honda, and lots of other well-known companies.'
+              })
+    .section-wrap-aside.section-wrap-image
+      +jpg('landing-seo-4-570x370')
+  ="\n"
+
+
+  // Our Projects and Cases
+  section.section.section-lg.text-center.bg-white
+    .shell-wide
+      h3 Our Projects and Cases
+      .divider.divider-default
+      .range.range-50.range-xl-90.range-xs-center(data-lightgallery='group')
+        .cell-xs-12.cell-sm-6.cell-md-4
+          +gallery-item({
+            classMod: 'titled-gallery-item',
+            lightGallery: 'group-item',
+            img: 'gallery-grid-01-570x380',
+            original: 'gallery-01-original',
+            figcaption: '348% More Organic Traffic in 7 Days'
+          })
+        .cell-xs-12.cell-sm-6.cell-md-4
+          +gallery-item({
+            classMod: 'titled-gallery-item',
+            lightGallery: 'group-item',
+            img: 'gallery-grid-02-570x380',
+            original: 'gallery-02-original',
+            figcaption: 'How Manual Tasks Sabotage the Potential of Natural Search Marketers'
+          })
+
+        .cell-xs-12.cell-sm-6.cell-md-4
+          +gallery-item({
+            classMod: 'titled-gallery-item',
+            lightGallery: 'group-item',
+            img: 'gallery-grid-03-570x380',
+            original: 'gallery-03-original',
+            figcaption: 'A Search Engine Based on Expert Documents'
+          })
+
+        .cell-xs-12.cell-sm-6.cell-md-4
+          +gallery-item({
+            classMod: 'titled-gallery-item',
+            lightGallery: 'group-item',
+            img: 'gallery-grid-04-570x380',
+            original: 'gallery-04-original',
+            figcaption: 'Enterprise SEO Tools: The Marketer’s Guide'
+          })
+
+        .cell-xs-12.cell-sm-6.cell-md-4
+          +gallery-item({
+            classMod: 'titled-gallery-item',
+            lightGallery: 'group-item',
+            img: 'gallery-grid-05-570x380',
+            original: 'gallery-05-original',
+            figcaption: 'SEO for Small Medical Practices'
+          })
+
+        .cell-xs-12.cell-sm-6.cell-md-4
+          +gallery-item({
+            classMod: 'titled-gallery-item',
+            lightGallery: 'group-item',
+            img: 'gallery-grid-06-570x380',
+            original: 'gallery-06-original',
+            figcaption: 'Information Retrieval Data Structures & Algorithms'
+          })
+
+      a.button.button-primary(href='grid-gallery.html') view all portfolio
+
+  ="\n"
+
+  section.section.section-lg.bg-gray-darker
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-xs-center.range-md-justify
+        .cell-xs-10.cell-sm-5
+          h3  
+            span.reveal-block Get The Latest News From
+            span.reveal-block.text-elight The Team Of SEOMarket
+          hr.divider.divider-left.divider-default
+          .box-width-medium
+            p.big Keep up with our always upcoming news, updates, and special offers. Enter your e-mail and subscribe to our newsletter.
+            // Subscribe form
+            form.rd-mailform(data-form-output="form-output-global" action="bat/rd-mailform.php" method='post' data-form-type='subscribe')
+              .form-wrap
+                input.form-input(type="email" name="email" data-constraints="@Email @Required" id='form-email-twitter')
+                label.form-label(for='form-email-twitter') Enter your e-mail
+              button.button.form-button.button-primary(type="submit") Subscribe
+
+        .cell-xs-10.cell-sm-5.cell-md-4
+          h3 Follow Us For News
+          hr.divider.divider-left.divider-default
+          ul.twitter.list-twitter(data-twitter-username='templatemonster')
+            +loop(3)
+              li(data-twitter-type='tweet')
+                .unit.unit-xs-horizontal
+                  .unit-left
+                    span.mdi.mdi-twitter.twitter-icon.icon-md-middle
+                  .unit-body
+                    p(data-tweet='text')
+                    time(data-date="text" data-datetime="datetime" datetime="2017")
+  ="\n"
+  
+  // Page Footer
+  +footer-default({className: 'bg-gray-lighter'})

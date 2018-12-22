@@ -1,0 +1,293 @@
+//
+// Panels custom styles
+// --------------------------------------------------
+
+// Primary (corporate)
+$accordion-corporate-color: $gray-darker;
+$accordion-corporate-background: $white;
+$accordion-corporate-border: #dedede;
+$accordion-corporate-content-color: $gray-light;
+$accordion-corporate-arrow-color: $white;
+$accordion-corporate-arrow-background: $primary;
+$accordion-corporate-shadow: 0px 5px 12px 0px #dcdeec;
+$accordion-corporate-border-radius: 10px;
+$accordion-corporate-header-padding: 18px 82px 18px 32px;
+$accordion-corporate-content-padding: 0 nth($accordion-corporate-header-padding, 2) 25px nth($accordion-corporate-header-padding, 4);
+
+// Light
+$accordion-light-color: $gray-darker;
+$accordion-light-border: $gray-2;
+$accordion-light-content-color: rgba($gray-light, .47);
+$accordion-light-arrow-color: $primary;
+$accordion-light-header-padding: 19px 55px 19px 32px;
+$accordion-light-content-padding: 0 44px 25px nth($accordion-light-header-padding, 4);
+
+// Panel groups
+.panel-group-custom {
+  margin-bottom: 0;
+
+  .panel-heading + .panel-collapse > .panel-body,
+  .panel-heading + .panel-collapse > .list-group {
+    border-top: 0;
+  }
+
+  .panel + .panel {
+    margin-top: 0;
+  }
+}
+
+.panel-group.panel-group-corporate {
+  .panel + .panel {
+    margin-top: 20px;
+  }
+}
+
+.panel-custom {
+  margin: 0;
+  background: inherit;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+
+  a {
+    display: block;
+  }
+
+  // Panel heading
+  .panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    border-top-left-radius: 0;
+  }
+
+  // Panel contents
+  .panel-body {
+    padding: 0;
+    border: 0;
+  }
+}
+
+* + .panel-group-custom {
+  margin-top: 35px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 50px;
+  }
+  
+  @media (min-width: $screen-xl-min) {
+    margin-top: 60px;
+  }
+}
+
+
+// Panel corporate
+.panel-corporate {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  background: $accordion-corporate-background;
+  box-shadow: $accordion-corporate-shadow;
+  
+  &.panel {
+    border-radius: $accordion-corporate-border-radius;
+  }
+
+  .panel-title a {
+    padding: $accordion-corporate-header-padding;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $accordion-corporate-color;
+    transition: inherit;
+    border-radius: $accordion-corporate-border-radius $accordion-corporate-border-radius 0 0 ;
+
+    // Open state
+    .panel-arrow {
+      transition: .33s;
+    }
+
+    // Collapsed state
+    &.collapsed {
+      border-bottom-width: 0;
+      border-radius: $accordion-corporate-border-radius;
+
+      .panel-arrow {
+        &::before { opacity: 1; }
+        &::after { opacity: 0; }
+      }
+    }
+  }
+
+  // Panel arrow
+  .panel-arrow {
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    right: -1px;
+    z-index: 2;
+    width: 70px;
+    background: $accordion-corporate-arrow-background;
+    border-radius: 0 $accordion-corporate-border-radius $accordion-corporate-border-radius 0;
+    transition: .33s all ease;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      font-family: 'Material Design Icons';
+      color: $accordion-corporate-arrow-color;
+      transition: .22s;
+    }
+
+    &::before {
+      content: '\f504';
+      opacity: 0;
+    }
+    
+    &::after {
+      content: '\f465';
+      opacity: 1;
+    }
+    
+    &:hover {
+      background: $secondary;
+    }
+  }
+
+  .panel-collapse {
+    position: relative;
+    z-index: 1;
+    color: $accordion-corporate-content-color;
+    border-radius: 0 0 $accordion-corporate-border-radius $accordion-corporate-border-radius;
+  }
+
+  .panel-body {
+    padding: $accordion-corporate-content-padding;
+  }
+
+  // Media queries
+  @media (max-width: $screen-xs-max) {
+    .panel-title a,
+    .panel-body {
+      padding-left: 25px;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .panel-title a {
+      font-size: $font-size-h5;
+      line-height: $font-lh-h5;
+    }
+
+    .panel-body {
+      padding-right: 150px;
+    }
+  }
+}
+
+
+// Panel light
+.panel-light {
+  &:first-child {
+    .panel-title {
+      border-top: 1px solid $accordion-light-border;
+    }
+  }
+
+  .panel-title {
+
+    &:nth-child(n + 2) {
+      margin-top: -1px;
+    }
+  }
+
+  .panel-title a {
+    position: relative;
+    padding: $accordion-light-header-padding;
+    border-bottom: 1px solid transparent;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: $accordion-light-color;
+    transition: .2s all ease;
+
+    // Opened state
+    .panel-arrow::after {
+      opacity: 0;
+      visibility: hidden;
+      transition: .2s all ease;
+    }
+
+    // Closed state
+    &.collapsed {
+      border-bottom-color: $accordion-light-border;
+      .panel-arrow::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .panel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 26px;
+    transition: .33s;
+    will-change: transform;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $accordion-light-arrow-color;
+    }
+
+    &::before {
+      width: 18px;
+      height: 2px;
+      right: 0;
+    }
+
+    &::after {
+      width: 2px;
+      height: 18px;
+      right: 8px;
+    }
+  }
+
+  .panel-collapse {
+    position: relative;
+    margin-top: -1px;
+    border-bottom: 1px solid $accordion-light-border;
+    color: $accordion-light-content-color;
+    will-change: transform;
+  }
+
+  .panel-body {
+    padding: $accordion-light-content-padding;
+  }
+
+  // Media queries
+  @media (max-width: $screen-xs-max) {
+    .panel-title a,
+    .panel-body {
+      padding-left: 15px;
+    }
+  }
+  
+  @media (min-width: $screen-sm-min) {
+    .panel-title a {
+      font-size: $font-size-h5;
+      line-height: $font-lh-h5;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.section-md
+  p.h3-alternate Comments
+  .comment-group
+    // Comment
+    article.comment
+      .comment-avatar: +jpg('user-1-80x80')
+      .comment-body
+        .comment-header
+          p.comment-title Catherine Payne
+          time.comment-time(datetime='2017') 2 days ago
+        .comment-text: p Thank you for such an amazing and informative article! It’s useful to know how to use social platforms for business’s benfit and how to do it correctly.
+        .comment-footer: a.comment-link-reply(href='#') Reply
+
+    .comment-group 
+      // Comment
+      article.comment
+        .comment-avatar: +jpg('user-2-80x80')
+        .comment-body
+          .comment-header
+            p.comment-title Ronald Chen
+            time.comment-time(datetime='2017') 2 days ago
+            span.comment-reply Catherine Payne
+          .comment-text: p Thank you for your comment! I will publish more tips on social media management in my forthcoming posts, so stay tuned and subscribe to our newsletter.
+          .comment-footer: a.comment-link-reply(href='#') Reply
+
+
+    // Comment
+    article.comment
+      .comment-avatar: +jpg('user-3-80x80')
+      .comment-body
+        .comment-header
+          p.comment-title Philip Bowman
+          time.comment-time(datetime='2017') 2 days ago
+        .comment-text: p Your tips helped me change my attitude to SMM, and I’m already planning to hire an expert form your company to help me with my SEO & SMM strategy.
+        .comment-footer: a.comment-link-reply(href='#') Reply
+
+.section-lg
+  p.h3-alternate Send a Comment
+  // RD Mailform
+  form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+    .range.range-20
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-name') First name
+          input.form-input(id='form-comment-name' type="text" name="name" data-constraints='@Required')
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-last-name') Last name
+          input.form-input(id='form-comment-last-name' type="text" name="last-name" data-constraints="@Required")
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-email') E-mail
+          input.form-input(id='form-comment-email' type="email" name="email" data-constraints="@Email @Required")
+      .cell-sm-6
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-phone') Phone
+          input.form-input(id='form-comment-phone' type="text" name="phone" data-constraints="@Numeric @Required")
+      .cell-xs-12
+        .form-wrap.form-wrap-validation
+          label.form-label-outside(for='form-comment-message') Message
+          textarea.form-input(id='form-comment-message' name="message" data-constraints="@Required")
+      .cell-xs-12.offset-custom-1
+        .form-button
+          button.button.button-primary(type='submit') send comment
+
+.section-sm
+  p.h3-alternate Recent Posts 
+  .range.range-30.range-lg-50
+    .cell-xs-10.cell-sm-6.post-light-wrap
+      article.post-light
+        .unit.unit-horizontal 
+          .unit-left: a(href=postLink): +jpg('post-light-1-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) Benefits of Using Modern Promotion Technologies
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+      article.post-light
+        .unit.unit-horizontal
+          .unit-left: a(href=postLink): +jpg('post-light-3-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) How Google Search Works in 2017
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+    .cell-xs-10.cell-sm-6.post-light-wrap
+      article.post-light
+        .unit.unit-horizontal
+          .unit-left: a(href=postLink): +jpg('post-light-2-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) Why Every Website Needs SEO Copywriting
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm
+
+      article.post-light
+        .unit.unit-horizontal
+          .unit-left: a(href=postLink): +jpg('post-light-4-120x80')
+          .unit-body
+            p.post-light-title: a(href=postLink) What is Local SEO? 
+            time.post-light-time(datetime='2017') Feb 27, 2017 at 5:47 pm

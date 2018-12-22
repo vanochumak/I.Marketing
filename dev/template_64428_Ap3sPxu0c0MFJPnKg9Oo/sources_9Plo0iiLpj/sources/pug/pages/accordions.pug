@@ -1,0 +1,102 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-panel
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Accordions' 
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+  
+  // Standard Accordion
+  section.section.section-lg.bg-white.text-center
+    .shell
+      .range.range-50.range-md-center
+        .cell-md-10.cell-lg-8
+          h3 Standard Accordion
+          // Bootstrap collapse
+          #accordion1.panel-group.panel-group-custom.panel-group-corporate(role='tablist', aria-multiselectable='false')
+            +panel({
+              first: true,
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '1',
+              header: 'How can I change something in my order?'
+            })
+              p If you need to change something in your order, please contact us immediately. We usually process orders within 30 minutes, and once we have processed your order, we will be unable to make any changes.
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '2',
+              header: 'How can I pay for my order?'
+            })
+              p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '3',
+              header: 'How long will my order take to be delivered?'
+            })
+              p Delivery times will depend on your location. Once payment is confirmed your order will be packaged. Delivery can be expected within a day.
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '4',
+              header: 'Can I track my order?'
+            })
+              p Yes, you can! After placing your order you will receive an order confirmation via email. Each order starts production 24 hours after your order is placed. Within 72 hours of you placing your order, you will receive an expected delivery date. 
+  ="\n"
+
+  // Alternative Accordion
+  section.section.section-lg.bg-white.text-center
+    .shell
+      .range.range-50.range-md-center
+        .cell-md-10.cell-lg-8
+          h3 Alternative Accordion
+          // Bootstrap collapse
+          #accordion2.panel-group.panel-group-custom.panel-group-light(role='tablist', aria-multiselectable='false')
+            +panel({
+              first: true,
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '1',
+              header: 'How can I change something in my order?'
+            })
+              p If you need to change something in your order, please contact us immediately. We usually process orders within 30 minutes, and once we have processed your order, we will be unable to make any changes.
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '2',
+              header: 'How can I pay for my order?'
+            })
+              p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '3',
+              header: 'How long will my order take to be delivered?'
+            })
+              p Delivery times will depend on your location. Once payment is confirmed your order will be packaged. Delivery can be expected within a day.
+
+            +panel({
+              panelClass: 'panel-light',
+              parentId: 'accordion2',
+              number: '4',
+              header: 'Can I track my order?'
+            })
+              p Yes, you can! After placing your order you will receive an order confirmation via email. Each order starts production 24 hours after your order is placed. Within 72 hours of you placing your order, you will receive an expected delivery date. 
+  ="\n"
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

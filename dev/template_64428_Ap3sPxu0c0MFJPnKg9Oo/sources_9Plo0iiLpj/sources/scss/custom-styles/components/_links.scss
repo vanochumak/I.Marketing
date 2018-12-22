@@ -1,0 +1,82 @@
+/*
+*
+* Links
+* --------------------------------------------------
+*/
+.link-video {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  line-height: 1;
+  
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+  }
+
+  &:hover {
+    color: $secondary-1;
+  }
+
+  &::before {
+    position: static;
+    display: inline-block;
+    overflow: hidden;
+    content: '\f4fb';
+    font-family: 'Material Design Icons';
+    font-size: 50px;
+    border-radius: 50%;
+  }
+
+  @media (min-width: $screen-md-min) {
+    &::before {
+      font-size: 75px;
+    }
+  }
+
+  @media (min-width: $screen-xl-min) {
+    &::before {
+      font-size: 100px;
+    }
+  }
+}
+
+// link bold
+.link-bold {
+  font-weight: 700;
+  color: $secondary;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+// Link image 
+.link-image {
+  display: inline-block;
+  max-width: 80%;
+  text-align: center;
+  
+  img {
+    opacity: .5;
+    width: auto;
+    transition: .33s;
+  }
+  
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+.link-text-color {
+  color: $text-color;
+  &:hover {
+    color: $secondary;
+  }
+}
+

@@ -1,0 +1,26 @@
+// Element-groups
+@mixin group($offset-x, $offset-y: $offset-x) {
+  transform: translateY(-$offset-y);
+  margin-bottom: -$offset-y;
+  margin-left: -$offset-x;
+
+  > * {
+    display: inline-block;
+    margin-top: $offset-y;
+    margin-left: $offset-x;
+  }
+}
+
+
+@mixin list-inline($spacing-top, $spacing-left) {
+  margin-bottom: -$spacing-top;
+  transform: translateY(-$spacing-top);
+  margin-left:  -$spacing-left / 2;
+  margin-right:  -$spacing-left / 2;
+  > li {
+    display: inline-block;
+    margin-top: $spacing-top;
+    margin-left: $spacing-left / 2;
+    margin-right: $spacing-left / 2;
+  }
+}

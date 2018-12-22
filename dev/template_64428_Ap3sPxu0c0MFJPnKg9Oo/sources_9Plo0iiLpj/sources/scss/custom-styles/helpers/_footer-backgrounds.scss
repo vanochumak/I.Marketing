@@ -1,0 +1,159 @@
+// Footer placeholders
+// ----------------------------------------
+%footer-dark {
+  color: $white;
+  #{headings()} { color: $white; }
+  .list-marked-primary {
+    > li {
+      &:before { color: $gray-1; }
+      a {
+        &, &:focus, &:active { color: $secondary-1; }
+        &:hover { color: $secondary; }
+      }
+    }
+  }
+  .right,
+  .form-label,
+  .form-input { color: $gray-light; }
+}
+
+%footer-gray {
+  .rd-mailform-inline .rd-mailform-inline-inner::before,
+  .form-input {
+    background-color: $white;
+  }
+  
+  .right,
+  .form-label,
+  .form-input {
+    color: $gray-light;
+  }
+}
+
+%footer-minimal-white-mix {
+  color: $gray-light;
+  .default-logo { display: inline-block; }
+  .inverse-logo { display: none; }
+}
+
+%footer-minimal-dark-mix {
+  .default-logo { display: none; }
+  .inverse-logo { display: inline-block; }
+  a.icon-secondary-5-filled {
+    &, &:focus, &:active, &:hover { color: $white; }
+  }
+}
+
+%footer-minimal-white {
+  a.icon-secondary-5-filled {
+    color: $gray-light;
+    background-color: $gray-lighter;
+    &:hover {
+      color: $white;
+    }
+    
+  }
+}
+
+%footer-minimal-lighter {
+  a.icon-secondary-5-filled {
+    color: $gray-light;
+    background-color: $white;
+    
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+%footer-extended-white-mix {
+  .tabs-custom.tabs-line .nav-tabs li a {
+    color: $gray-light;
+  }
+  .tabs-custom.tabs-line .nav-tabs li.active a, .tabs-custom.tabs-line .nav-tabs li a:hover {
+    color: $primary;
+  }
+  .box-inline {
+    a {
+      &, &:focus, &:active {
+        color: $gray-light;
+      }
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  a.icon-secondary-5-filled {
+    &, &:focus, &:active {
+      color: $white;
+      background-color: $gray-1;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+%footer-extended-dark-mix {
+  .icon-secondary-5-filled {
+    color: $gray-1;
+    background-color: $secondary-5;
+  }
+  .list-darker {
+    color: $gray-1;
+    a {
+      &:hover {
+        color: $secondary-1;
+      }
+    }
+  }
+  .tabs-custom.tabs-line .nav-tabs {
+    border-color: rgba($white, .1);
+  }
+  
+  @media (max-width: $screen-sm-min - 1) {
+    .tabs-custom.tabs-line .nav-tabs li a {
+      //color: $white;
+    }
+    .tabs-custom.tabs-line .nav-tabs li.active a {
+      color: $white;
+    }
+  }
+  @media (min-width: $screen-sm-min) {
+    .tabs-custom.tabs-line .nav-tabs li a {
+      color: $gray-1;
+    }
+  }
+  .right a:hover {
+    color: $white;
+  }
+  .blog-inline-meta {
+    a {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  .blog-inline-title {
+    color: $secondary-1;
+    a {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  .tabs-custom.tabs-line .nav-tabs li a::after {
+    background-color: $secondary-1;
+  }
+  @media (min-width: $screen-sm-min) {
+    .tabs-custom.tabs-line .nav-tabs li.active a, .tabs-custom.tabs-line .nav-tabs li a:hover {
+      color: $secondary-1;
+    }
+  }
+}
+
+%footer-alternative-mix {
+  p.right {
+    color: $gray-light;
+  }
+}

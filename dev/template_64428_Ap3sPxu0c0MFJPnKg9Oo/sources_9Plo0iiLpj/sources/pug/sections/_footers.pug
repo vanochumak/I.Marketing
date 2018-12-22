@@ -1,0 +1,53 @@
+//- Instafeed include
+include ../elements/_ui-insta-thumb-big
+include ../elements/_subscribe-form
+include ../elements/_ui-social
+
+
+mixin footer-default(obj)
+  // Footer Default
+  - if (typeof(obj) === 'undefined') var obj = {};
+  footer.section.page-footer.page-footer-default.text-left(class= obj.className)
+    .shell-wide
+      .range.range-50.range-xs-center
+        .cell-sm-6.cell-lg-3
+          .inset-xl
+            h6 About Us
+            p.text-spacing-sm SEOMarket is a very professional and experienced team of SEO, SMM, and online marketing experts that know how to push your website forward. With our help, your resource will become one of the most recognizable ones on the Web.
+
+        .cell-sm-6.cell-lg-2
+          h6 Quick links
+          ul.list-marked.list-marked-primary 
+            li: a(href='about-us.html') About Us
+            li: a(href='services.html') Services
+            li: a(href='classic-blog.html') Blog
+            li: a(href='grid-gallery.html') Portfolio
+            li: a(href='contacts.html') Contacts
+
+        .cell-sm-6.cell-lg-4
+          h6 Instagram Feed
+          if (obj.instaType == 'tagged')
+            .instafeed.text-center(data-instafeed-tagname= obj.tagName ? obj.tagName : 'taxi', data-instafeed-get='tagged', data-instafeed-sort='least-liked' data-lightgallery='group')
+              .range.range-10.range-narrow
+                - for (var i = 0; i < 8 ; i++)
+                  .cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-3(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+          else if (obj.instaType == 'location')
+            .instafeed.text-center(data-instafeed-location= obj.location ? obj.location : '241201111', data-instafeed-get='location', data-instafeed-sort='least-liked' data-lightgallery='group')
+              .range.range-10.range-narrow
+                - for (var i = 0; i < 8 ; i++)
+                  .cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-3(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+          else
+            .instafeed.text-center(data-instafeed-user= obj.userID ? obj.userID : '25025320', data-instafeed-get='user', data-instafeed-sort='least-recent' data-lightgallery='group')
+              .range.range-10.range-narrow 
+                - for (var i = 0; i < 8 ; i++)
+                  .cell-xxs-6.cell-xs-4.cell-sm-4.cell-md-3(data-instafeed-item='')
+                    +thumbnail-instafeed-big({className: 'thumbnail-instafeed-minimal'})
+                  
+        .cell-sm-6.cell-lg-3
+          h6 Newsletter
+          p.text-spacing-sm Keep up with our always upcoming product features and technologies. Enter your e-mail and subscribe to our newsletter.
+          +subscribe-form
+
+      p.right &#169;&nbsp;#[span(class="copyright-year")] All Rights Reserved&nbsp;#[a(href="#") Terms of Use]&nbsp;and&nbsp;#[a(href="privacy-policy.html") Privacy Policy]

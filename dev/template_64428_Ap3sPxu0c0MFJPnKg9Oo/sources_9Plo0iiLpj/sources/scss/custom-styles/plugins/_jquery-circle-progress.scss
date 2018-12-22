@@ -1,0 +1,70 @@
+/*
+*
+* Circle Progress Bars
+* --------------------------------------------------
+*/
+
+.progress-bar-circle {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 1.2;
+  
+ 
+  
+  canvas {
+    vertical-align: middle;
+  }
+  
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: $font-family-sec;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 28px;
+    color: $gray-darker;
+    letter-spacing: $spacing-md;
+    transform: translate(-50%, -50%);
+  }
+  
+  span.radial {
+    &:after {
+      content: "%";
+    }
+  }
+}
+
+.bg-gray-darker {
+  .progress-bar-circle {
+    span {
+      color: $white;
+    }
+  }
+}
+
+.progress-bar-circle-classic {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border: 2px solid $gray-lighter;
+    border-radius: 50%;
+  }
+}
+
+* + .progress-bar-circle {  margin-top: 25px; }
+.progress-bar-circle + * {  margin-top: 10px; }
+
+@media (min-width: $screen-sm-min) {
+  .progress-bar-circle + * {  margin-top: 15px; }
+  * + .progress-bar-circle { margin-top: 60px; }
+}
+
+@media (min-width: $screen-xl-min) {
+  .progress-bar-circle + * {  margin-top: 25px; }
+}

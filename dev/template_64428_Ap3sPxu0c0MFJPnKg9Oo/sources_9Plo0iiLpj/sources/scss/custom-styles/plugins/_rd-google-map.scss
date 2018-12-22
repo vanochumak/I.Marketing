@@ -1,0 +1,177 @@
+/*
+*
+* RD Google Map
+* --------------------------------------------------
+*/
+
+$map-height: 200px;
+$map-xs-height: 250px;
+$map-md-height: 400px;
+
+.rd-google-map {
+  max-width: 870px;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.rd-google-map-default {
+  max-width: none;
+}
+
+@media (min-width: $screen-md-min) {
+  .rd-google-map-with-icon {
+    .gm-style {
+      > div:nth-child(1) {
+        > div:nth-child(4) {
+          > div:nth-child(4) {
+            > div:nth-child(1) {
+              border-radius: $border-sm !important;
+              > div:nth-child(1) {
+                > div:nth-child(2) {
+                  box-shadow:  none !important;
+                  background-color: transparent !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .gm-wrapper {
+      > div:nth-child(1) {
+        > div:nth-child(1) {
+          > div:nth-child(3) {
+            z-index: 100;
+            > div {
+              margin-top: -5px;
+              > div {
+                box-shadow: none !important;
+              }
+            }
+          }
+          > div:nth-child(4) {
+            border-radius: $border-sm !important;
+            box-shadow:  0 8px 21px 0 rgba(#cdced6, 1) !important;
+          }
+        }
+      }
+    }
+    .gm-style-iw {
+      > div:nth-child(1) {
+        overflow: visible !important;
+        > div:nth-child(1) {
+          overflow: visible !important;
+        }
+      }
+    }
+    .iw-content {
+      p {
+        position: relative;
+        text-align: center;
+        margin-left: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-top: 50px;
+        color: $gray-darker;
+        letter-spacing: $spacing-sm;
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          display: block;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          content: '\f440';
+          font-family: 'Material Design Icons', sans-serif;
+          font-size: 36px;
+          letter-spacing: $screen-sm;
+          color: $secondary;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
+
+.rd-google-map-wrap {
+  .rd-google-map {
+    max-width: 940px;
+  }
+}
+
+.page-footer-extended {
+  .rd-google-map-wrap {
+    .rd-google-map {
+      max-width: none;
+    }
+  }
+}
+
+.rd-google-map-wrap-full-height {
+  @media (min-width: $screen-lg-min) {
+    position: relative;
+    padding-bottom: 70%;
+    width: 100%;
+    .rd-google-map.rd-google-map-full-height {
+      position: absolute !important;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      min-height: 100%;
+      height: 100%;
+      max-width: none;
+    }
+  }
+}
+
+.rd-google-map {
+  &.rd-google-map-full-height {
+    @media (min-width: $screen-lg-min) {
+      
+    }
+  }
+}
+
+.rd-google-map__model {
+  color: $gray-base;
+  height: $map-height;
+  
+  img {
+    max-width: none !important;
+  }
+  
+  @media (min-width: $screen-xs-min) {
+    height: $map-xs-height;
+  }
+  
+  @media (min-width: $screen-md-min) {
+    height: $map-md-height;
+  }
+
+  &.rd-google-map-sm {
+    @media (min-width: $screen-md-min) {
+      min-height: 500px;
+    }
+  }
+  
+  &.rd-google-map-md {
+    @media (min-width: $screen-md-min) {
+      min-height: 600px;
+    }
+  }
+}
+
+.map_locations {
+  display: none;
+}
+
+* + .rd-google-map { margin-top: 50px; }
+
+.rd-google-map-wrap + .shell { margin-top: 50px; }
+
+@media (min-width: $screen-lg-min) {
+  .rd-google-map-wrap + .shell { margin-top: 0; }
+}

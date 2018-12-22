@@ -1,0 +1,169 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Typography'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Base typography
+  section.section.section-lg.bg-white
+    .shell
+      .range.range-50
+        .cell-md-10.cell-lg-8
+          ul.list-xl
+            li
+              h1 H1 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h2 H2 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h3 H3 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h4 H4 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h5 H5 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+            li
+              h6 H6 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+  ="\n"
+
+  // Blockquote
+  section.section.section-lg.bg-white
+    .shell
+      .range.range-50
+        .cell-md-10.cell-lg-8
+          h3 Blockquote
+          article.quote-primary
+            .quote-primary-mark
+            .quote-primary-text: p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.  
+
+            p.quote-primary-meta
+              span by
+              span.cite Ronald Chen
+  ="\n"
+
+  // HTML Text Elements
+  section.section.section-lg.bg-white
+    .shell
+      .range
+        .cell-md-10.cell-lg-8
+          h3 HTML Text Elements
+          ul.list-xs
+            li: a(href='#') Link text
+            li: a.link-hover(href='#') Hover link text
+            li: span.text-bold Bold Text
+            li: span.text-italic Italic Text
+            li: mark This is a highlighted text
+            li: span.text-strike This is a strikethrough text
+            li: span.text-underline This is an underlined text.
+
+  ="\n"
+
+  // Unordered List
+  section.section.section-lg.bg-white
+    .shell
+      .range.range-50
+        .cell-md-10.cell-lg-8
+          h3 Unordered List
+          p We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests.
+          ul.list-marked
+            li Consulting
+            li Customer Service
+            li Innovation
+            li Management
+            li Ethics
+          p We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+  ="\n"
+
+  // Ordered List
+  section.section.section-lg.bg-white
+    .shell
+      .range.range-50
+        .cell-md-10.cell-lg-8
+          h3 Ordered List
+          p We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests.
+          ol.list-ordered
+            li Consulting
+            li Customer Service
+            li Innovation
+            li Management
+            li Ethics
+          p We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+  ="\n"
+
+  // Icon List
+  section.section.section-lg.bg-white
+    .shell
+      .range: .cell-xs-12
+        h3 Icon List
+        .range.range-30
+          .cell-xs-10.cell-sm-6.cell-md-4
+            article.box-minimal
+              .box-minimal-header
+                .box-minimal-icon.fl-bigmug-line-megaphone11
+                h6.box-minimal-title Best Service
+              .box-minimal-text Our mission is to attract and retain customers by providing Best in Class solutions and fostering a profitable, disciplined culture of safety, service, and trust.
+
+          .cell-xs-10.cell-sm-6.cell-md-4
+            article.box-minimal
+              .box-minimal-header
+                .box-minimal-icon.fl-bigmug-line-note35
+                h6.box-minimal-title Reputation
+              .box-minimal-text We have established a strong presence in the industry. Our award-winning services earn a reputation for quality and excellence that few can rival.
+
+          .cell-xs-10.cell-sm-6.cell-md-4
+            article.box-minimal
+              .box-minimal-header
+                .box-minimal-icon.fl-bigmug-line-square160
+                h6.box-minimal-title Safety & Security
+              .box-minimal-text Safety for our employees, customers and the community we work with will always remain our primary focus in all the policies, procedures and programs.
+  ="\n"
+
+  // Image Centered
+  section.section.section-lg.bg-white
+    .shell
+      .range
+        .cell-md-10.cell-lg-8
+          h3 Image Centered
+          figure.figure-light
+            +jpg('typography-1-770x480', 'img-centered')
+            figcaption: p A Business Meeting
+
+          p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+  ="\n"
+
+  // Image Left
+  section.section.section-lg.bg-white
+    .shell: .range: .cell-md-10.cell-lg-8
+      h3 Image Left
+      .range.range-30
+        .cell-sm-6: +jpg('typography-1-770x480')
+        .cell-sm-6: p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+  ="\n"
+
+  // Image Right
+  section.section.section-lg.bg-white
+    .shell: .range: .cell-md-10.cell-lg-8
+      h3 Image Right
+      .range.range-30.range-sm-reverse
+        .cell-sm-6: +jpg('typography-1-770x480')
+        .cell-sm-6: p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+  ="\n"
+
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

@@ -1,0 +1,142 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item-title-inside
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Single Project'
+
+block page
+  // Page Header 
+  include ../sections/_header-centered
+  +breadcrumbs({
+    title: 'Project',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // about this project
+  section.section.section-lg.text-center.text-sm-left.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-7.cell-xl-6
+          h3 About this project
+          .divider.divider-default
+          .box-2-columns
+            p.heading-5 Creating a solid SEO strategy means employing a thoughtful, multifaceted approach that covers numerous aspects of web promotion.
+            p.text-spacing-sm It includes the tech-heavy aspects of your website’s infrastructure to creative, targeted approaches to content marketing, which can bring amazing results.
+            p.text-spacing-sm You need an SEO strategy that not only outlines your basic plan of attack, but lays out the goals you’re trying to achieve, profiles the audience you’re trying to reach, and digs into the competitive landscape you’re trying to win in.
+            p.text-spacing-sm Over time and thousands of client projects, we’ve developed and refined a comprehensive approach to creating an SEO strategy that involves all components in an easy way.
+        .cell-sm-3
+          ul.list-lg
+            li
+              p
+                b.text-gray-darker Agency
+              p
+                a(href='http://templateMonster.com').link-text-color SEOMarket
+            li
+              p
+                b.text-gray-darker Services
+              p Search Engine Optimization, Social Media Management, Email Marketing
+            li
+              p
+                b.text-gray-darker Brief
+              p Our qualfied team can develop SEO strategy of any complexity for your company. We take into account all your corporate needs and personal preferences to provide the best rankings for your website.
+  ="\n"
+
+  // strategy development
+  section.section.section-lg.text-center.text-sm-left.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-4.cell-xl-3
+          h3 Strategy Development
+          .divider.divider-default
+          p.heading-5 To develop a successful SEO strategy means to gather the intel you’ll need to make informed decisions.
+          p.text-spacing-sm Our experts will analyze your company’s marketing needs and shape the potential SEO measures to fit your company in the best possible way. It includes detecting your target audience, conducting keyword research, generating content etc.
+
+        .cell-sm-6
+          +jpg('single-project-1-870x580')
+          
+  // Conversion
+  section.section.section-lg.text-center.text-sm-left.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify.range-sm-reverse        
+        .cell-sm-5.cell-xl-4
+          h3 Conversion
+          .divider.divider-default
+          p.heading-5 It’s not enough to get traffic to your website. It makes little sense to make a large investment in SEO if your website isn’t built to sell. 
+          p.text-spacing-sm During this part of the process, we will analyze critical pages on your website where people make first contact, buy, sign up, or ask questions, determining how well the copy, design, and overall user experience are working to transform leads into customers. Then, we’ll take these insights and build out the plan based on the already prepared strategy.
+        .cell-sm-5
+          include ../elements/_ui-blick-imac
+  ="\n"
+
+  // creating content
+  section.section.section-lg.text-center.text-sm-left.bg-gray-lighter
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-4.cell-xl-3
+          h3 Creating Content
+          .divider.divider-default
+          p.heading-5 Another pillar of a solid SEO plan is your content. It is what will nurture buyers through the marketing funnel.
+          p.text-spacing-sm To succeed with content, we work to enforce consistency in brand voice and tone across all channels while crafting channel-specific strategies to boost engagement and increase conversions. This stage allows you to satisfy your customers’ needs.
+
+        .cell-sm-6
+          // Swiper
+          .swiper-container.swiper-slider.swiper-slider_height-1(data-loop='true' data-autoplay='false' data-simulate-touch="false")
+            .swiper-wrapper
+              .swiper-slide(data-slide-bg='images/single-project-2-870x580.jpg')
+                .swiper-slide-caption: .section-md
+
+              .swiper-slide(data-slide-bg='images/single-project-3-870x580.jpg')
+                .swiper-slide-caption: .section-md
+
+              .swiper-slide(data-slide-bg='images/single-project-4-870x580.jpg')
+                .swiper-slide-caption: .section-md
+
+            // Swiper controls
+            .swiper-button-prev
+            .swiper-button-next
+              
+  section.section.section-lg.text-center.bg-white
+    .shell.shell-wide
+      .range.range-50.range-sm-center
+        .cell-sm-11.cell-md-10.cell-xl-7.cell-xxl-6
+          h3 Testimonials
+          .divider.divider-default
+
+          // Owl Carousel
+          .owl-carousel.owl-layout-2(data-items='1', data-dots='true' data-nav='false' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false")
+            article.quote-vertical
+              +jpg('quote-user-1-210x210', 'quote-vertical-image')
+              .quote-vertical-text
+                p I would just like to say thank you for your effective online marketing services, for your friendly and professional support and answers to my questions! You helped me improve the website performance for my clients. Now I have a better level of keyword targeting that has enabled me to realize how well each keyword is performing.
+
+              .quote-vertical-meta
+                p.quote-vertical-cite Philip Lawrence
+                p.quote-vertical-small Regular Customer
+
+
+            article.quote-vertical
+              +jpg('quote-user-2-210x210', 'quote-vertical-image')
+              .quote-vertical-text
+                p Thank you for the SEO services you delivered. You helped my website attract new partners and promote my own services to a greater number of customers. I also appreciate your assistance with finding new clients, saving existing ones, and driving strategy for SEO because of the information and data you provided.
+
+              .quote-vertical-meta
+                p.quote-vertical-cite Debra Ortega
+                p.quote-vertical-small Regular Customer
+
+
+            article.quote-vertical
+              +jpg('quote-user-3-210x210', 'quote-vertical-image')
+              .quote-vertical-text
+                p SEOMarket is the only agency that provides high quality online marketing and promotion services. The members of their team are real professionals in search engine optimization. Working with them really allowed us to easily showcase all of the great things that we were able to do and provide for our clients.
+
+              .quote-vertical-meta
+                p.quote-vertical-cite Jose Gutierrez
+                p.quote-vertical-small Regular Customer
+  
+  include ../sections/_cta-section-thin
+    
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

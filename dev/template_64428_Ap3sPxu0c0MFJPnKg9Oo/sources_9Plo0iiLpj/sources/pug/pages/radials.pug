@@ -1,0 +1,40 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Radials' 
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Classic Bar
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Classic bar
+      // Circle Progress Bar
+      .progress-bar-circle.progress-bar-circle-classic(data-value="0.8", data-gradient="#1cd8c9, #1cd8c9", data-empty-fill="rgb(255,255,255)", data-size="140", data-thickness="4"): span 5
+
+  ="\n"
+
+  // alternative bar
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Alternative bar
+      // Circle Progress Bar
+      .progress-bar-circle(data-value="0.8", data-gradient="#1cd8c9, #1cd8c9", data-empty-fill="rgb(242,243,249)", data-size="140", data-thickness="6"): span 5
+
+
+  // alternative bar
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Modern bar
+      // Circle Progress Bar
+      .progress-bar-circle(data-value="0.8", data-gradient="#1cd8c9, #1cd8c9", data-empty-fill="rgb(242,243,249)", data-size="140", data-thickness="12", data-line-cap='round'): span 5
+
+  ="\n"
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

@@ -1,0 +1,137 @@
+//
+// Time Circles
+// --------------------------------------------------
+
+/**
+ *	This element is created inside your target element
+ *	It is used so that your own element will not need to be altered
+ **/
+.time_circles {
+  position: relative;
+  width: 100%;
+}
+
+/**
+ *	This is all the elements used to house all text used
+ * in time circles
+ **/
+.time_circles > div {
+  position: absolute;
+  top: 0 !important;
+  bottom: 0;
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  @include justify-content(center);
+  margin-top: -6px;
+  text-align: center;
+  
+  &::after {
+    $ratio: 68%;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #e8e8e8;
+    width: $ratio;
+    padding-bottom: $ratio;
+    border-radius: 100%;
+  }
+  
+  @media (min-width: $screen-xs-min) {
+    margin-top: -10px;
+    &::after {
+      top: 51.1%;
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  [data-x-mode='true'] .time_circles > div::after {
+    top: 52.7%;
+  }
+}
+
+@-moz-document url-prefix() {
+  .time_circles > div {
+    &::after {
+      padding-bottom: 61%;
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  #DateCountdown {
+    width: 100%;
+  }
+}
+
+/**
+ *	Titles (Days, Hours, etc)
+ **/
+.time_circles > div > h4 {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 15px);
+  right: 0;
+  transform: translateY(-100%);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+  font-size: 16px !important;
+  letter-spacing: 0;
+  line-height: 1.2 !important;
+  text-transform: none;
+  color: $gray-light;
+ 
+  & + * {
+    margin-top: 0;
+  }
+  
+  @media (min-width: $screen-sm-min) {
+    font-size: 20px !important;
+  }
+  
+  @media (min-width: $screen-xl-min) {
+    font-size: 24px !important;
+  }
+}
+
+/**
+ *	Time numbers, ie: 12
+ **/
+.time_circles > div > span {
+  display: block;
+  text-align: center;
+  font-family: $font-family-sec;
+  font-size: 24px !important;
+  font-weight: 400;
+  line-height: 1 !important;
+  letter-spacing: $spacing-md;
+  color: $gray-darker;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 28px !important;
+  }
+}
+
+.countdown-wrap {
+  max-width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+* + .countdown-wrap {
+  margin-top: 35px;
+}
+
+@media (min-width: $screen-xl-min) {
+  * + .countdown-wrap {
+    margin-top: 60px;
+  }
+}

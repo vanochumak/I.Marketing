@@ -1,0 +1,82 @@
+//
+// Parallax
+// --------------------------------------------------
+
+.parallax-scene {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+  display: none;
+  pointer-events: none;
+
+  .desktop & {
+    @media (min-width: $screen-md-min) {
+      display: block;
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    .shell {
+      position: relative;
+      z-index: 1;
+    }
+
+  }
+
+  [class^='layer-'] {
+    position: absolute;
+    pointer-events: none;
+
+    img {
+      max-width: none;
+    }
+  }
+
+  .layer {
+    &-01 {
+      left: 80px;
+    }
+
+    &-02 {
+      left: 14%;
+      top: 35%;
+      display: none;
+    }
+
+    &-03 {
+      left: 10%;
+      top: 75%;
+    }
+
+    &-04 {
+      left: 86%;
+      top: 3%;
+    }
+
+    &-05 {
+      left: 80%;
+      top: 50%;
+    }
+
+    &-06 {
+      left: 85%;
+      top: 60%;
+      display: none;
+    }
+  }
+
+  @media (min-height: 750px) and (min-width: 1200px) {
+    .layer {
+      &-04 { top: 2%; }
+      &-05 { top: 38%; }
+      &-02,
+      &-06 {
+        display: block;
+      }
+    }
+  }
+}

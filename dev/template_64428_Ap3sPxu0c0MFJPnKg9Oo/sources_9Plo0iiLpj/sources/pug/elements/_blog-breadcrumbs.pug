@@ -1,0 +1,21 @@
+//- Breadcrumbs blog post custom
+mixin breadcrumbs-blog-post-header(obj)
+  - var activeItemName = obj.path.pop()[0];
+  - var mainTitle= obj.title ? obj.title : activeItemName;
+  header.section.page-header.breadcrumbs-custom-wrap.bg-gray-darker
+    include ../sections/navbar-centered
+    section.breadcrumbs-custom.breadcrumbs-blog-post.bg-image(style='background-image: url(images/' + obj.bgImage + '.jpg)')
+      .shell
+        p.heading-3.breadcrumbs-custom-title=mainTitle
+        .box-inline
+          span.icon.icon-md-middle.mdi.mdi-account
+          a(href='#').event-default-link by Ronald Chen
+      .shell
+        ul.breadcrumbs-custom-path
+          li: a(href='index.html')=menu[0].title
+          - for (var i = 0; i < obj.path.length; i++)
+            - if (obj.path[i][0] == activeItemName) break;
+            - var pathLink = obj.path[i][1] ? obj.path[i][1] : nameToLink(obj.path[i][0])
+            li: a(href=pathLink)=obj.path[i][0]
+
+          li.active=activeItemName

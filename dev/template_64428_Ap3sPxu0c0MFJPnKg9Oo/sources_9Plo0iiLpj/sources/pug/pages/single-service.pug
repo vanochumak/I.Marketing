@@ -1,0 +1,158 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_pricings
+include ../elements/_ui-panel
+include ../elements/_ui-thumbnail-classic
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Single Service'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    title: 'SEO',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // about service
+  section.section.section-lg.text-center.text-sm-left.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-8.cell-lg-4 
+          h3 About this service
+          .divider.divider-default
+          p Search engine optimization (SEO) is the process of affecting the visibility of a website or a web page in a web search engine's unpaid results — often referred to as "natural", "organic", or "earned" results, which influence you website’s rankings.
+          // Quote minimal
+          article.quote-minimal
+            p.quote-minimal-text The value of being in the top ten results can give you amazing possibilities for your company.
+          p In general, the earlier (or higher ranked on the search results page), and more frequently a site appears in the search results list, the more visitors it will receive from the search engine's users.
+          a.button.button-primary(href='#') order now
+
+        .cell-lg-5.text-center
+          include ../elements/_ui-blick-imac
+  ="\n"
+
+  section.section.section-lg.text-center.bg-image.bg-image-7
+    .shell-wide
+      .range.range-xs-center.range-50
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-thumb-up-outline',
+            title: 'Individual Approach',
+            text: 'Unlike many other companies, we use an individual approach to each client and we never offer you a set of standard decisions for your business.'
+          })
+
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-account-multiple',
+            title: 'Qualified Employees',
+            text: 'SEOMarket is a team of dedicated and qualified promotion and online marketing experts and managers who are ready to work for a personalized SEO solution.'
+          })
+
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-headset',
+            title: '24/7 Online Support',
+            text: 'Our dedicated online support is available 24 hours a day, 7 days a week to answer your every question and help you solve any issue you may have with our services.'
+          })
+              
+        .cell-sm-9.cell-md-6.cell-lg-3
+          +thumbnail-classic({
+            icon_class: 'mdi mdi-credit-card',
+            title: 'Various Payment Methods',
+            text: 'We provide a variety of payment methods that include Paypal, Visa/Mastercard/American Express and lots of others, which can be customized.'
+          })
+
+  section.section.section-lg.text-center.bg-white
+    .shell.shell-bigger
+      h3 Testimonials
+      .divider.divider-default
+
+      // Owl Carousel
+      .owl-carousel.owl-layout-1(data-items='1', data-dots='true' data-nav='true' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false")
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-1-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p I would just like to say thank you for your effective online marketing services, for your friendly and professional support and answers to my questions! You helped me improve the website performance for my clients. Now I have a better level of keyword targeting that has enabled me to realize how well each keyword is performing.
+            .quote-boxed-meta
+              p.quote-boxed-cite Philip Lawrence
+              p.quote-boxed-small Regular Customer
+
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-2-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p Thank you for the SEO services you delivered. You helped my website attract new partners and promote my own services to a greater number of customers. I also appreciate your assistance with finding new clients, saving existing ones, and driving strategy for SEO because of the information and data you provided.
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Debra Ortega
+              p.quote-boxed-small Regular Customer
+
+
+        article.quote-boxed
+          .quote-boxed-aside: +jpg('quote-user-3-210x210', 'quote-boxed-image')
+          .quote-boxed-main
+            .quote-boxed-text
+              p SEOMarket is the only agency that provides high quality online marketing and promotion services. The members of their team are real professionals in search engine optimization. Working with them really allowed us to easily showcase all of the great things that we were able to do and provide for our clients.
+
+            .quote-boxed-meta
+              p.quote-boxed-cite Jose Gutierrez
+              p.quote-boxed-small Regular Customer
+
+  section.section.section-lg.bg-gray-lighter.text-center
+    .shell.shell-wide
+      h3 Pricing
+      .divider.divider-default
+      +xxl-pricing
+
+  section.section.section-lg.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-lg-justify
+        .cell-sm-9.cell-md-5.cell-xl-5
+          h3 Frequently Asked Questions
+          // Bootstrap collapse
+          #accordion1.panel-group.panel-group-custom.panel-group-corporate(role='tablist', aria-multiselectable='false')
+            +panel({
+              first: true,
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '1',
+              header: 'What is SEO?'
+            })
+              p SEO abbreviation stands for search engine optimization. It is a set of techniques that helps your website to be easily found in organic search results on specific websites (Google, Bing, Yahoo and many others).
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '2',
+              header: 'How can I benefit from using your SEO services?'
+            })
+              p SEO services of our agency were designed to improve the overall image of modern companies. Our services can help your business be promoted on the Internet through leading search engines.
+
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '3',
+              header: 'What are organic search results?'
+            })
+              p Organic results are links to websites listed on your request after you press “Search” button. There are also paid results that appear on top or side of the page. They include links of websites whose owners paid to appear on search engines.
+              
+            +panel({
+              panelClass: 'panel-corporate',
+              parentId: 'accordion1',
+              number: '4',
+              header: 'What are meta descriptions?'
+            })
+              p Meta description is the text that can be seen under the website title and link to it in search results. It helps your potential customer to understand whether it is the website he/she is looking for or not. Search engines generally truncate descriptions longer than 160 characters.
+
+        .cell-sm-9.cell-md-5.cell-xl-4 
+          figure.image-default: +jpg('accordions-1-570x600')
+
+  include ../sections/_cta-section-thin
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

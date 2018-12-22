@@ -1,0 +1,9 @@
+mixin campaign-monitor-form(classes)
+  - campaignMonitorFormCounter += 1
+  // Campaign Monitor
+  form.campaign-mailform.rd-mailform-inline.rd-mailform-sm(data-form-output="form-output-global", action='http://templatemonster1.createsend.com/t/d/s/xlyhhk/' method='post', class=classes)
+    .rd-mailform-inline-inner
+      .form-wrap
+        input.form-input(type="email" name='cm-xlyhhk-xlyhhk' data-constraints="@Email @Required" id='campaign-monitor-form-email-' + campaignMonitorFormCounter)
+        label.form-label(for='campaign-monitor-form-email-' + campaignMonitorFormCounter) Enter your e-mail
+      button.button.form-button.button-sm.button-primary(type="submit") Subscribe

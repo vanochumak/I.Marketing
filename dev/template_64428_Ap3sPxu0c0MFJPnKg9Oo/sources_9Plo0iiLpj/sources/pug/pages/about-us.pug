@@ -1,0 +1,171 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 1
+  - var pageName = 'About Us'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({ 
+    path: [[pageName]]
+  })
+  
+  // Hi, we are seomarket
+  section.section.section-lg.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify.range-md-reverse
+        .cell-sm-9.cell-md-5.cell-lg-4
+          h3 Hi, we are SEOMarket
+          .divider.divider-default
+          p.heading-5 We work in areas as diverse as search engine optimization, social media marketing, email marketing and digital marketing.
+          p.text-spacing-sm Our team of specialists consistently delivers outstanding results combining creative ideas with our vast experience. We can help you build a sustainable, meaningful relationship with your clients by engaging them with your brand using social media.
+          a.button.button-default-outline(href='our-history.html') learn more
+        .cell-sm-9.cell-md-5
+          +jpg('about-us-1-720x459')
+  ="\n"
+
+  // Small Features
+  section.section.section-lg.section-lg-alternative.bg-gray-lighter
+    .shell-wide
+      .range.range-50.range-xs-center.text-gray-light
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal-modern
+            .box-minimal-icon.box-minimal-icon-lg.mdi.mdi-thumb-up-outline
+            h6.box-minimal-title Individual Approach
+            p Unlike many other companies, we use an individual approach to each client and we never offer you a set of standard decisions for your business.
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal-modern
+            .box-minimal-icon.box-minimal-icon-lg.mdi.mdi-account-multiple
+            h6.box-minimal-title Qualified Employees
+            p SEOMarket is a team of dedicated and qualified promotion and online marketing experts and managers who are ready to work for a personalized SEO solution.
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal-modern
+            .box-minimal-icon.box-minimal-icon-lg.mdi.mdi-headset
+            h6.box-minimal-title 24/7 Online Support
+            p Our dedicated online support is available 24 hours a day, 7 days a week to answer your every question and help you solve any issue you may have with our services.
+        .cell-xs-10.cell-sm-6.cell-lg-3
+          article.box-minimal-modern
+            .box-minimal-icon.box-minimal-icon-lg.mdi.mdi-credit-card
+            h6.box-minimal-title Payment Methods
+            p We provide a variety of payment methods that include Paypal, Visa/Mastercard/American Express and lots of others, which can be customized.
+  ="\n"
+
+  // Our Team
+  section.section.section-lg.text-center
+    .shell.shell-wide
+      h3 Our Team
+      .divider.divider-default
+      .range.range-50.range-xl-90.range-xs-center.offset-custom-2
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle', {
+            image: 'team-07-300x300',
+            title: 'Sandra Ferguson',
+            job_position: 'President, Owner'
+          })
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle' , {
+            image: 'team-08-300x300',
+            title: 'Ronald Chen',
+            job_position: 'Founder, CEO'
+          })
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle' , {
+            image: 'team-09-300x300',
+            title: 'Frances Watson',
+            job_position: 'Marketing Analyst'
+          })
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle' , {
+            image: 'team-10-300x300',
+            title: 'Joe Myers',
+            job_position: 'SEO Expert'
+          })
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle', {
+            image: 'team-12-300x300',
+            title: 'Brenda Lopez',
+            job_position: 'Senior Designer'
+          })
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle' , {
+            image: 'team-13-300x300',
+            title: 'Deborah Stewart',
+            job_position: 'Office Manager'
+          })
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle' , {
+            image: 'team-14-300x300',
+            title: 'Patrick Douglas',
+            job_position: 'Support Operator'
+          })
+        .cell-sm-6.cell-md-3
+          +team-classic( 'teamCircle' , {
+            image: 'team-15-300x300',
+            title: 'Ruth Marshall',
+            job_position: 'Copywriter'
+          })
+  ="\n"
+
+  // Our history
+  section.section.section-lg.bg-gray-lighter.text-center
+    .shell.shell-wide
+      .range.range-lg-center
+        .cell-md-10.cell-lg-8.cell-xl-6
+          h3 Our History
+          .divider.divider-default
+          p.text-gray-light What started as a small team of web design and online marketing specialists eventually became a huge project evolving lots of experts in SEO, SMM, web design, and email marketing from all over the world.
+      // Owl Carousel
+      .owl-carousel.time-line-horizontal(data-autoplay='false', data-items='1', data-xs-items='2', data-sm-items='2', data-md-items='3', data-lg-items='3', data-dots='false', data-nav='false', data-stage-padding='0', data-sm-stage-padding='30', data-loop='true', data-margin='15', data-lg-margin='50', data-xl-margin='80', data-mouse-drag='true')
+        .time-line-horizontal-element
+          .time-line-time
+            time.wow.fadeInUp(data-wow-delay=".7s" datetime='2017') April, 2016
+          .time-line-content.wow.fadeInUp(data-wow-delay=".7s")
+            h5: a(href='#') We gathered the team of dedicated and knowledgeable online marketing specialists
+            p Before we started working as a team at SEOMarket, we extended our team with young, talented, and promising experts in online marketing and web design. It allowed us to reach great results.
+        .time-line-horizontal-element
+          .time-line-time
+            time.wow.fadeInUp(data-wow-delay=".8s" datetime='2017') September, 2016
+          .time-line-content.wow.fadeInUp(data-wow-delay=".8s")
+            h5: a(href='#') Developing an extensive client list
+            p Over the years we have developed an impressive client list ranging from small, local startups to internationally recognized brands. We have also polished our skills to deliver return on investment for our clients.
+        .time-line-horizontal-element
+          .time-line-time
+            time.wow.fadeInUp(data-wow-delay=".9s" datetime='2017') March, 2017
+          .time-line-content.wow.fadeInUp(data-wow-delay=".9s")
+            h5: a(href='#') Today we are one of the biggest SEO agencies
+            p Thanks to our constant improvement and cooperation with global partners, we have reached a great level of acknowledgment in the industry and we are known as the #1 SEO agency in the world.
+  ="\n"
+
+  // Projects
+  section.section.section-lg.bg-gray-darker.text-center
+    .shell.shell-wide
+      .range.range-50.range-sm-center
+        .cell-xs-12.cell-sm-10.cell-md-8.cell-lg-7.cell-xl-6
+          h3 Projects
+          .divider.divider-default
+          p SEOMarket not only provides great marketing and management services, we also works on a variety of business, advertising, and promotional projects that make the life of our clients and community better.
+      include ../elements/_about-gallery
+
+    a.button.button-primary(href='#') view all projects
+
+  ="\n" 
+
+  // CTA Gradient
+  section.section.section-xs.text-center.bg-gradient-1
+    .shell-wide
+      .box-cta-thin
+        p.big
+          strong Make the right choice!
+          | &nbsp;
+          span Do you need a SEO consultation?
+          | &nbsp;
+          a(href='callto:#').link.link-bold Call us now!
+  ="\n"
+  
+  // Page Footer
+  +footer-default({className: 'bg-gray-lighter'})

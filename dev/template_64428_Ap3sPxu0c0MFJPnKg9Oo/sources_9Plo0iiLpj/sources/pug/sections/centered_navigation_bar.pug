@@ -1,0 +1,18 @@
+extends  ../_skeleton
+
+//- Header types includes
+include ../elements/_ui-header-types
+
+block variables
+  - var activeIndex = 2
+  - var pageName = 'Navigation bar centered'
+  - var customStyle = '../css/style.css' 
+
+block page
+
+  +centered-navigation({
+    activeItemName: 'main title',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  +disable-events

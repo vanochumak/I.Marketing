@@ -1,0 +1,61 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../elements/_ui-gallery-item
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Single Job'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    title: 'Middle Analyst',
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // hi, we are brave
+  section.section.section-lg.bg-white
+    .shell.shell-bigger
+      .range.range-ten.range-50.range-sm-center.range-md-middle.range-lg-justify.range-md-reverse
+        .cell-sm-9.cell-md-5.cell-lg-5
+          h3 Description
+          .divider.divider-default
+          p.heading-5 Are you up for a meaningful challenge? Do you aspire to use your creativity to drive web development ahead? Then we need you!
+          p.text-spacing-sm.text-gray-darker We are a multi-award winning SEO agency developing incredible products and services that redevelop markets and redefine industries. Our purposeful disruption reshapes businesses, making them more commercially successful and future proofing them for years to come. 
+          p.text-spacing-sm.text-gray-darker As a Project Manager, you are required to manage a variety of digital marketing projects from conception stage right through to completion, following and championing the project processes. Your other responsibilities will include:
+          ul.list-marked.text-gray-darker
+            li Managing stand-alone design and online marketing projects
+            li Understanding budgets for digital and advertising projects, including social media campaigns, online advertising, traditional campaigns and websites
+            li Creating, communicating, and maintaining timelines for all assigned projects
+            li Translating business requirements into functional and technical specifications for creative staff, and clearly communicating technical concepts to non-technical staff
+          a.button.button-primary(href='#') apply for this position
+        .cell-sm-9.cell-md-5.cell-lg-4
+          .range.range-30
+            .cell-xs-12
+              +jpg('single-job-01-570x380')
+            .cell-xs-12
+              +jpg('single-job-02-570x380')
+  ="\n"
+
+  // Current Openings
+  section.section.section-lg.text-center.bg-gray-lighter
+    .shell.shell-wide
+      h3 Current Openings
+      .divider.divider-default
+      .range.range-30.range-center.text-left
+        include ../elements/_openings-1
+          
+  // CTA Primary
+  section.section.section-xs.text-center.bg-primary
+    .shell-wide
+      .box-cta-thin
+        p.big
+          span We are Always Looking for Talents.
+          | &nbsp;
+          a(href='#').link.link-bold Get in Touch!
+  ="\n"
+  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

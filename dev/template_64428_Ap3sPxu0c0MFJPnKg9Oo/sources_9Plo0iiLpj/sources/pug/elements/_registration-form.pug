@@ -1,0 +1,17 @@
+mixin registration-form(uniqueId)
+  // RD Mailform
+  form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+    .form-wrap.form-wrap-validation
+      input.form-input(id='form-' + uniqueId + '-email' type="email" name="email" data-constraints="@Email @Required")
+      label.form-label(for='form-' + uniqueId + '-email') E-mail
+    .form-wrap.form-wrap-validation
+      input.form-input(id='form-' + uniqueId + '-password' type="password" name="password" data-constraints="@Required")
+      label.form-label(for='form-' + uniqueId + '-password') Password
+    .form-wrap.form-wrap-validation
+      input.form-input(id='form-' + uniqueId + '-password-confirm' type="password" name="password-confirm" data-constraints="@Required")
+      label.form-label(for='form-' + uniqueId + '-password-confirm') Confirm Password
+    //- Additional fields
+    block
+      
+    .form-button=counter
+      button.button.button-block.button-primary(type='submit') Create an account

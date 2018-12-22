@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+//- Includes
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Under Construction'
+
+block page
+  // Page Header
+  header.section.page-header.bg-gray-darker.breadcrumbs-custom-wrap
+    include ../sections/navbar-centered
+
+  section.section.fullwidth-page.bg-gray-darker
+    .fullwidth-page-inner
+      .section-md.text-center
+        .shell-wide
+          p.breadcrumbs-custom-subtitle The Website will be Available Soon
+          p.heading-1.breadcrumbs-custom-title Under Construction
+          p Our website is coming soon and we are currently working very hard #[br.veil.reveal-sm-inline]to give you the best experience on our new website. Stay ready, we`re launching soon.
+          .range.range-xs-center
+            .cell-sm-8.cell-lg-6.cell-xl-4 
+              +subscribe-form('rd-mailform-inline-modern rd-mailform-inline-centered')
+
+      // Page Footer
+      .section-xs.page-footer.text-center
+        .shell
+          p.right
+            | &#169; #[span(class="copyright-year")] All Rights Reserved
+            | &nbsp;
+            a(href="#") Terms of Use
+            | &nbsp;
+            span and
+            | &nbsp;
+            a(href="privacy-policy.html") Privacy Policy

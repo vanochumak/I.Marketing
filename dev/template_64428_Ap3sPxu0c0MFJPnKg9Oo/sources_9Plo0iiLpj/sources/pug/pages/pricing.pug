@@ -1,0 +1,47 @@
+extends  ../_skeleton
+include ../elements/_pricings
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Pricing'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Standard Pricing
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Standard pricing
+      +default-pricing
+
+  ="\n" 
+
+  // Alternative Pricing
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Alternative Pricing
+      +alternative-pricing
+  ="\n"
+
+  // 2 columns pricing
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 2 columns pricing
+      +columns-pricing
+
+  ="\n"
+
+  // Table Pricing
+  section.section.section-lg.bg-white.text-center
+    .shell.shell-wide
+      h3 Table pricing
+      +xxl-pricing
+
+  ="\n"
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

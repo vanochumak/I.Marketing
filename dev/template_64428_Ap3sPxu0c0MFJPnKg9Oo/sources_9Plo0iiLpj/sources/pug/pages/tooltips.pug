@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 4
+  - var pageName = 'Tooltips'
+
+block page
+  // Page Header
+  include ../sections/_header-centered
+  +breadcrumbs({
+    path: [[menu[activeIndex].title, menu[activeIndex].link], [pageName]]
+  })
+
+  // Tooltip design
+  section.section.section-lg.bg-white.text-center
+    .shell
+      h3 Tooltip design
+      // Box element
+      .box-element
+        .tooltip-custom(data-toggle='tooltip' data-placement='top' title='Tooltip text')
+          span.icon.icon-lg-smaller.icon-primary.fl-bigmug-line-megaphone11
+
+      // Box element
+      .box-element
+        .tooltip-custom(data-toggle='tooltip' data-placement='right' title='Tooltip text')
+          span.text-gray-1 Tooltip
+
+      // Box element
+      .box-element
+        .tooltip-custom(data-toggle='tooltip' data-placement='left' title='Tooltip text')
+          button.button.button-primary Tooltip button
+  ="\n"
+
+  // Page Footer  // Page Footer   
+  +footer-default({className: 'bg-gray-lighter'})

@@ -1,0 +1,46 @@
+/*
+*
+* Counter
+* --------------------------------------------------
+*/
+
+.counter {
+
+  &__subtitle { }
+
+  &-wrap {
+    font-size: 24px;
+
+    .icon {
+      font-size: 28px;
+    }
+
+    * + p {
+      margin-top: 10px;
+    }
+
+    .icon + * {
+      margin-top: 8px;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+  .cell-sm-3 {
+    .counter {
+      &-wrap {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .counter {
+    &-wrap {
+      .icon {
+        font-size: 32px;
+      }
+    }
+  }
+}
