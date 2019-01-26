@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 var path = {
     build: {
         html: 'build/',
-        js: 'build/js/',
+        js: '../wp-content/themes/index-marketing/includes/js/',
         css: '../wp-content/themes/index-marketing/includes/css/',
         images: 'build/images/',
         fonts: 'build/fonts/'
@@ -45,7 +45,7 @@ var config = {
     tunnel: true,
     host: 'localhost',
     port: 9000,
-    logPrefix: "Frontend_V22"
+    logPrefix: "Frontend_I.Marketing"
 };
 
 gulp.task('html:build', function () {

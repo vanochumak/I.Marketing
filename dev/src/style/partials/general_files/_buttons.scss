@@ -1,0 +1,132 @@
+/**
+ Buttons
+ */
+.btn-wrap{
+  display: flex;
+  justify-content: center;
+}
+.btn{
+  position: relative;
+  text-align: center;
+  color: $white;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  border-radius: 30px;
+  border: 2px solid $white;
+  background-color: transparent;
+  padding: 15px 25px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s;
+  &.btn-bg{
+    border-color: transparent;
+    background-color: $hover;
+    z-index: 1;
+    &:before{
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      border-radius: inherit;
+      z-index: -1;
+      background: linear-gradient(to right, #50e590, #35c8a4);
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    &:hover{
+      &:before{
+        opacity: 0;
+      }
+    }
+  }
+  &.btn-light{
+    background-color: $white;
+    border-color: $grey-border;
+    color: $dark;
+  }
+  &:hover{
+    background-color: $hover;
+    border-color: $hover;
+  }
+  &.btn-sm{
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+  }
+  &.btn-icon{
+    z-index: 1;
+    padding: 15px 30px 15px 80px;
+    font-size: 16px;
+    transition: 0.3s;
+    &:before{
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      bottom: -2px;
+      width: 50px;
+      transition: 0.3s;
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+      background-color: $fb-hover;
+      z-index: -1;
+    }
+    span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      @include flex-row-center;
+      color: $white;
+      font-size: 24px;
+    }
+    &.btn-fb{
+      background-color: $fb;
+      border-color: $fb;
+    }
+    &.btn-twitter{
+      background-color: $twitter;
+      border-color: $twitter;
+      &:before{
+        background-color: $twitter-hover;
+      }
+    }
+    &.btn-google{
+      background-color: $google;
+      border-color: $google;
+      &:before{
+        background-color: $google-hover;
+      }
+    }
+    &:hover{
+      background-color: $fb-hover;
+      border-color: $fb-hover;
+      &:before{
+        width: calc(100% + 4px);
+        border-top-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+      }
+      &.btn-twitter{
+        background-color: $twitter-hover;
+        border-color: $twitter-hover;
+      }
+      &.btn-google{
+        background-color: $google-hover;
+        border-color: $google-hover;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    font-size: 16px;
+    padding: 15px 25px;
+    border-radius: 25px;
+  }
+
+}

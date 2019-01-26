@@ -3,7 +3,7 @@ $title_third_section = get_sub_field('title_third_block');
 $add_background_section_third_section = get_sub_field('add_background_section');
 ?>
 <section class="s-services <?php echo $add_background_section_third_section == 'true' ? 'add-background-section' : '' ?>">
-    <div class="container-fluid">
+    <div class="container">
         <?php echo ($title_third_section) ? '<h2 class="h2 h2-center title">'. $title_third_section .'</h2>' : ''; ?>
         <div class="row">
             <?php

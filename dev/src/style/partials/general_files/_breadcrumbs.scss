@@ -1,0 +1,35 @@
+.breadcrumbs{
+  margin-top: 60px;
+  background-color: transparent;
+  @include flex-row-center;
+  li{
+    position: relative;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 400;
+    a{
+      transition: all 0.3s;
+      &:hover{
+        color: $main;
+      }
+    }
+    i{
+      display: inline-block;
+      font-size: 14px;
+      margin: 0 20px 0 15px;
+      color: $text-2;
+    }
+    &.active{
+      //color: $text;
+    }
+  }
+  //@media (max-width: 1599px) {
+  //  margin-top: 40px;
+  //}
+  //@media (max-width: 767px) {
+  //
+  //}
+}
+ul.breadcrumbs + section{
+  padding-top: 0;
+}

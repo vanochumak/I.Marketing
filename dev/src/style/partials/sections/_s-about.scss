@@ -1,6 +1,9 @@
 .s-about{
+  padding: 80px 0;
   .title{
-
+    font-size: 34px;
+    font-family: sans-serif;
+    padding-bottom: 25px;
   }
   .subtitle{
     line-height: 1.4;
@@ -9,11 +12,13 @@
     color: $dark;
     p{
       font-weight: 400;
+      font-family: sans-serif;
     }
   }
   .desc{
     color: $text;
     margin-top: 20px;
+    font-family: sans-serif;
   }
   .btn{
     margin-top: 25px;

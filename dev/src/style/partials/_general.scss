@@ -2,25 +2,25 @@
   box-sizing: border-box;
 }
 body{
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
   //font-family: 'Poppins', sans-serif;
   font-family: 'Lato', sans-serif;
   color: $dark;
-  @media (max-width: 1199px) {
-    font-size: 16px;
-  }
+  //@media (max-width: 1199px) {
+  //  font-size: 16px;
+  //}
 }
 section{
   display: block;
-  padding: 125px 0;
-  @media (max-width: 1599px) {
-    padding: 80px 0;
-  }
-  @media (max-width: 767px) {
-    padding: 60px 0;
-  }
+  //padding: 125px 0;
+  //@media (max-width: 1599px) {
+  //  padding: 80px 0;
+  //}
+  //@media (max-width: 767px) {
+  //  padding: 60px 0;
+  //}
 }
 div{
   position: relative;
@@ -38,6 +38,7 @@ p{
   margin: 0;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+  font-size: 16px;
 }
 strong{
   font-weight: 700;
@@ -55,19 +56,23 @@ img{
  min height of page
  */
 .min-height{
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  #content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    padding-top: 134px;
-    @media (max-width: 991px) {
-      padding-top: 56px;
-    }
-  }
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh !important;
+  //display: flex;
+  //min-height: 100vh;
+  //flex-direction: column;
+  //#content{
+  //  outline: 1px solid red;
+  //  display: flex;
+  //  flex-direction: column;
+  //  justify-content: center;
+  //  flex: 1;
+  //  padding-top: 131px;
+  //  //@media (max-width: 991px) {
+  //  //  padding-top: 56px;
+  //  //}
+  //}
 }
 
 
@@ -140,7 +145,7 @@ h1,h2,h3,h4,h5,h6{
   font-size: 18px;
   line-height: 1;
 }
-@media (max-width: 1599px) {
+/*@media (max-width: 1599px) {
   .h1{
     font-size: 60px;
   }
@@ -174,19 +179,19 @@ h1,h2,h3,h4,h5,h6{
     font-size: 24px;
   }
 }
-
+*/
 .text-center{
   text-align: center;
 }
 
-.h2-center + p{
-  text-align: center;
-  margin-top: 45px;
-  @media (max-width: 1599px) {
-    font-size: 16px;
-    margin-top: 20px;
-  }
-}
+//.h2-center + p{
+//  text-align: center;
+//  margin-top: 45px;
+//  //@media (max-width: 1599px) {
+//  //  font-size: 16px;
+//  //  margin-top: 20px;
+//  //}
+//}
 
 /**
  Grid
@@ -199,19 +204,19 @@ h1,h2,h3,h4,h5,h6{
   //@media (max-width: 1599px) {
   //  max-width: 1200px;
   //}
-  @media (max-width: 1199px) {
-    max-width: 970px;
-    min-width: 300px;
-  }
-  @media (max-width: 991px) {
-    max-width: 750px;
-  }
-  @media (max-width: 767px) {
-    max-width: 480px;
-  }
+  //@media (max-width: 1199px) {
+  //  max-width: 970px;
+  //  min-width: 300px;
+  //}
+  //@media (max-width: 991px) {
+  //  max-width: 750px;
+  //}
+  //@media (max-width: 767px) {
+  //  max-width: 480px;
+  //}
 }
 .container-md{
-  max-width: 1530px;
+  max-width: 1230px;
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
@@ -230,138 +235,7 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
-/**
- Buttons
- */
-.btn-wrap{
-  display: flex;
-  justify-content: center;
-}
-.btn{
-  position: relative;
-  text-align: center;
-  color: $white;
-  font-size: 18px;
-  line-height: 1;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: Poppins, sans-serif;
-  font-weight: 500;
-  border-radius: 30px;
-  border: 2px solid $white;
-  background-color: transparent;
-  padding: 19px 40px;
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.3s;
-  &.btn-bg{
-    border-color: transparent;
-    background-color: $hover;
-    z-index: 1;
-    &:before{
-      content: '';
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      bottom: -2px;
-      left: -2px;
-      border-radius: inherit;
-      z-index: -1;
-      background: linear-gradient(to right, #50e590, #35c8a4);
-      opacity: 1;
-      transition: all 0.3s;
-    }
-    &:hover{
-      &:before{
-        opacity: 0;
-      }
-    }
-  }
-  &.btn-light{
-    background-color: $white;
-    border-color: $grey-border;
-    color: $dark;
-  }
-  &:hover{
-    background-color: $hover;
-    border-color: $hover;
-  }
-  &.btn-sm{
-    padding: 15px 25px;
-    border-radius: 25px;
-    font-size: 16px;
-  }
-  &.btn-icon{
-    z-index: 1;
-    padding: 15px 30px 15px 80px;
-    font-size: 16px;
-    transition: 0.3s;
-    &:before{
-      content: '';
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      bottom: -2px;
-      width: 50px;
-      transition: 0.3s;
-      border-top-left-radius: inherit;
-      border-bottom-left-radius: inherit;
-      background-color: $fb-hover;
-      z-index: -1;
-    }
-    span{
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 50px;
-      height: 100%;
-      @include flex-row-center;
-      color: $white;
-      font-size: 24px;
-    }
-    &.btn-fb{
-      background-color: $fb;
-      border-color: $fb;
-    }
-    &.btn-twitter{
-      background-color: $twitter;
-      border-color: $twitter;
-      &:before{
-        background-color: $twitter-hover;
-      }
-    }
-    &.btn-google{
-      background-color: $google;
-      border-color: $google;
-      &:before{
-        background-color: $google-hover;
-      }
-    }
-    &:hover{
-      background-color: $fb-hover;
-      border-color: $fb-hover;
-      &:before{
-        width: calc(100% + 4px);
-        border-top-right-radius: inherit;
-        border-bottom-right-radius: inherit;
-      }
-      &.btn-twitter{
-        background-color: $twitter-hover;
-        border-color: $twitter-hover;
-      }
-      &.btn-google{
-        background-color: $google-hover;
-        border-color: $google-hover;
-      }
-    }
-  }
-  @media (max-width: 991px) {
-    font-size: 16px;
-    padding: 15px 25px;
-    border-radius: 25px;
-  }
 
-}
 
 .pagination{
   @include flex-row-center;
@@ -521,11 +395,11 @@ h1,h2,h3,h4,h5,h6{
     .input{
       padding: 0 170px 0 20px;
     }
-    .btn{
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
+    //.btn{
+    //  position: absolute;
+    //  top: 0;
+    //  right: 0;
+    //}
   }
   &.input-wrap-icon{
     position: relative;
@@ -534,7 +408,7 @@ h1,h2,h3,h4,h5,h6{
     }
     button{
       position: absolute;
-      top: 12px;
+      top: 18px;
       right: 10px;
       background: transparent;
       border: none;
@@ -595,45 +469,9 @@ input:focus:-ms-input-placeholder { color:transparent; }
   padding-bottom: 30px;
 }
 
-.breadcrumbs{
-  margin-top: 60px;
-  background-color: transparent;
-  @include flex-row-center;
-  li{
-    position: relative;
-    font-size: 18px;
-    line-height: 1;
-    font-weight: 400;
-    a{
-      transition: all 0.3s;
-      &:hover{
-        color: $main;
-      }
-    }
-    i{
-      display: inline-block;
-      font-size: 14px;
-      margin: 0 20px 0 15px;
-      color: $text-2;
-    }
-    &.active{
-      //color: $text;
-    }
-  }
-  @media (max-width: 1599px) {
-    margin-top: 40px;
-  }
-  @media (max-width: 767px) {
 
-  }
-}
-ul.breadcrumbs + section{
-  padding-top: 0;
-}
 
-.bg-top{
-  @include bg-top;
-}
+
 
 .hr{
   height: 1px;
@@ -641,44 +479,7 @@ ul.breadcrumbs + section{
   margin: 18px 0;
 }
 
-/*
-* back to top btn
- */
-.to-top {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  border-radius: 9px;
-  right: 40px;
-  bottom: 40px;
-  overflow: hidden;
-  cursor: pointer;
-  @include flex-col-center;
-  z-index: 120;
-  transition: .45s all ease-in-out;
-  transform: translateY(100px);
-  i{
-    font-size: 12px;
-  }
-  color: $white;
-  background-color: $hover;
-  &:active, &:focus{
-    color: $white;
-    background-color: $hover;
-  }
-  &:hover{
-    color: $white;
-    background-color: $main;
-    text-decoration: none;
-  }
-  &.active{
-    transform: translateY(0);
-  }
-  @media (max-width: 1199px) {
-    display: none;
-  }
-}
+
 
 .bg-grey{
   background-color: $grey-light;

@@ -22,7 +22,6 @@
     <header class="header">
         <div class="container-fluid">
             <div class="header-inner">
-
                 <nav class="header-nav">
                     <?php
                     wp_nav_menu(array(
@@ -31,31 +30,21 @@
                     ));
                     ?>
                 </nav>
-
                 <div class="header-left">
                     <div class="hamburger">
                         <span></span>
                     </div>
-                    <!-- error404 ? logo-inverse.png : logo.png -->
                     <a class="header-logo" href="<?php echo site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="SEOMarket"></a>
                 </div>
-
                 <div class="hamburger-2">
                     <span></span>
                 </div>
-
                 <div class="header-right">
                     <div class="header-search">
                         <div class="header-search-btn">
                             <i class="icon ion-android-search i-search"></i>
                             <i class="icon ion-android-close i-close"></i>
                         </div>
-                        <form class="form" action="">
-                            <div class="input-wrap input-wrap-icon">
-                                <input type="text" class="input" placeholder="Search...">
-                                <button type="submit"><i class="icon ion-android-search"></i></button>
-                            </div>
-                        </form>
                     </div>
                     <?php
                     $theme_settings_header = get_field('theme_settings_header', 'option');
@@ -69,5 +58,16 @@
                 </div>
             </div>
         </div>
+        <div class="search-from-dropdown">
+            <form class="form" action="">
+                <div class="input-wrap input-wrap-icon">
+                    <input type="text" class="input" placeholder="Type here to search...">
+                    <button type="submit"><i class="icon ion-android-search"></i></button>
+                </div>
+            </form>
+        </div>
+
     </header>
-    <div id="content">
+
+
+<!--    <div id="content">-->

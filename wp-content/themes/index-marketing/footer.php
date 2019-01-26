@@ -1,9 +1,9 @@
 <?php wp_footer(); 
 $theme_settings_footer = get_field('theme_settings_footer', 'option');
 ?>
-</div>
+<!--</div>-->
 <footer class="footer">
-    <div class="container-fluid">
+    <div class="container">
         <?php
         if( have_rows('theme_settings_footer', 'option') ):
         while( have_rows('theme_settings_footer', 'option') ): the_row();

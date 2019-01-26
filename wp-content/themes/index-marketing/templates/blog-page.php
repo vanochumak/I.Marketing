@@ -3,11 +3,11 @@
  * Template Name: Blog
  */
 get_header();
-$title_on_the_blog_page = get_field('title_on_the_blog_page', 'option');
-$image_on_the_blog_page      = get_field('image_on_the_blog_page', 'option');
+$title_on_the_blog_page  = get_field('title_on_the_blog_page', 'option');
+$image_on_the_blog_page  = get_field('image_on_the_blog_page', 'option');
 ?>
 <section class="s-top-2 bg-top" style="background-image: url('<?php echo $image_on_the_blog_page['url']; ?>')">
-    <?php echo $title_on_the_blog_page ? '<h1 class="h1 title">'. $title_on_the_blog_page .'</h1>' : ''; ?>
+    <?php echo $title_on_the_blog_page ? '<h2 class="h1 title">'. $title_on_the_blog_page .'</h2>' : ''; ?>
     <ul class="breadcrumbs">
         <li>
             <a href="<?php echo get_home_url(); ?>"><?php _e('Home', 'index-marketing'); ?></a>

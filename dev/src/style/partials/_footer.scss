@@ -1,5 +1,5 @@
 .footer{
-  padding: 100px 0 35px;
+  padding: 55px 0 35px;
   background-color: $grey-light;
   color: $text;
   .input{
@@ -7,6 +7,7 @@
   }
   .title{
     margin-bottom: 40px;
+    font-family: sans-serif;
   }
   .subtitle{
     margin-bottom: 10px;
@@ -16,6 +17,9 @@
     .title{
       margin-bottom: 25px;
     }
+  }
+  p{
+    font-size: 16px;
   }
 }
 

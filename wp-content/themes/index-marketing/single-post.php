@@ -25,7 +25,7 @@ $img = get_image_by_id(get_the_ID()); $src = $img[0];
     <section class="s-blog-single">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-10 col-xl-6">
+                <div class="col-12 col-lg-10 col-xl-7">
                     <article class="blog-article">
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                         <h2 class="title h2 h2-alt"><?php the_title(); ?></h2>
