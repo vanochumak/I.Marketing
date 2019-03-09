@@ -1,4 +1,4 @@
-<section class="s-news">
+<section class="s-news content-section">
     <div class="container-fluid">
 
         <h2 class="h2 h2-center title"><?php _e('Latest News', 'index-marketing'); ?></h2>

@@ -17,6 +17,9 @@ get_header();
             case 'third_section':
                 get_template_part( 'templates/home-page/inc/third_section.inc' );
                 break;
+            case 'fourth_section':
+                get_template_part( 'templates/home-page/inc/fourth_section.inc' );
+                break;
             default:
                 trigger_error( 'Error loading template for layout <strong>' . $row_layout . '</strong>', E_USER_WARNING );
                 break;

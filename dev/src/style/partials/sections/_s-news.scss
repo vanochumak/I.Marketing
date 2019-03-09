@@ -1,4 +1,6 @@
 .s-news{
+  padding-top: 80px;
+  padding-bottom: 80px;
   background-color: $grey-light;
   .title{
     margin-bottom: 60px;
@@ -7,6 +9,10 @@
     .title{
       margin-bottom: 60px;
     }
+  }
+  .h2{
+    font-size: 34px;
+    padding-bottom: 28px;
   }
 }
 .news-item{

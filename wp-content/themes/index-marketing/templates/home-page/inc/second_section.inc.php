@@ -17,10 +17,10 @@ $button = button_link(
     $second_section['button_internal']
 );
 ?>
-<section class="s-about <?php echo $second_section['add_background_section'] == 'true' ? 'add-background-section' : '' ?>">
+<section class="s-about content-section <?php echo $second_section['add_background_section'] == 'true' ? 'add-background-section' : '' ?>">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col col-md-10 col-lg-10">
+            <div class="col col-md-10 col-lg-12">
                 <div class="row justify-content-center justify-content-lg-between align-items-lg-center">
                     <div class="col-md-12 col-lg-6 col-xl-6">
                         <?php
